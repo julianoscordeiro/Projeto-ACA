@@ -28,7 +28,7 @@
 
 <!-- Formulario de login-->
     
-    <form id="logincss">
+    <form action="login" id="logincss">
         <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
             <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
@@ -42,7 +42,7 @@
         <a href="cadastro.php" >Cadastrar-se </a>
         <a id="linkresetpass"href="resetpass.php" >Esqueci a senha</a><br>
 
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
 
     <!-- Core -->
@@ -56,7 +56,6 @@
 </body>
 </html>
 
+<!-- Sistema de autentificação abaixo -->
 <?php
-
-?>
 
