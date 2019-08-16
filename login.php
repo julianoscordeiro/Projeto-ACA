@@ -18,11 +18,7 @@
     <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <style type="text/css">
-        #logincss{
-            margin: 10% 30% 30% 30%;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css" />
         
         
     </head>
@@ -44,7 +40,7 @@
         </div>
 
         <a href="cadastro.php" >Cadastrar-se </a>
-        <a href="resetpass.php" >Esqueci a senha</a><br>
+        <a id="linkresetpass"href="resetpass.php" >Esqueci a senha</a><br>
 
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
