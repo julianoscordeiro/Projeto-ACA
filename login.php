@@ -36,14 +36,15 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Senha</label>
-            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+            <input name="senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
         </div>
 
         <a href="cadastro.php" >Cadastrar-se </a>
         <a id="linkresetpass"href="resetpass.php" >Esqueci a senha</a><br>
 
-        <button onclick="entrar()" type="submit" class="btn btn-primary">Entrar</button>
+        <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
+
 
     <!-- Core -->
     <script src="/assets/vendor/jquery/jquery.min.js"></script>
@@ -57,7 +58,5 @@
 </html>
 
 <!-- Sistema de autentificação abaixo -->
-<?php
-include_once("entrar.php");
-?>
+
 
