@@ -36,7 +36,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
-            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+            <input name="emailUsuario" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
             
         </div>
         <div class="form-group">
