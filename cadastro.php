@@ -28,7 +28,7 @@
 
 
 <!-- Formulario de registro-->
-    <form id="logincss">
+    <form method="POST" action="register.php" id="logincss">
     <div class="form-group">
             <label for="exampleInputEmail1">Usuario</label>
             <input name="usuario" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario">
@@ -41,7 +41,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Senha</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+            <input name="senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
         </div>
     
     <input type="submit" class="btn btn-primary" value="Cadastrar">
@@ -58,44 +58,5 @@
 </body>
 </html>
 <!-- Sistema de cadastro abaixo -->
-<?php 
- 
-$login = $_POST['login'];
-$senha = MD5($_POST['senha']);
-$connect = mysql_connect('nome_do_servidor','nome_de_usuario','senha');
-$db = mysql_select_db('nome_do_banco_de_dados');
-$query_select = "SELECT login FROM usuarios WHERE login = '$login'";
-$select = mysql_query($query_select,$connect);
-$array = mysql_fetch_array($select);
-$logarray = $array['login'];
- 
-  if($login == "" || $login == null){
-    echo"<script language='javascript' type='text/javascript'>
-    alert('O campo login deve ser preenchido');window.location.href='
-    cadastro.html';</script>";
- 
-    }else{
-      if($logarray == $login){
- 
-        echo"<script language='javascript' type='text/javascript'>
-        alert('Esse login já existe');window.location.href='
-        cadastro.html';</script>";
-        die();
- 
-      }else{
-        $query = "INSERT INTO usuarios (login,senha) VALUES ('$login','$senha')";
-        $insert = mysql_query($query,$connect);
-         
-        if($insert){
-          echo"<script language='javascript' type='text/javascript'>
-          alert('Usuário cadastrado com sucesso!');window.location.
-          href='login.html'</script>";
-        }else{
-          echo"<script language='javascript' type='text/javascript'>
-          alert('Não foi possível cadastrar esse usuário');window.location
-          .href='cadastro.html'</script>";
-        }
-      }
-    }
-?>
+
 

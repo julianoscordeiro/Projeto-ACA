@@ -28,7 +28,7 @@
 
 <!-- Formulario de login-->
     
-    <form action="login" id="logincss">
+    <form method="POST" action="entrar.php" id="logincss">
         <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
             <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
@@ -36,13 +36,13 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Senha</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
         </div>
 
         <a href="cadastro.php" >Cadastrar-se </a>
         <a id="linkresetpass"href="resetpass.php" >Esqueci a senha</a><br>
 
-        <button type="submit" class="btn btn-primary">Entrar</button>
+        <button onclick="entrar()" type="submit" class="btn btn-primary">Entrar</button>
     </form>
 
     <!-- Core -->
@@ -58,4 +58,6 @@
 
 <!-- Sistema de autentificação abaixo -->
 <?php
+include_once("entrar.php");
+?>
 
