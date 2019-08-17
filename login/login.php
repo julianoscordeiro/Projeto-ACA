@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cadastro</title>
-    
+    <title>Login</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
 
@@ -19,33 +18,33 @@
     <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
-
-
-</head>
+    <link rel="stylesheet" type="text/css" href="..\style.css" />
+        
+        
+    </head>
 
 <body>
 
 
-<!-- Formulario de registro-->
-    <form method="POST" action="register.php" id="logincss">
-    <div class="form-group">
-            <label for="exampleInputEmail1">Usuario</label>
-            <input name="usuario" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario">
-            
-        </div>
+<!-- Formulario de login-->
+    
+    <form method="POST" action="entrar.php" id="logincss">
         <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
-            <input name="emailUsuario" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
             
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Senha</label>
             <input name="senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
         </div>
-    
-    <input type="submit" class="btn btn-primary" value="Cadastrar">
+
+        <a href="cadastro.php" >Cadastrar-se </a>
+        <a id="linkresetpass"href="resetpass.php" >Esqueci a senha</a><br>
+
+        <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
+
 
     <!-- Core -->
     <script src="/assets/vendor/jquery/jquery.min.js"></script>
@@ -54,9 +53,10 @@
 
     <!-- Theme JS -->
     <script src="/assets/js/blk-design-system.min.js"></script>
-    
+
 </body>
 </html>
-<!-- Sistema de cadastro abaixo -->
+
+<!-- Sistema de autentificação abaixo -->
 
 
