@@ -24,6 +24,14 @@
     </head>
 
 <body>
+<?php
+include("..\header.php");
+?>
+
+
+           
+
+
 
 
 <!-- Formulario de login-->
@@ -54,6 +62,7 @@
     <!-- Theme JS -->
     <script src="/assets/js/blk-design-system.min.js"></script>
 
+    
 </body>
 </html>
 

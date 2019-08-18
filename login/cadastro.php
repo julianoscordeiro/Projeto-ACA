@@ -25,6 +25,9 @@
 </head>
 
 <body>
+<?php
+include("..\header.php");
+?>
 
 
 <!-- Formulario de registro-->

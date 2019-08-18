@@ -7,9 +7,29 @@
     <title>ACA - Aplicativo de correção automatizada</title>
 </head>
 <body>
+<?php
+include("header.php");
+
+?>
+
+<div class="area" >
+    <ul class="circles">
+
+
     
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+
+    </ul>
+</div >
 </body>
 </html>
 
-
-<?php
