@@ -3,15 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class siteController extends Controller{
+class HomeController extends Controller
+{
 
-    public function index(){
-        $title = "Inicio";
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
 
-        return view('home.index');
+        $title = 'Inicio | ';
+        return view('home.index', [
+            'title' => $title
+        ]);
     }
 
 
+    /**
+     * Show the user dashboard.
+     */
+
+    public function home()
+    {
+        return view('home.home');
+    }
 }

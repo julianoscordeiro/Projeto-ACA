@@ -1,12 +1,13 @@
 @extends('template.template')
 
-@sections('content')
-
-?>
+@section('content')
 
 <div class="area" >
     <ul class="circles">
 
+
+
+                    
                     <li></li>
                     <li></li>
                     <li></li>
