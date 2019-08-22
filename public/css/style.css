@@ -23,6 +23,20 @@ body{
     margin-top: 10%;
     text-align: center;
 }
+.fundoDashboard{
+    
+    background-color: #380049;
+    
+}
+.fundoContent{
+    background-color: #e6e6e6;
+}
+.fundoNavBarDashboard{
+    background-color: #110014;
+}
+.dashboardContent{
+    width: 60%;
+}
 
 
 
