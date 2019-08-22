@@ -8,6 +8,7 @@
                 
 
                 <div class="card-body" id="formlogincss">
+                <h1 class="display-1 ">Cadastrar-se:</h1>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -66,6 +67,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Cadastrar') }}
                                 </button>
+                                <a href="/login">
+                                    {{ __('ou Entre') }}
+                                </a>
                             </div>
                         </div>
                     </form>

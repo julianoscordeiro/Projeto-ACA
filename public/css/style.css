@@ -17,6 +17,11 @@ body{
 }
 #formlogincss{
     margin-top: 30%;
+    border: solid #4a1844 2px
+}
+.textoinicio{
+    margin-top: 10%;
+    text-align: center;
 }
 
 

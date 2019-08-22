@@ -5,9 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div>
-                
 
+                
+            
                 <div class="card-body" id="formlogincss">
+                <h1 class="display-1 ">Entrar:</h1>
+                    
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
