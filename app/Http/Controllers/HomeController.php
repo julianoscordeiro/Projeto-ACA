@@ -27,7 +27,10 @@ class HomeController extends Controller
      */
 
     public function home()
-    {
-        return view('home.home');
+    {   
+        $title = 'Painel | ';
+        return view('home.home', [
+            'title' => $title
+        ]);
     }
 }
