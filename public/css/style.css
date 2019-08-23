@@ -30,9 +30,10 @@ body{
 }
 .fundoContent{
     background-color: #e6e6e6;
+    border-radius: 10px; 
 }
 .fundoNavBarDashboard{
-    background-color: #110014;
+    background-color: transparent;
 }
 .dashboardContent{
     width: 60%;
