@@ -33,4 +33,19 @@ class HomeController extends Controller
             'title' => $title
         ]);
     }
+
+    public function questoes()
+    {   
+        $title = 'Questões | ';
+        return view('home.questoes', [
+            'title' => $title
+        ]);
+    }
+    public function criarquestao()
+    {   
+        $title = 'Criar Questão | ';
+        return view('home.criarquestao', [
+            'title' => $title
+        ]);
+    }
 }

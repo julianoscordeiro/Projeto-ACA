@@ -22,3 +22,11 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@home')->name('home');
 });
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/questoes', 'HomeController@questoes')->name('questoes');
+});
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/questoes/criar', 'HomeController@criarquestao')->name('criarquestao');
+});

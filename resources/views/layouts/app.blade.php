@@ -45,8 +45,9 @@
                 <div class="col-sm-10">
                     <div class="topnav" id="myTopnav">
                                         
-                                        <a href="/home" class="active">Inicio</a>
+                                        <a href="/home" ">Inicio</a>
                                         <a href="/questoes">Questões</a>
+                                        
                                         <a href="/provas">Provas</a>
                                         <a href="/turmas">Turmas</a>
                                         <a href="/correcao">Correção</a>
@@ -78,6 +79,9 @@
                         </div>   
                     </div>            
                     
+                   
+
+
                 </div> 
                  
             </div>  

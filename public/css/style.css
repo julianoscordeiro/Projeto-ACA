@@ -71,19 +71,21 @@ body,html {height:100%;overflow:hidden;}
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    border-bottom: solid 1px white;
+    border-top: solid 1px white;
   }
   
   .topnav a:hover {
-    color: #f2f2f2;
-    border: #ddd 2px solid;
-    border-radius: 20px;
+    color: #e14eca;
+    border-color: #e14eca;
+
   }
   
   .topnav a.active {
     background-color: transparent;
     border: #e14eca 2px solid;
     color: white;
-    border-radius: 20px;
+    border-radius: 15px;
   }
   
   .topnav .icon {
@@ -111,6 +113,27 @@ body,html {height:100%;overflow:hidden;}
       text-align: left;
     }
   }
+
+
+/* Questões */
+
+.barrapesquisa{
+    border-color: #f2f2f2;
+    background-color: #f2f2f2;  
+    margin-top: 20%;
+}
+.questoesMargin1{
+    margin-top: 30%;
+}
+.questoesMargin2{
+    margin-top: 5%;
+}
+
+.corblack{
+    color: black;
+}
+
+
 
 
 
