@@ -32,98 +32,61 @@
 
     <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- Meu css -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
+    
     
 </head>
 <body class="fundoDashboard">
 
-
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light fundoNavBarDashboard shadow-sm">
-        
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
-                    ACA
-                </a>
-
-            
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                                <!-- Menus -->
-
-
-                        <div class="card card-nav-tabs card-plain">
-                            <div class="card-header card-header-danger">
-                                <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
-                                <div class="nav-tabs-navigation">
-                                    <div class="nav-tabs-wrapper">
-                                        <ul class="nav nav-tabs" data-tabs="tabs">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" href="/home" >Inicio</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="/questoes" >Questões</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="/provas" >Provas</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="/turmas" >Turmas</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="/correcao" >Correção</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="/relatorios" >Relatórios</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                        </div>
-                    </ul>
+        <!-- Menu Responsivo -->
+        <div class="container">
+            <div class=" row justify-content-center ">
+                <div class="col-sm-10">
+                    <div class="topnav" id="myTopnav">
+                                        
+                                        <a href="/home" class="active">Inicio</a>
+                                        <a href="/questoes">Questões</a>
+                                        <a href="/provas">Provas</a>
+                                        <a href="/turmas">Turmas</a>
+                                        <a href="/correcao">Correção</a>
+                                        <a href="/relatorios">Relatórios</a>                                      
+                                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                                            <i class="fa fa-bars"></i>
+                                        </a>
+                                        
+                    </div>  
                     
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <div class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </div>
-                            @if (Route::has('register'))
-                                <div class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </div>
-                            @endif
-                        @else
-                            <div class="nav-item  dropdown">
-                                <a id="navbarDropdown" class=" dropdown-toggle btn btn-primary" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    
+                </div> 
+                <div class="col-sm-2">
+                    <div >   
+                    <div class="btn-group dropdown usuariobtn">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ Auth::user()->name }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
-                            </div>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                        </div>
+                        </div>   
+                    </div>            
+                    
+                </div> 
+                 
+            </div>  
+               
+        </div>
+        
+
+
+    <div id="app">
 
         <main class="py-4">
             @yield('content')
@@ -131,6 +94,15 @@
     </div>
 
 
-  
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 </body>
 </html>
