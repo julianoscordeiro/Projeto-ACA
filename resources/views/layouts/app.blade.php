@@ -65,22 +65,22 @@
                                     <div class="nav-tabs-wrapper">
                                         <ul class="nav nav-tabs" data-tabs="tabs">
                                             <li class="nav-item">
-                                                <a class="nav-link active" href="#home" data-toggle="tab">Inicio</a>
+                                                <a class="nav-link active" href="/home" >Inicio</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#updates" data-toggle="tab">Questões</a>
+                                                <a class="nav-link" href="/questoes" >Questões</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#history" data-toggle="tab">Provas</a>
+                                                <a class="nav-link" href="/provas" >Provas</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#history" data-toggle="tab">Turmas</a>
+                                                <a class="nav-link" href="/turmas" >Turmas</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#history" data-toggle="tab">Correção</a>
+                                                <a class="nav-link" href="/correcao" >Correção</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#history" data-toggle="tab">Relatórios</a>
+                                                <a class="nav-link" href="/relatorios" >Relatórios</a>
                                             </li>
                                         </ul>
                                     </div>
