@@ -31,39 +31,25 @@
                 <!-- Formulario -->
                         <div>
                                 <form>
-                                        <div class="form-group">
-                                            Unidade Curricular:
-                                            <select class="form-control">
-                                                <option selected>Escolha</option>
-                                                <option>Programação</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group ">
-                                                Assunto:
-                                                <select class="form-control">
-                                                    <option selected>Escolha</option>
-                                                    <option>Programação</option>
-                                                </select>
-                                        </div>
+                                        
+                                        Unidade Curricular:
+                                        <input type="text" class="formulariosquestoes" placeholder="Unidade Curricular">
+                                        Assunto:
+                                        <input type="text" class="formulariosquestoes" placeholder="Assunto">
 
                                         Enunciado:
-                                        <input type="text" class="form-control" placeholder="Enunciado">
+                                        <input type="text" class="formulariosquestoes" placeholder="Enunciado">
 
-                                        <h3 class="corblack">Alternativas:</h3>
-                                        Alternativa:
-                                        <input type="text" class="form-control" placeholder="A">
-                                        Alternativa:
-                                        <input type="text" class="form-control" placeholder="B">
-                                        Alternativa:
-                                        <input type="text" class="form-control" placeholder="C">
-                                        Alternativa:
-                                        <input type="text" class="form-control" placeholder="D">
-                                        Alternativa:
-                                        <input type="text" class="form-control" placeholder="E">
+                                        Alternativas:
+                                        <input type="text" class="formulariosquestoes" placeholder="A">
+                                        <input type="text" class="formulariosquestoes" placeholder="B">
+                                        <input type="text" class="formulariosquestoes" placeholder="C">
+                                        <input type="text" class="formulariosquestoes" placeholder="D">
+                                        <input type="text" class="formulariosquestoes" placeholder="E">
  
                                         <div class="form-group">
                                                 Alternativa Correta:
-                                                <select class="form-control">
+                                                <select class="formulariosquestoes">
                                                     <option selected>Escolha</option>
                                                     <option>A</option>
                                                     <option>B</option>
@@ -77,6 +63,8 @@
                                         
                                         <button type="submit" class="btn btn-danger">Cancelar</button>
                                         <button type="submit" class="btn btn-warning">Rascunho</button>
+
+                                
 
                                 </form>
                         </div>    
