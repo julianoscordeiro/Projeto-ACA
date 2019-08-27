@@ -7,18 +7,24 @@
 
                     <!-- Texto de boas vindas -->
                     <div class="textoinicio" >
-                        <h1 class="display-1">ACA</h1>
-                        <h3 class="display-3">Aplicativo de correção automatizada</h3>
-                        <h3>
-                            <small class="text-muted">Cansado de passar dias corrigindo provas? o ACA faz isso pra você e totalmente de graça! <br> 
-                            Registre-se agora e obtenha mais momentos em sua vida!
-                        </h3>
+                        <h1 class="display-1">PROVA PRO</h1>
+                        <h3 class="display-3">Elaboração e Correção Automatizada</h3>
+                        <h2>
+                            <small class="text-muted">                     
+                            Conheça a ferramenta que vai auxiliar o professor em suas atividades                            
+                            <h3>
+                                <small class="text-muted">
+                                Elabore suas provas e questões, corrija seus exames e gerencie suas turmas, com eficiência e qualidade
+                            </h3>                           
+                        </h2>  
                         <a href="/register"  class="btn btn-primary">
-                                    {{ __('Registrar-se') }}
-                        </a>
-                        <a href="/login">
-                                    {{ __('ou Entre') }}
-                        </a>
+                                {{ __('Registre-se') }}
+                        </a><br>
+                        <h5>
+                            <a href="/login">
+                                {{ __('Entre') }}
+                            </a>
+                        </h5>
                     </div>
                     
                     <li></li>
