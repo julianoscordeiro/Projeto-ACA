@@ -18,7 +18,7 @@
                             </h3>                           
                         </h2>  
                         <a href="/register"  class="btn btn-primary">
-                                {{ __('Registre-se') }}
+                                {{ __('Casdastre-se') }}
                         </a><br>
                         <h5>
                             <a href="/login">
