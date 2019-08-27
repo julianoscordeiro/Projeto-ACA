@@ -16,7 +16,7 @@
                         </div>
                     @endif
 
-                    Bem vindo ao ACA!
+                    Bem vindo ao PROVA PRO!
 
                 </div>
             </div>
@@ -27,7 +27,7 @@
 <div class="container">
     <div class="row justify-content-center ">
         <div class="col-md-12">
-        <h3>Crie suas questões -> Crie suas provas para cada turma -> Corrija elas de forma rapida e pratica!</h3>
+        <h3>Elabore suas questões -> Diagrame suas provas -> Gerencie suas turmas -> Corrija as provas de maneira fácil</h3>
         </div>
     </div>
 </div>
