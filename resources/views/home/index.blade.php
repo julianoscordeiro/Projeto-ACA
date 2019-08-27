@@ -14,17 +14,17 @@
                             Conheça a ferramenta que vai auxiliar o professor em suas atividades                            
                             <h3>
                                 <small class="text-muted">
-                                Elabore suas provas e questões, corrija seus exames e gerencie suas turmas, com eficiência e qualidade
+                                Elabore suas provas e questões, corrija seus exames e gerencie turmas com eficiência e qualidade
                             </h3>                           
                         </h2>  
                         <a href="/register"  class="btn btn-primary">
                                 {{ __('Casdastre-se') }}
                         </a><br>
-                        <h5>
+                        <h4>
                             <a href="/login">
                                 {{ __('Entre') }}
                             </a>
-                        </h5>
+                        </h4>
                     </div>
                     
                     <li></li>
