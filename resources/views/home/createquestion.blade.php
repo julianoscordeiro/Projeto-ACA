@@ -10,7 +10,6 @@
         </div>
         <div class="col-md-2">
                 <!-- Busca -->
-                <a href="/questoes/criar" class="btn btn-primary questoesMargin1">Importar imagem</a>
         </div>
     </div>
 
@@ -30,10 +29,13 @@
                 
                 <!-- Formulario -->
                         <div>
-                                <form method="POST" action="{{ route('criadaquestao') }}">
+
+                                
+                                <form method="POST" action="{{ route('criadaquestao') }}" enctype="multipart/form-data">
+                                @csrf
+                                        Imagem:
+                                        <input name="imagem" type="file" accept="image/*" class="btn btn-primary" /> <br>
                                         
-                                        Unidade Curricular:
-                                        <input type="text" class="formulariosquestoes" placeholder="Unidade Curricular">
                                         Assunto:
                                         <input name="assunto" type="text" class="formulariosquestoes" placeholder="Assunto">
 
@@ -57,12 +59,11 @@
                                                     <option>D</option>
                                                     <option>E</option>
                                                 </select>
-                                            </div>
+                                        </div>
                                     
                                         <button type="submit" class="btn btn-success">Criar</button>
                                         
-                                        <button type="submit" class="btn btn-danger">Cancelar</button>
-                                        <button type="submit" class="btn btn-warning">Rascunho</button>                                       
+                                        <button type="clear" class="btn btn-danger">Cancelar</button>                                  
                                         
                                 
 

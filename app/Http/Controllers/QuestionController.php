@@ -4,17 +4,19 @@ namespace App\Http\Controllers;
 
 use Auth;
 
-use App\Questao;
+use App\Question;
 
 use Illuminate\Http\Request;
 
 class QuestionController  extends Controller
 {
+
+
     /* Inserção no banco de dados */
     public function create(Request $request)
     {
-        dd("Veio ate aqui caraio");
-        Questao::create([            
+        
+        $question = Question::create([            
         'assunto' => $request->assunto,
         'enunciado'=> $request->enunciado,
         'alternativaA' => $request->alternativaA,
@@ -23,12 +25,19 @@ class QuestionController  extends Controller
         'alternativaD' => $request->alternativaD,
         'alternativaE' => $request->alternativaE,
         'resposta' => $request->resposta,
+        'tipoQuestao' => true,
         'user_id' => Auth::id()
         ]);
 
+        
+        //Salva na pasta storage/app/images/questions
+        $path = $request->imagem->storeAs('/questions', $question->id.".".$request->imagem->extension());
+        
+        //Salva o caminho da imagem no banco de dados
+        $question->imagem = $path;
+        $question->save();
         return redirect()->route('questoes');
 
-        
     }
 
 

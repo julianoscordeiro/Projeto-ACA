@@ -13,7 +13,7 @@ class CreateQuestaosTable extends Migration
      */
     public function up()
     {
-        Schema::create('questaos', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('assunto');
             $table->string('enunciado');
@@ -23,8 +23,8 @@ class CreateQuestaosTable extends Migration
             $table->string('alternativaD');
             $table->string('alternativaE');
             $table->string('resposta');
-            $table->string('imagem');
-            $table->string('tipoQuestao');
+            $table->string('imagem')->default('noimage');
+            $table->string('tipoQuestao')->default(false);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
@@ -39,6 +39,6 @@ class CreateQuestaosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questaos');
+        Schema::dropIfExists('questions');
     }
 }

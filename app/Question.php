@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Questao extends Model
+class Question extends Model
 {
     protected $fillable = [
         'id',
@@ -21,4 +21,10 @@ class Questao extends Model
         'user_id'
     ];
     
+
+    /*Relaciona o usuario a questão */
+    public function user(){
+        return $this->hasOne(User::class, 'id');
+    }
+
 }

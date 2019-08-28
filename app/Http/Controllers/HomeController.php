@@ -37,14 +37,14 @@ class HomeController extends Controller
     public function questoes()
     {   
         $title = 'Questões | ';
-        return view('home.questoes', [
+        return view('home.questions', [
             'title' => $title
         ]);
     }
     public function criarquestao()
     {   
         $title = 'Criar Questão | ';
-        return view('home.criarquestao', [
+        return view('home.createquestion', [
             'title' => $title
         ]);
     }
