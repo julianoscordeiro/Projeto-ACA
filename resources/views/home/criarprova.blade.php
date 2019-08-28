@@ -6,7 +6,7 @@
 <div class="container ">
     <div class="row justify-content-center   ">
         <div class="col-md-9 ">
-            <h1 class="display-1 ">Questão:</h1>
+            <h1 class="display-1 ">Criar prova:</h1>
         </div>
         <div class="col-md-2">
                 <a href="/questoes/criar" class="btn btn-primary questoesMargin1">Importar imagem</a>
@@ -30,7 +30,7 @@
                 <!-- Formulario -->
                         <div>
                                 <form method="POST" action="{{ route('criadaquestao') }}">
-                                        
+                                                                        
                                         Nome:
                                         <input name="nome" type="text" class="formulariosquestoes" placeholder="Enunciado">
                                         Unidade Curricular:
@@ -43,6 +43,8 @@
                                         <div class="col-md-3 md-form active-pink active-pink-2 mb-3 mt-0">
                                             <input class="form-control barrapesquisa " type="text" placeholder="Pesquisar" aria-label="Search">
                                         </div>
+
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     
                                         <button type="submit" class="btn btn-success">Criar</button>
                                         

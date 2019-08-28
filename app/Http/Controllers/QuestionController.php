@@ -13,6 +13,7 @@ class QuestionController  extends Controller
     /* Inserção no banco de dados */
     public function create(Request $request)
     {
+        dd("Veio ate aqui caraio");
         Questao::create([            
         'assunto' => $request->assunto,
         'enunciado'=> $request->enunciado,
