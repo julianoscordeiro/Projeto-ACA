@@ -20,4 +20,5 @@ class Questao extends Model
         'tipoQuestao',
         'user_id'
     ];
+    
 }

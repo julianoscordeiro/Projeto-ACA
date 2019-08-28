@@ -9,7 +9,6 @@
             <h1 class="display-1 ">Questão:</h1>
         </div>
         <div class="col-md-2">
-                <!-- Busca -->
                 <a href="/questoes/criar" class="btn btn-primary questoesMargin1">Importar imagem</a>
         </div>
     </div>
@@ -32,38 +31,24 @@
                         <div>
                                 <form method="POST" action="{{ route('criadaquestao') }}">
                                         
+                                        Nome:
+                                        <input name="nome" type="text" class="formulariosquestoes" placeholder="Enunciado">
                                         Unidade Curricular:
-                                        <input type="text" class="formulariosquestoes" placeholder="Unidade Curricular">
+                                        <input name="unidadecurricular" type="text" class="formulariosquestoes" placeholder="Unidade Curricular">
                                         Assunto:
                                         <input name="assunto" type="text" class="formulariosquestoes" placeholder="Assunto">
 
-                                        Enunciado:
-                                        <input name="enunciado" type="text" class="formulariosquestoes" placeholder="Enunciado">
-
-                                        Alternativas:
-                                        <input name="alternativaA" type="text" class="formulariosquestoes" placeholder="A">
-                                        <input name="alternativaB" type="text" class="formulariosquestoes" placeholder="B">
-                                        <input name="alternativaC" type="text" class="formulariosquestoes" placeholder="C">
-                                        <input name="alternativaD" type="text" class="formulariosquestoes" placeholder="D">
-                                        <input name="alternativaE" type="text" class="formulariosquestoes" placeholder="E">
- 
-                                        <div class="form-group">
-                                                Alternativa Correta:
-                                                <select name="resposta" class="formulariosquestoes">
-                                                    <option selected>Escolha</option>
-                                                    <option>A</option>
-                                                    <option>B</option>
-                                                    <option>C</option>
-                                                    <option>D</option>
-                                                    <option>E</option>
-                                                </select>
-                                            </div>
+                                        Questões:
+                                        <!--Busca-->
+                                        <div class="col-md-3 md-form active-pink active-pink-2 mb-3 mt-0">
+                                            <input class="form-control barrapesquisa " type="text" placeholder="Pesquisar" aria-label="Search">
+                                        </div>
                                     
                                         <button type="submit" class="btn btn-success">Criar</button>
                                         
                                         <button type="submit" class="btn btn-danger">Cancelar</button>
                                         <button type="submit" class="btn btn-warning">Rascunho</button>                                       
-                                        
+                                       
                                 
 
                                 </form>

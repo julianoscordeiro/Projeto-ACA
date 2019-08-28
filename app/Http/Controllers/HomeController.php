@@ -48,4 +48,18 @@ class HomeController extends Controller
             'title' => $title
         ]);
     }
+    public function provas()
+    {   
+        $title = 'Provas | ';
+        return view('home.provas', [
+            'title' => $title
+        ]);
+    }
+    public function criarProva()
+    {   
+        $title = 'Criar Prova | ';
+        return view('home.criarprova', [
+            'title' => $title
+        ]);
+    }
 }
