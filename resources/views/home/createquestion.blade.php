@@ -33,26 +33,30 @@
                                 
                                 <form method="POST" action="{{ route('criadaquestao') }}" enctype="multipart/form-data">
                                 @csrf
-                                        Imagem:
-                                        <input name="imagem" type="file" accept="image/*" class="btn btn-primary" /> <br>
+                                        
+                                        <div class="btn btn-primary">
+                                            Escolha sua imagem
+                                            <input name="imagem" class="uploadz" type="file" accept="image/*" class="btn btn-primary" /> <br>
+                                            
+                                        </div>
+                                        <br>
                                         
                                         Assunto:
-                                        <input name="assunto" type="text" class="formulariosquestoes" placeholder="Assunto">
+                                        <input name="assunto" type="text" class="formulariosquestoes" placeholder="Assunto" required>
 
                                         Enunciado:
-                                        <input name="enunciado" type="text" class="formulariosquestoes" placeholder="Enunciado">
+                                        <input name="enunciado" type="text" class="formulariosquestoes" placeholder="Enunciado" required>
 
                                         Alternativas:
-                                        <input name="alternativaA" type="text" class="formulariosquestoes" placeholder="A">
-                                        <input name="alternativaB" type="text" class="formulariosquestoes" placeholder="B">
-                                        <input name="alternativaC" type="text" class="formulariosquestoes" placeholder="C">
-                                        <input name="alternativaD" type="text" class="formulariosquestoes" placeholder="D">
-                                        <input name="alternativaE" type="text" class="formulariosquestoes" placeholder="E">
+                                        <input name="alternativaA" type="text" class="formulariosquestoes" placeholder="A" required>
+                                        <input name="alternativaB" type="text" class="formulariosquestoes" placeholder="B" required>
+                                        <input name="alternativaC" type="text" class="formulariosquestoes" placeholder="C" required>
+                                        <input name="alternativaD" type="text" class="formulariosquestoes" placeholder="D" required>
+                                        <input name="alternativaE" type="text" class="formulariosquestoes" placeholder="E" required>
  
                                         <div class="form-group">
                                                 Alternativa Correta:
                                                 <select name="resposta" class="formulariosquestoes">
-                                                    <option selected>Escolha</option>
                                                     <option>A</option>
                                                     <option>B</option>
                                                     <option>C</option>
