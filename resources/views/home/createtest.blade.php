@@ -9,7 +9,7 @@
             <h1 class="display-1 ">Criar prova:</h1>
         </div>
         <div class="col-md-2">
-                <a href="/questoes/criar" class="btn btn-primary questoesMargin1">Importar imagem</a>
+                
         </div>
     </div>
 
@@ -39,17 +39,26 @@
                                         <input name="assunto" type="text" class="formulariosquestoes" placeholder="Assunto">
 
                                         Questões:
-                                        <!--Busca-->
-                                        <div class="col-md-3 md-form active-pink active-pink-2 mb-3 mt-0">
-                                            <input class="form-control barrapesquisa " type="text" placeholder="Pesquisar" aria-label="Search">
-                                        </div>
 
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        @foreach ($question as $q)
+                                        <div class="listquestions row justify-content-center ">
+                                            <div class="col-md-4">
+                                                <span class="textQuestionList1" >{{$q->assunto}}</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                    <span class="textQuestionList" >{{$q->enunciado}}</span>
+                                            </div>
+                                            <div class=" textQuestionList1 col-md-2">
+                                                    <input type="checkbox"/>
+                                            </div>
+                                        </div>
+                                        @endforeach
+
+                                        
                                     
                                         <button type="submit" class="btn btn-success">Criar</button>
                                         
-                                        <button type="submit" class="btn btn-danger">Cancelar</button>
-                                        <button type="submit" class="btn btn-warning">Rascunho</button>                                       
+                                        <button type="clear" class="btn btn-danger">Cancelar</button>                                      
                                        
                                 
 

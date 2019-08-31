@@ -42,7 +42,7 @@ class HomeController extends Controller
         //Retorna a lista de questões;
         $userid = Auth::id();
         $question = DB::table('questions')->where('user_id', '=', "$userid")->get();
-        
+
         $title = 'Questões | ';
         return view('home.questions', [
             'title' => $title
@@ -58,15 +58,19 @@ class HomeController extends Controller
     public function provas()
     {   
         $title = 'Provas | ';
-        return view('home.provas', [
+        return view('home.tests', [
             'title' => $title
         ]);
     }
     public function criarProva()
     {   
+        //Retorna a lista de questões;
+        $userid = Auth::id();
+        $question = DB::table('questions')->where('user_id', '=', "$userid")->get();
+
         $title = 'Criar Prova | ';
-        return view('home.criarprova', [
+        return view('home.createtest', [
             'title' => $title
-        ]);
+        ], compact('question'));
     }
 }
