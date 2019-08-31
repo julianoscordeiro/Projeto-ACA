@@ -30,12 +30,21 @@ class QuestionController  extends Controller
         ]);
 
         
-        //Salva na pasta storage/app/images/questions
-        $path = $request->imagem->storeAs('/questions', $question->id.".".$request->imagem->extension());
+
         
-        //Salva o caminho da imagem no banco de dados
-        $question->imagem = $path;
-        $question->save();
+        //Veirica se tem uma imagem
+        $temimagem = $request->imagem;
+
+        if($temimagem != null){
+            //Salva na pasta storage/app/images/questions
+            $path = $request->imagem->storeAs('/questions', $question->id.".".$request->imagem->extension());
+            //Salva o caminho da imagem no banco de dados
+            $question->imagem = $path;
+            $question->save();
+        }
+        
+        
+        
         return redirect()->route('questoes');
 
     }

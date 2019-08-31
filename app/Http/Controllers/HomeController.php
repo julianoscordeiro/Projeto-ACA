@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Question;
+use Auth;
+use DB;
 
 class HomeController extends Controller
 {
@@ -36,10 +39,14 @@ class HomeController extends Controller
 
     public function questoes()
     {   
+        //Retorna a lista de questões;
+        $userid = Auth::id();
+        $question = DB::table('questions')->where('user_id', '=', "$userid")->get();
+        
         $title = 'Questões | ';
         return view('home.questions', [
             'title' => $title
-        ]);
+        ], compact('question'));
     }
     public function criarquestao()
     {   
