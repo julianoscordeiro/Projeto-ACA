@@ -8,6 +8,8 @@ use App\Question;
 
 use Illuminate\Http\Request;
 
+use DB;
+
 class QuestionController  extends Controller
 {
 
@@ -47,6 +49,13 @@ class QuestionController  extends Controller
         
         return redirect()->route('questoes');
 
+    }
+
+    public function deleteQuestion($id){
+        
+        //Deleta questão
+        $deleteQuestion = DB::table('questions')->where('id', '=', "$id")->delete();
+        return redirect()->route('questoes');
     }
 
 

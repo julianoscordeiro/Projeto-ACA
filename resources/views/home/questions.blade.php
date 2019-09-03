@@ -3,6 +3,7 @@
 @section('content')
 
 
+
 <div class="container ">
     <div class="row justify-content-center   ">
         <div class="col-md-6 ">
@@ -47,6 +48,44 @@
 
                                     <!-- loop para mostrar questões  do usuario -->
                                     
+                                    <!-- Excluir Questão -->
+                                    <script>
+                                        function confirmDelete(id) {
+                                            var confirmation = confirm("Deseja realmente excluir?");
+
+                                            if(confirmation){
+                                                window.location = "/questoes/delete/"+id;
+                                            }   
+                                        } 
+                                    </script>
+
+                                    <script>
+                                        // Get the modal
+                                        var modal = document.getElementById("myModal");
+
+                                        // Get the button that opens the modal
+                                        var btn = document.getElementById("modalBtn");
+
+                                        // Get the <span> element that closes the modal
+                                        var span = document.getElementsByClassName("close")[0];
+
+                                        // When the user clicks the button, open the modal 
+                                        btn.onclick = function() {
+                                        modal.style.display = "block";
+                                        }
+
+                                        // When the user clicks on <span> (x), close the modal
+                                        span.onclick = function() {
+                                        modal.style.display = "none";
+                                        }
+
+                                        // When the user clicks anywhere outside of the modal, close it
+                                        window.onclick = function(event) {
+                                        if (event.target == modal) {
+                                            modal.style.display = "none";
+                                        }
+                                        }
+                                    </script>
                                     
                                     @foreach ($question as $q)
                                     <div class="listquestions row justify-content-center ">
@@ -56,14 +95,29 @@
                                         <div class="col-md-6">
                                                 <span class="textQuestionList" >{{$q->enunciado}}</span>
                                         </div>
+                                        
                                         <div class=" textQuestionList1 col-md-1">
-                                                <a class="">Excluir</a>
+                                        
+                                                <button onclick="confirmDelete({{ $q->id }})" class="">Excluir</button>
+
+                                                
                                         </div>
                                         <div class="textQuestionList1 col-md-1">
-                                                <a class="">Editar</a>
+                                                <button id="modalBtn" class="">Editar</button>
                                         </div>
                                     </div>
                                     @endforeach
+
+                                    <!-- The Modal -->
+                                    <div id="myModal" class="modal">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <p>Questões aqui</p>
+                                    </div>
+
+                                    </div> 
                                     
                    
 
