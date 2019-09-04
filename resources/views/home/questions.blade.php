@@ -59,6 +59,8 @@
                                         } 
                                     </script>
 
+                                    <!-- script do modal -->
+
                                     <script>
                                         // Get the modal
                                         var modal = document.getElementById("myModal");
@@ -103,22 +105,45 @@
                                                 
                                         </div>
                                         <div class="textQuestionList1 col-md-1">
-                                                <button id="modalBtn" class="">Editar</button>
+                                                <button type="button" class="" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
                                         </div>
                                     </div>
                                     @endforeach
+                                    <!-- Modal Visualizar -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h2 class="modal-title" id="exampleModalLabel">Visualizar Questão</h2>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Assunto:<br>
+                                            <p>{{$q->assunto}}</p>
+                                            Enunciado: <br>
+                                            <p>{{$q->enunciado}}</p>
+                                            Alternativas: <br>
+                                            
+                                            <p>A = {{$q->alternativaA}}</p>
+                                            <p>B = {{$q->alternativaB}}</p>
+                                            <p>C = {{$q->alternativaC}}</p>
+                                            <p>D = {{$q->alternativaD}}</p>
+                                            <p>E = {{$q->alternativaE}}</p>
 
-                                    <!-- The Modal -->
-                                    <div id="myModal" class="modal">
+                                            Alternativa Correta: {{$q->resposta}}
 
-                                    <!-- Modal content -->
-                                    <div class="modal-content">
-                                    <span class="close">&times;</span>
-                                    <p>Questões aqui</p>
+                                            
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                                        </div>
+                                        </div>
                                     </div>
-
-                                    </div> 
-                                    
+                                    </div>
                    
 
                 <div>
