@@ -26,6 +26,12 @@ class Question extends Model
     public function user(){
         return $this->hasOne(User::class, 'id');
     }
+
+    //Pertence a varias provas
+    public function tests()
+    {
+        return $this->belongsToMany('App\Test')->using('App\TestQuestion')->withTimestamp();
+    }
     
 
 }
