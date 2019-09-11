@@ -92,10 +92,10 @@
                                     @foreach ($question as $q)
                                     <div class="listquestions row justify-content-center ">
                                         <div class="col-md-4">
-                                            <span class="textQuestionList1" >{{$q->assunto}}</span>
+                                            <span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
                                         </div>
                                         <div class="col-md-6">
-                                                <span class="textQuestionList" >{{$q->enunciado}}</span>
+                                                <span class="textQuestionList" >{{$q->enunciado ?? ''}}</span>
                                         </div>
                                         
                                         <div class=" textQuestionList1 col-md-1">
@@ -121,18 +121,18 @@
                                         </div>
                                         <div class="modal-body">
                                             Assunto:<br>
-                                            <p>{{$q->assunto}}</p>
+                                            <p>{{$q->assunto ?? ''}}</p>
                                             Enunciado: <br>
-                                            <p>{{$q->enunciado}}</p>
+                                            <p>{{$q->enunciado ?? ''}}</p>
                                             Alternativas: <br>
                                             
-                                            <p>A = {{$q->alternativaA}}</p>
-                                            <p>B = {{$q->alternativaB}}</p>
-                                            <p>C = {{$q->alternativaC}}</p>
-                                            <p>D = {{$q->alternativaD}}</p>
-                                            <p>E = {{$q->alternativaE}}</p>
+                                            <p>A = {{$q->alternativaA ?? ''}}</p>
+                                            <p>B = {{$q->alternativaB ?? ''}}</p>
+                                            <p>C = {{$q->alternativaC ?? ''}}</p>
+                                            <p>D = {{$q->alternativaD ?? ''}}</p>
+                                            <p>E = {{$q->alternativaE ?? ''}}</p>
 
-                                            Alternativa Correta: {{$q->resposta}}
+                                            Alternativa Correta: {{$q->resposta ?? ''}}
 
                                             
 

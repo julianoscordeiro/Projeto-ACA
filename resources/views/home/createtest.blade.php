@@ -29,12 +29,12 @@
                 
                 <!-- Formulario -->
                         <div>
-                                <form method="POST" action="{{ route('criadaquestao') }}">
-                                                                        
+                                <form method="POST" action="{{ route('criadaprova') }}">
+                                @csrf                                        
                                         Nome:
                                         <input name="nome" type="text" class="formulariosquestoes" placeholder="Enunciado">
                                         Unidade Curricular:
-                                        <input name="unidadecurricular" type="text" class="formulariosquestoes" placeholder="Unidade Curricular">
+                                        <input name="unidadeCurricular" type="text" class="formulariosquestoes" placeholder="Unidade Curricular">
                                         Assunto:
                                         <input name="assunto" type="text" class="formulariosquestoes" placeholder="Assunto">
 
