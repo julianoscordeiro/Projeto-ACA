@@ -10,7 +10,8 @@ class Test extends Model
         'id',
         'nome',
         'unidadeCurricular',
-        'assunto'
+        'assunto',
+        'user_id'
     ];
 
     //pertence a varias questões

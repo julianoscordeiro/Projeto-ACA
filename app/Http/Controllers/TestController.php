@@ -22,18 +22,12 @@ class TestController  extends Controller
         'nome' => $request->nome,
         'unidadeCurricular'=> $request->unidadeCurricular,
         'assunto'=> $request->assunto,
+        'user_id' => Auth::id()
 
         ]);
         
         return redirect()->route('provas');
 
-    }
-
-    public function deleteQuestion($id){
-        
-        //Deleta questão
-        $deleteQuestion = DB::table('questions')->where('id', '=', "$id")->delete();
-        return redirect()->route('questoes');
     }
 
 

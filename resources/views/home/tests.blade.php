@@ -35,7 +35,26 @@
                         </div>
                     @endif
 
-                   
+                                     @foreach ($test as $q)
+                                    <div class="listquestions row justify-content-center ">
+                                        <div class="col-md-4">
+                                            <span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <span class="textQuestionList" >{{$q->assunto ?? ''}}</span>
+                                        </div>
+                                        
+                                        <div class=" textQuestionList1 col-md-1">
+                                        
+                                                <button onclick="confirmDelete({{ $q->id }})" class="">Excluir</button>
+
+                                                
+                                        </div>
+                                        <div class="textQuestionList1 col-md-1">
+                                                <button type="button" class="" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
+                                        </div>
+                                    </div>
+                                    @endforeach
 
                 <div>
                     

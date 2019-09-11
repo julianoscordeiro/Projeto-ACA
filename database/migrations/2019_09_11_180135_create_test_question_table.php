@@ -17,6 +17,8 @@ class CreateTestQuestionTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('test_id');
             $table->unsignedBigInteger('question_id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
