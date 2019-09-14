@@ -6,7 +6,7 @@
 <div class="container ">
     <div class="row justify-content-center   ">
         <div class="col-md-6 ">
-            <h1 class="display-1 ">Provas:</h1>
+            <h1 class="display-1 ">Provas</h1>
         </div>
         <div class="col-md-3">
                 <!-- Busca -->
@@ -35,6 +35,58 @@
                         </div>
                     @endif
 
+                                <div class=" row justify-content-center ">
+                                    <div class="titleListQuestion col-md-4">
+                                        <span>Nome</span>
+                                    </div>
+                                    <div class="titleListQuestion col-md-8">
+                                            <span>Assunto</span>
+                                    </div>
+                                </div>
+
+                                 <!-- Confirmação -->
+                        <script>
+                                function confirmDelete(id) {
+                                    var confirmation = confirm("Deseja realmente excluir?");
+
+                                    if(confirmation){
+                                        window.location = "/provas/delete/"+id;
+                                    }   
+                                } 
+                            </script>
+
+                            <!-- script do modal -->
+
+                            <script>
+                                // Get the modal
+                                var modal = document.getElementById("myModal");
+
+                                // Get the button that opens the modal
+                                var btn = document.getElementById("modalBtn");
+
+                                // Get the <span> element that closes the modal
+                                var span = document.getElementsByClassName("close")[0];
+
+                                // When the user clicks the button, open the modal 
+                                btn.onclick = function() {
+                                modal.style.display = "block";
+                                }
+
+                                // When the user clicks on <span> (x), close the modal
+                                span.onclick = function() {
+                                modal.style.display = "none";
+                                }
+
+                                // When the user clicks anywhere outside of the modal, close it
+                                window.onclick = function(event) {
+                                if (event.target == modal) {
+                                    modal.style.display = "none";
+                                }
+                                }
+                            </script>
+
+                                
+                                <!-- Mostrar as provas criadas -->
                                      @foreach ($test as $q)
                                     <div class="listquestions row justify-content-center ">
                                         <div class="col-md-4">
@@ -55,6 +107,32 @@
                                         </div>
                                     </div>
                                     @endforeach
+
+
+                                     <!-- Modal Visualizar -->
+                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h2 class="modal-title" id="exampleModalLabel">Visualizar Questão</h2>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Nome:<br>
+                                                    <p>{{$q->nome ?? ''}}</p>
+                                                    Enunciado: <br>
+                                                    <p>{{$q->assunto ?? ''}}</p>
+        
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        <!-- Fim modal -->
 
                 <div>
                     

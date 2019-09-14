@@ -34,6 +34,19 @@ body{
     height: 50px;
   } 
 
+/*Paginação*/
+
+.pagination{
+    color: black;
+}
+
+/* Botões */
+.button{
+    padding:10px 20px;
+    margin-left: -30px;
+
+}
+
 
 /*
 body,html {height:100%;overflow:hidden;}*/

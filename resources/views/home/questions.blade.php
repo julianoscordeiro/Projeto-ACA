@@ -45,49 +45,48 @@
                                             <span>Enunciado</span>
                                     </div>
                             </div>
+                                     <!-- Confirmação -->
+                        <script>
+                                function confirmDelete(id) {
+                                    var confirmation = confirm("Deseja realmente excluir?");
+
+                                    if(confirmation){
+                                        window.location = "/questoes/delete/"+id;
+                                    }   
+                                } 
+                            </script>
+
+                            <!-- script do modal -->
+
+                            <script>
+                                // Get the modal
+                                var modal = document.getElementById("myModal");
+
+                                // Get the button that opens the modal
+                                var btn = document.getElementById("modalBtn");
+
+                                // Get the <span> element that closes the modal
+                                var span = document.getElementsByClassName("close")[0];
+
+                                // When the user clicks the button, open the modal 
+                                btn.onclick = function() {
+                                modal.style.display = "block";
+                                }
+
+                                // When the user clicks on <span> (x), close the modal
+                                span.onclick = function() {
+                                modal.style.display = "none";
+                                }
+
+                                // When the user clicks anywhere outside of the modal, close it
+                                window.onclick = function(event) {
+                                if (event.target == modal) {
+                                    modal.style.display = "none";
+                                }
+                                }
+                            </script>
 
                                     <!-- loop para mostrar questões  do usuario -->
-                                    
-                                    <!-- Excluir Questão -->
-                                    <script>
-                                        function confirmDelete(id) {
-                                            var confirmation = confirm("Deseja realmente excluir?");
-
-                                            if(confirmation){
-                                                window.location = "/questoes/delete/"+id;
-                                            }   
-                                        } 
-                                    </script>
-
-                                    <!-- script do modal -->
-
-                                    <script>
-                                        // Get the modal
-                                        var modal = document.getElementById("myModal");
-
-                                        // Get the button that opens the modal
-                                        var btn = document.getElementById("modalBtn");
-
-                                        // Get the <span> element that closes the modal
-                                        var span = document.getElementsByClassName("close")[0];
-
-                                        // When the user clicks the button, open the modal 
-                                        btn.onclick = function() {
-                                        modal.style.display = "block";
-                                        }
-
-                                        // When the user clicks on <span> (x), close the modal
-                                        span.onclick = function() {
-                                        modal.style.display = "none";
-                                        }
-
-                                        // When the user clicks anywhere outside of the modal, close it
-                                        window.onclick = function(event) {
-                                        if (event.target == modal) {
-                                            modal.style.display = "none";
-                                        }
-                                        }
-                                    </script>
                                     
                                     @foreach ($question as $q)
                                     <div class="listquestions row justify-content-center ">
@@ -100,12 +99,12 @@
                                         
                                         <div class=" textQuestionList1 col-md-1">
                                         
-                                                <button onclick="confirmDelete({{ $q->id }})" class="">Excluir</button>
+                                                <button onclick="confirmDelete({{ $q->id }})" class="btn btn-primary button">Excluir</button>
 
                                                 
                                         </div>
                                         <div class="textQuestionList1 col-md-1">
-                                                <button type="button" class="" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
+                                                <button type="button" class="btn btn-primary button" class="" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
                                         </div>
                                     </div>
                                     @endforeach
@@ -144,7 +143,7 @@
                                         </div>
                                     </div>
                                     </div>
-                   
+                                    
 
                 <div>
                     

@@ -35,4 +35,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/provas', 'HomeController@provas')->name('provas');
     Route::get('/provas/criar', 'HomeController@criarprova')->name('criarprova');
     Route::post('/provas/criar/nova', 'TestController@create')->name('criadaprova');
+    //Deletar prova
+    Route::get('/provas/delete/{id}', 'TestController@deleteTest')->name('deletarprova');
 });

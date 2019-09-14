@@ -46,7 +46,7 @@ class HomeController extends Controller
         $title = 'Questões | ';
         return view('home.questions', [
             'title' => $title
-        ], compact('question'));
+        ], compact('question'),);
     }
     public function criarquestao()
     {   
