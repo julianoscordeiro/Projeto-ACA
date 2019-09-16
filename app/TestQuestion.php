@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class TestQuestion extends Pivot
 {
+    /* Array com atributos de ProvaQuestão */
     protected $fillable = [
         'id',
         'test_id',

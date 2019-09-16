@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
+    /* Array com atributos de questão */
     protected $fillable = [
         'id',
         'assunto',

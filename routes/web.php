@@ -25,6 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@home')->name('home');
     Route::get('/questoes', 'HomeController@questoes')->name('questoes');
     Route::get('/questoes/criar', 'HomeController@criarquestao')->name('criarquestao');
+    Route::get('/questoes/editar/{id}', 'HomeController@editarquestao')->name('editar');
+    Route::post('/questoes/editado/{id}', 'QuestionController@updateQuestion')->name('editarquestao');
     Route::post('/questoes/criar/nova', 'QuestionController@create')->name('criadaquestao');
     //Deletar Questão
     Route::get('/questoes/delete/{id}', 'QuestionController@deleteQuestion')->name('deletarquestao');

@@ -43,10 +43,11 @@ class HomeController extends Controller
         $userid = Auth::id();
         $question = DB::table('questions')->where('user_id', '=', "$userid")->get();
 
+
         $title = 'Questões | ';
         return view('home.questions', [
             'title' => $title
-        ], compact('question'),);
+        ], compact('question'));
     }
     public function criarquestao()
     {   
@@ -54,6 +55,20 @@ class HomeController extends Controller
         return view('home.createquestion', [
             'title' => $title
         ]);
+    }
+    public function editarquestao(Request $request)
+    {   
+        
+        $id = $request->route('id');
+
+
+         //Retorna a lista de questões;
+         $question = DB::table('questions')->where('id', '=', "$id")->get();
+
+        $title = 'Editar Questão | ';
+        return view('home.updatequestion', [
+            'title' => $title
+        ],compact('id','question'));
     }
     public function provas()
     {   

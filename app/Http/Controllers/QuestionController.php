@@ -51,6 +51,28 @@ class QuestionController  extends Controller
 
     }
 
+    public function edit($id)
+    {
+        $share = Share::find($id);
+
+        return view('shares.edit', compact('share'));
+    }
+
+    //Editar questões
+
+    public function updateQuestion(Request $request, $id){
+
+        
+
+        $share = Question::find($id);
+        $share->assunto = $request->get('assunto') ?? $share->assunto ;
+        $share->assunto = $request->get('enunciado') ?? $share->enunciado ;
+        $share->save();
+
+        return redirect()->route('questoes');
+
+    }
+
     public function deleteQuestion($id){
         
         //Deleta questão

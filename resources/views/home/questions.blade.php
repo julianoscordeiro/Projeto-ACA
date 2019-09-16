@@ -93,18 +93,18 @@
                                         <div class="col-md-4">
                                             <span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-5">
                                                 <span class="textQuestionList" >{{$q->enunciado ?? ''}}</span>
                                         </div>
                                         
                                         <div class=" textQuestionList1 col-md-1">
-                                        
-                                                <button onclick="confirmDelete({{ $q->id }})" class="btn btn-primary button">Excluir</button>
-
-                                                
+                                        <button onclick="confirmDelete({{ $q->id }})">Excluir</button>
+                                        </div>
+                                        <div class=" textQuestionList1 col-md-1">
+                                        <a href="/questoes/editar/{{ $q->id }}">Editar</a>
                                         </div>
                                         <div class="textQuestionList1 col-md-1">
-                                                <button type="button" class="btn btn-primary button" class="" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
+                                                <button type="button" class="" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
                                         </div>
                                     </div>
                                     @endforeach
@@ -131,18 +131,18 @@
                                             <p>D = {{$q->alternativaD ?? ''}}</p>
                                             <p>E = {{$q->alternativaE ?? ''}}</p>
 
-                                            Alternativa Correta: {{$q->resposta ?? ''}}
-
-                                            
-
-
+                                            Alternativa Correta: {{$q->resposta ?? ''}};
+                                        
                                         </div>
+
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
                                         </div>
                                         </div>
                                     </div>
                                     </div>
+
+                                    
                                     
 
                 <div>
