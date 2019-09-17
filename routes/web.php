@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Input;
+use App\Question;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +32,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/questoes/criar/nova', 'QuestionController@create')->name('criadaquestao');
     //Deletar Questão
     Route::get('/questoes/delete/{id}', 'QuestionController@deleteQuestion')->name('deletarquestao');
+    //procurar questão
+    Route::get('/questoes/resultado', 'HomeController@buscarquestao')->name('buscarquestao');
+    Route::any('/search','HomeController@buscarquestao');
 
 
 

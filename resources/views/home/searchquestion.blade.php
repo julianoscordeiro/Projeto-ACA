@@ -98,7 +98,7 @@
 
                                     <!-- loop para mostrar questões  do usuario -->
                                     
-                                    @foreach ($question as $q)
+                                    @foreach ($banana as $q)
                                     <div class="container">
                                     <div class="listquestions row justify-content-center ">
                                         <div class="col-md-4">
@@ -118,9 +118,8 @@
                                                 <button type="button" class="" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
                                         </div>
                                     </div>
-                                </div>
+                                    </div>
                                     @endforeach
-                                    {!! $pag->links() !!}
                                     <!-- Modal Visualizar -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
