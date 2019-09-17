@@ -43,7 +43,7 @@ class HomeController extends Controller
         //Retorna a lista de questões;
         $userid = Auth::id();
         $question = DB::table('questions')->where('user_id', '=', "$userid")->get();
-        $pag = Question::where('user_id','=', Auth::id())->paginate(5);
+        $pag = Question::where('user_id','=', Auth::id())->orderBy('id')->paginate(5);
 
 
         $title = 'Questões | ';
@@ -64,8 +64,8 @@ class HomeController extends Controller
         $q = Input::get ( 'q' );
         $procura = Question::where('assunto','LIKE','%'.$q.'%')->orWhere('enunciado','LIKE','%'.$q.'%')->get();
         if(count($procura) > 0)
-            return view('/home/searchquestion')->withDetails($procura)->withQuery ( $q );
-        else return view ('welcome')->withMessage('No Details found. Try to search again !');
+            return view('home.searchquestion')->withDetails($procura)->withQuery ( $q );
+        else return redirect()->route('questoes');
 
         //Retorna a lista de questões;
         $userid = Auth::id();

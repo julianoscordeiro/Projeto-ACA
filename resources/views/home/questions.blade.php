@@ -101,26 +101,26 @@
                                     @foreach ($question as $q)
                                     <div class="container">
                                     <div class="listquestions row justify-content-center ">
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
                                             <span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-7">
                                                 <span class="textQuestionList" >{{$q->enunciado ?? ''}}</span>
                                         </div>
                                         
                                         <div class=" textQuestionList1 col-md-1">
-                                        <button onclick="confirmDelete({{ $q->id }})">Excluir</button>
+                                        <button class="button" onclick="confirmDelete({{ $q->id }})">Excluir</button>
                                         </div>
                                         <div class=" textQuestionList1 col-md-1">
-                                        <a href="/questoes/editar/{{ $q->id }}">Editar</a>
+                                        <a class="button" href="/questoes/editar/{{ $q->id }}">Editar</a>
                                         </div>
                                         <div class="textQuestionList1 col-md-1">
-                                                <button type="button" class="" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
+                                                <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
                                         </div>
                                     </div>
                                 </div>
                                     @endforeach
-                                    {!! $pag->links() !!}
+                                    {!! $pag->onEachSide(5)->links() !!}
                                     <!-- Modal Visualizar -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">

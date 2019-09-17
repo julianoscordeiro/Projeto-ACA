@@ -45,7 +45,7 @@
                                         <input name="assunto" type="text" class="formulariosquestoes" placeholder="Assunto" required>
 
                                         Enunciado:
-                                        <input name="enunciado" type="text" class="formulariosquestoes" placeholder="Enunciado" required>
+                                        <textarea name="enunciado" type="text" class="formulariosquestoes" placeholder="Enunciado" required></textarea>
 
                                         Alternativas:
                                         <input name="alternativaA" type="text" class="formulariosquestoes" placeholder="A" required>

@@ -98,12 +98,12 @@
                                         
                                         <div class=" textQuestionList1 col-md-1">
                                         
-                                                <button onclick="confirmDelete({{ $q->id }})" class="">Excluir</button>
+                                                <button class="button" onclick="confirmDelete({{ $q->id }})" class="">Excluir</button>
 
                                                 
                                         </div>
                                         <div class="textQuestionList1 col-md-1">
-                                                <button type="button" class="" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
+                                                <button class="button" type="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
                                         </div>
                                     </div>
                                     @endforeach
