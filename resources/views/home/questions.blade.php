@@ -27,7 +27,7 @@
                 </div>
         </div>
         <div class="col-md-2">
-                <!-- Busca -->
+                <!-- Criar Questão -->
                 <a href="/questoes/criar" class="btn btn-primary questoesMargin1">Criar Questão</a>
         </div>
     </div>
