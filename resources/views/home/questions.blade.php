@@ -100,7 +100,7 @@
                                     
                                     @foreach ($question as $q)
                                     <div class="container">
-                                    <div class="listquestions row justify-content-center ">
+                                    <div class="listquestions row justify-content-center">
                                         <div class="col-md-2">
                                             <span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
                                         </div>
