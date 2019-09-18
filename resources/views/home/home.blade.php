@@ -29,7 +29,7 @@
                     <div class="textocenter">
                         <h3>
                             <small class="text-muted">
-                            O processo de criação de provas do Prova Pro possui etapas as abaixo:   
+                            O processo de criação de provas do Prova Pro possui as etapas abaixo:   
                         </h3> 
                     </div>
 
