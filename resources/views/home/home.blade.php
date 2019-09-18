@@ -29,7 +29,7 @@
                     <div class="textocenter">
                         <h3>
                             <small class="text-muted">
-                            O processo de criação de provas do Prova Pro possui 4 etapas.
+                            O processo de criação de provas do Prova Pro possui etapas.
                             Crie suas questões e provas, gerencie suas turmas e faça a correção de seus exames, seguindo o fluxo de utilização abaixo:   
                         </h3> 
                     </div>
