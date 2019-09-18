@@ -47,12 +47,12 @@
                                         Enunciado:
                                         <textarea name="enunciado" class="formulariosquestoes" >{{$q->enunciado}} </textarea>
 
-                                        Alternativas:
-                                        <input name="alternativaA" type="text" class="formulariosquestoes" placeholder="A">
-                                        <input name="alternativaB" type="text" class="formulariosquestoes" placeholder="B" >
-                                        <input name="alternativaC" type="text" class="formulariosquestoes" placeholder="C" >
-                                        <input name="alternativaD" type="text" class="formulariosquestoes" placeholder="D" >
-                                        <input name="alternativaE" type="text" class="formulariosquestoes" placeholder="E" >
+                                        Alternativas:<br>
+                                        A:<textarea name="alternativaA" class="formulariosquestoes" placeholder="A">{{$q->alternativaA}}  </textarea>
+                                        B:<textarea name="alternativaB" class="formulariosquestoes" placeholder="B">{{$q->alternativaB}}  </textarea>
+                                        C:<textarea name="alternativaC" class="formulariosquestoes" placeholder="C">{{$q->alternativaC}}  </textarea>
+                                        D:<textarea name="alternativaD" class="formulariosquestoes" placeholder="D">{{$q->alternativaD}}  </textarea>
+                                        E:<textarea name="alternativaE" class="formulariosquestoes" placeholder="E">{{$q->alternativaE}}  </textarea>
  
                                         <div class="form-group">
                                                 Alternativa Correta:
