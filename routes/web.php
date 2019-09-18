@@ -23,12 +23,16 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@home')->name('home');
-});
-
-Route::group(['middleware' => 'auth'], function () {
     Route::get('/questoes', 'HomeController@questoes')->name('questoes');
-});
-
-Route::group(['middleware' => 'auth'], function () {
     Route::get('/questoes/criar', 'HomeController@criarquestao')->name('criarquestao');
+    Route::post('/questoes/criar/nova', 'QuestionController@create')->name('criadaquestao');
+    //Deletar Questão
+    Route::get('/questoes/delete/{id}', 'QuestionController@deleteQuestion')->name('deletarquestao');
+
+
+
+
+    Route::get('/provas', 'HomeController@provas')->name('provas');
+    Route::get('/provas/criar', 'HomeController@criarprova')->name('criarprova');
+    Route::post('/provas/criar/nova', 'TestController@create')->name('criadaprova');
 });

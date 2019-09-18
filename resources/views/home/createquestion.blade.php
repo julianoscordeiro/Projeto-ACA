@@ -10,7 +10,6 @@
         </div>
         <div class="col-md-2">
                 <!-- Busca -->
-                <a href="/questoes/criar" class="btn btn-primary questoesMargin1">Importar imagem</a>
         </div>
     </div>
 
@@ -30,40 +29,46 @@
                 
                 <!-- Formulario -->
                         <div>
-                                <form>
+
+                                
+                                <form method="POST" action="{{ route('criadaquestao') }}" enctype="multipart/form-data">
+                                @csrf
                                         
-                                        Unidade Curricular:
-                                        <input type="text" class="formulariosquestoes" placeholder="Unidade Curricular">
+                                        <div class="btn btn-primary">
+                                            Escolha sua imagem
+                                            <input name="imagem" class="uploadz" type="file" accept="image/*" class="btn btn-primary" /> <br>
+                                            
+                                        </div>
+                                        <br>
+                                        
                                         Assunto:
-                                        <input type="text" class="formulariosquestoes" placeholder="Assunto">
+                                        <input name="assunto" type="text" class="formulariosquestoes" placeholder="Assunto" required>
 
                                         Enunciado:
-                                        <input type="text" class="formulariosquestoes" placeholder="Enunciado">
+                                        <input name="enunciado" type="text" class="formulariosquestoes" placeholder="Enunciado" required>
 
                                         Alternativas:
-                                        <input type="text" class="formulariosquestoes" placeholder="A">
-                                        <input type="text" class="formulariosquestoes" placeholder="B">
-                                        <input type="text" class="formulariosquestoes" placeholder="C">
-                                        <input type="text" class="formulariosquestoes" placeholder="D">
-                                        <input type="text" class="formulariosquestoes" placeholder="E">
+                                        <input name="alternativaA" type="text" class="formulariosquestoes" placeholder="A" required>
+                                        <input name="alternativaB" type="text" class="formulariosquestoes" placeholder="B" required>
+                                        <input name="alternativaC" type="text" class="formulariosquestoes" placeholder="C" required>
+                                        <input name="alternativaD" type="text" class="formulariosquestoes" placeholder="D" required>
+                                        <input name="alternativaE" type="text" class="formulariosquestoes" placeholder="E" required>
  
                                         <div class="form-group">
                                                 Alternativa Correta:
-                                                <select class="formulariosquestoes">
-                                                    <option selected>Escolha</option>
+                                                <select name="resposta" class="formulariosquestoes">
                                                     <option>A</option>
                                                     <option>B</option>
                                                     <option>C</option>
                                                     <option>D</option>
                                                     <option>E</option>
                                                 </select>
-                                            </div>
+                                        </div>
                                     
                                         <button type="submit" class="btn btn-success">Criar</button>
                                         
-                                        <button type="submit" class="btn btn-danger">Cancelar</button>
-                                        <button type="submit" class="btn btn-warning">Rascunho</button>                                       
-                                        a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>
+                                        <button type="clear" class="btn btn-danger">Cancelar</button>                                  
+                                        
                                 
 
                                 </form>

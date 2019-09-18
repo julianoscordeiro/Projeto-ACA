@@ -23,6 +23,18 @@ body{
     margin-top: 10%;
     text-align: center;
 }
+/* Botão de upload*/
+
+  .uploadz {
+    position: absolute;
+    font-size: 50px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+    height: 50px;
+  } 
+
+
 /*
 body,html {height:100%;overflow:hidden;}*/
 
@@ -116,6 +128,31 @@ body,html {height:100%;overflow:hidden;}*/
 
 
 /* Questões */
+.titleListQuestion{
+    color: #110014;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.textQuestionList{
+
+    color: #380049;
+    vertical-align: middle;
+}
+.textQuestionList1{
+
+    color: #380049;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 70px;
+}
+
+.listquestions{
+    background: #f2f2f2;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgb(85, 85, 85);
+    margin-top: 20px;
+}
 
 .barrapesquisa{
     border-color: #f2f2f2;

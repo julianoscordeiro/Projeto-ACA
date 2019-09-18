@@ -37,7 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /*Retorna todas as questões do usuario */
+    /*Retorna todas as questões do usuario*/
     public function questoes(){
         return $this->hasMany(Questao::class, 'user_id');
     }
