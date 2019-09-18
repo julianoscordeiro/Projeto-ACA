@@ -3,7 +3,9 @@
 Projeto integrador 2 do curso Técnico em desenvolvimento de sistemas, do Instituto Federal de Santa Catarina Campus Tubarão.
 
 Desenvolvedores: Fernando Barbosa; Juliano dos Santos Cordeiro.
+
 Turma:2018/2
+
 Cliente do projeto: José Pedro Simão, professor substituto do IFSC.
 
 Resumo
