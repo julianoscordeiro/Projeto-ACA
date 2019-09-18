@@ -6,7 +6,7 @@
 <div class="container ">
     <div class="row justify-content-center   ">
         <div class="col-md-9 ">
-            <h1 class="display-1 ">Questão:</h1>
+            <h1 class="display-1 ">Editar questão</h1>
         </div>
         <div class="col-md-2">
                 <!-- Busca -->
@@ -29,9 +29,9 @@
                 
                 <!-- Formulario -->
                         <div>
-
                                 
-                                <form method="POST" action="{{ route('criadaquestao') }}" enctype="multipart/form-data">
+                                @foreach ($question as $q)
+                                <form method="POST" action="{{ route('editarquestao', $id)}}" enctype="multipart/form-data">
                                 @csrf
                                         
                                         <div class="btn btn-primary">
@@ -42,21 +42,22 @@
                                         <br>
                                         
                                         Assunto:
-                                        <input name="assunto" type="text" class="formulariosquestoes" placeholder="Assunto" required>
+                                        <textarea name="assunto" class="formulariosquestoes">{{$q->assunto}} </textarea>
 
                                         Enunciado:
-                                        <textarea name="enunciado" type="text" class="formulariosquestoes" placeholder="Enunciado" required></textarea>
+                                        <textarea name="enunciado" class="formulariosquestoes" >{{$q->enunciado}} </textarea>
 
-                                        Alternativas:
-                                        <input name="alternativaA" type="text" class="formulariosquestoes" placeholder="A" required>
-                                        <input name="alternativaB" type="text" class="formulariosquestoes" placeholder="B" required>
-                                        <input name="alternativaC" type="text" class="formulariosquestoes" placeholder="C" required>
-                                        <input name="alternativaD" type="text" class="formulariosquestoes" placeholder="D" required>
-                                        <input name="alternativaE" type="text" class="formulariosquestoes" placeholder="E" required>
+                                        Alternativas:<br>
+                                        A:<textarea name="alternativaA" class="formulariosquestoes" placeholder="A">{{$q->alternativaA}}  </textarea>
+                                        B:<textarea name="alternativaB" class="formulariosquestoes" placeholder="B">{{$q->alternativaB}}  </textarea>
+                                        C:<textarea name="alternativaC" class="formulariosquestoes" placeholder="C">{{$q->alternativaC}}  </textarea>
+                                        D:<textarea name="alternativaD" class="formulariosquestoes" placeholder="D">{{$q->alternativaD}}  </textarea>
+                                        E:<textarea name="alternativaE" class="formulariosquestoes" placeholder="E">{{$q->alternativaE}}  </textarea>
  
                                         <div class="form-group">
                                                 Alternativa Correta:
                                                 <select name="resposta" class="formulariosquestoes">
+                                                    <option>{{$q->resposta}}</option>
                                                     <option>A</option>
                                                     <option>B</option>
                                                     <option>C</option>
@@ -65,13 +66,14 @@
                                                 </select>
                                         </div>
                                     
-                                        <button type="submit" class="btn btn-success">Criar</button>
+                                        <button type="submit" class="btn btn-success">Salvar</button>
                                         
                                         <button type="clear" class="btn btn-danger">Cancelar</button>                                  
                                         
                                 
 
                                 </form>
+                                @endforeach
                         </div>    
 
                     </div>       

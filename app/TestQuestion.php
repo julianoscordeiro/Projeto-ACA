@@ -2,14 +2,16 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class TestQuestion extends Pivot
 {
+    /* Array com atributos de ProvaQuestão */
     protected $fillable = [
         'id',
-        'testId',
-        'questionId'
+        'test_id',
+        'question_id',
+        'user_id',
     ];
 
     /*Retorna todas as questões*/

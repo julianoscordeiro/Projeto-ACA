@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Question;
 use Auth;
 use DB;
+use Illuminate\Support\Facades\Input;
 
 class HomeController extends Controller
 {
@@ -30,7 +31,7 @@ class HomeController extends Controller
      */
 
     public function home()
-    {   
+    {
         $title = 'Painel | ';
         return view('home.home', [
             'title' => $title
@@ -38,25 +39,60 @@ class HomeController extends Controller
     }
 
     public function questoes()
-    {   
+    {
         //Retorna a lista de questões;
         $userid = Auth::id();
         $question = DB::table('questions')->where('user_id', '=', "$userid")->get();
+        $pag = Question::where('user_id','=', Auth::id())->orderBy('id')->paginate(5);
+
 
         $title = 'Questões | ';
         return view('home.questions', [
             'title' => $title
-        ], compact('question'));
+        ], compact('question','pag'));
     }
     public function criarquestao()
-    {   
+    {
         $title = 'Criar Questão | ';
         return view('home.createquestion', [
             'title' => $title
         ]);
     }
+    public function buscarquestao()
+    {
+        //Busca a questão
+        $q = Input::get ( 'q' );
+        $procura = Question::where('assunto','LIKE','%'.$q.'%')->orWhere('enunciado','LIKE','%'.$q.'%')->get();
+        if(count($procura) > 0)
+            return view('home.searchquestion')->withDetails($procura)->withQuery ( $q );
+        else return redirect()->route('questoes');
+
+        //Retorna a lista de questões;
+        $userid = Auth::id();
+        $banana = DB::table('questions')->where('user_id', '=', "$userid")->get();
+
+        $title = 'Resultado | ';
+        return view('home.searchquestion', [
+            'title' => $title
+        ], compact('banana'));
+    }
+
+    public function editarquestao(Request $request)
+    {
+
+        $id = $request->route('id');
+
+
+        //Retorna a lista de questões;
+        $question = DB::table('questions')->where('id', '=', "$id")->get();
+
+        $title = 'Editar Questão | ';
+        return view('home.updatequestion', [
+            'title' => $title
+        ], compact('id', 'question'));
+    }
     public function provas()
-    {   
+    {
         //Retorna a lista de questões;
         $userid = Auth::id();
         $test = DB::table('tests')->where('user_id', '=', "$userid")->get();
@@ -67,7 +103,7 @@ class HomeController extends Controller
         ], compact('test'));
     }
     public function criarProva()
-    {   
+    {
         //Retorna a lista de questões;
         $userid = Auth::id();
         $question = DB::table('questions')->where('user_id', '=', "$userid")->get();

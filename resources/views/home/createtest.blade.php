@@ -49,7 +49,7 @@
                                                     <span class="textQuestionList" >{{$q->enunciado}}</span>
                                             </div>
                                             <div class=" textQuestionList1 col-md-2">
-                                                    <input type="checkbox"/>
+                                                <input type="checkbox" name="question_selected[]" value="{{$q->id}}">
                                             </div>
                                         </div>
                                         @endforeach

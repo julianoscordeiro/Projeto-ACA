@@ -23,6 +23,18 @@ body{
     margin-top: 10%;
     text-align: center;
 }
+.textocenter{
+    text-align: center;
+}
+#centro {
+    width:180px;
+    height:130px;
+    position:relative;
+    top:0%;
+    left:50%;
+    margin-top:0px;
+    margin-left:-90px;
+    }
 /* Botão de upload*/
 
   .uploadz {
@@ -33,6 +45,26 @@ body{
     top: 0;
     height: 50px;
   } 
+
+/*Paginação*/
+
+.pagination{
+    color: black;
+}
+
+/* Botões */
+.button{
+    background-color: transparent;
+    border: none;
+    color: #380049;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.button:hover{
+    border: none;
+    color:#e14eca;
+
+}
 
 
 /*
@@ -136,7 +168,7 @@ body,html {height:100%;overflow:hidden;}*/
 .textQuestionList{
 
     color: #380049;
-    vertical-align: middle;
+    margin: 10px;
 }
 .textQuestionList1{
 

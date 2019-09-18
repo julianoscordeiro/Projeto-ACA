@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Input;
+use App\Question;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +27,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@home')->name('home');
     Route::get('/questoes', 'HomeController@questoes')->name('questoes');
     Route::get('/questoes/criar', 'HomeController@criarquestao')->name('criarquestao');
+    Route::get('/questoes/editar/{id}', 'HomeController@editarquestao')->name('editar');
+    Route::post('/questoes/editado/{id}', 'QuestionController@updateQuestion')->name('editarquestao');
     Route::post('/questoes/criar/nova', 'QuestionController@create')->name('criadaquestao');
     //Deletar Questão
     Route::get('/questoes/delete/{id}', 'QuestionController@deleteQuestion')->name('deletarquestao');
+    //procurar questão
+    Route::get('/questoes/resultado', 'HomeController@buscarquestao')->name('buscarquestao');
+    Route::any('/search','HomeController@buscarquestao');
 
 
 
@@ -35,4 +42,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/provas', 'HomeController@provas')->name('provas');
     Route::get('/provas/criar', 'HomeController@criarprova')->name('criarprova');
     Route::post('/provas/criar/nova', 'TestController@create')->name('criadaprova');
+    //Deletar prova
+    Route::get('/provas/delete/{id}', 'TestController@deleteTest')->name('deletarprova');
 });

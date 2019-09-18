@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Test extends Model
 {
+    /* Array com atributos de prova */
     protected $fillable = [
         'id',
         'nome',

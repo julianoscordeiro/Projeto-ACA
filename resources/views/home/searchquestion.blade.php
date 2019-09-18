@@ -13,11 +13,21 @@
                 <!-- Busca -->
                 
                 <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-                        <input class="form-control barrapesquisa " type="text" placeholder="Pesquisar" aria-label="Search">
+                        <form action="/search" method="POST" role="search">
+                            {{ csrf_field() }}
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="q"
+                                    placeholder="Search users"> <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
                 </div>
         </div>
         <div class="col-md-2">
-                <!-- Criar Questão -->
+                <!-- Busca -->
                 <a href="/questoes/criar" class="btn btn-primary questoesMargin1">Criar Questão</a>
         </div>
     </div>
@@ -88,30 +98,28 @@
 
                                     <!-- loop para mostrar questões  do usuario -->
                                     
-                                    @foreach ($question as $q)
+                                    @foreach ($banana as $q)
                                     <div class="container">
-                                    <div class="listquestions row justify-content-center">
-                                        <div class="col-md-2">
+                                    <div class="listquestions row justify-content-center ">
+                                        <div class="col-md-4">
                                             <span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
                                         </div>
-                                        <div class="col-md-7">
+                                        <div class="col-md-5">
                                                 <span class="textQuestionList" >{{$q->enunciado ?? ''}}</span>
                                         </div>
                                         
                                         <div class=" textQuestionList1 col-md-1">
-                                        <button class="button" onclick="confirmDelete({{ $q->id }})">Excluir</button>
+                                        <button onclick="confirmDelete({{ $q->id }})">Excluir</button>
                                         </div>
                                         <div class=" textQuestionList1 col-md-1">
-                                        <a class="button" href="/questoes/editar/{{ $q->id }}">Editar</a>
+                                        <a href="/questoes/editar/{{ $q->id }}">Editar</a>
                                         </div>
                                         <div class="textQuestionList1 col-md-1">
-                                                <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
+                                                <button type="button" class="" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
                                         </div>
                                     </div>
-                                </div>
-                                
+                                    </div>
                                     @endforeach
-
                                     <!-- Modal Visualizar -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">

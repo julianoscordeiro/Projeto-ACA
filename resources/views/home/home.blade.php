@@ -1,7 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-
+                
+                <!-- Texto de boas vindas -->
+                    <div class="textocenter">
+                        <p class="display-1">Olá Professor</p>
+                        <p class="display-3">Seja bem-vindo!</p>
+                        <h2>
+                            <small class="text-muted">                     
+                            <p>O Prova Pro foi pensado para você.</p>
+                            <p>Crie, corrija e gerencie suas provas, com segurança, eficiência e qualidade.</p>                                                
+                        </h2>  
+                    </div>
 
 <div class="container">
     <div class="row justify-content-center ">
@@ -14,8 +24,14 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endif
-
+                    @endif   
+                    
+                    <div class="textocenter">
+                        <h3>
+                            <small class="text-muted">
+                            O processo de criação de provas do Prova Pro possui as etapas abaixo:   
+                        </h3> 
+                    </div>
 
                     <!-- Carrocel de imagens -->
 
@@ -25,16 +41,21 @@
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                         </ol>
-                        <div class="carousel-inner">
+                        <div class="carousel-inner">                        
                             <div class="carousel-item active">
-                            <img class="d-block w-100" src="https://i.pinimg.com/originals/f1/90/ef/f190ef1c41595ad20eafb36313a0f395.jpg" alt="First slide">
-                            </div>
+                                <img class="w3-card-4" src="https://user-images.githubusercontent.com/53874458/65147675-02480500-d9f5-11e9-874b-e783a97181c0.png" alt="First slide" id="centro">
+                            </div> 
+                            
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="https://wallpaperplay.com/walls/full/d/0/b/193021.jpg" alt="Second slide">
+                            <img class="w3-card-4" src="https://user-images.githubusercontent.com/53874458/65147584-d75db100-d9f4-11e9-885c-611b61904844.png" alt="Second slide" id="centro">    
                             </div>
+    
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="https://i.pinimg.com/originals/7f/28/d8/7f28d83b07cf8b48ca26391c72d3b8c2.jpg" alt="Third slide">
+                            <img class="w3-card-4" src="https://user-images.githubusercontent.com/53874458/65147750-286da500-d9f5-11e9-84e1-5f1a0b3af299.png" alt="Third slide" id="centro">
                             </div>
+                            
+                            <div class="carousel-item">
+                            <img class="w3-card-4" src="https://user-images.githubusercontent.com/53874458/65147635-f1978f00-d9f4-11e9-809c-ac1c657b890d.png" alt="Fourth slide" id="centro">               
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
