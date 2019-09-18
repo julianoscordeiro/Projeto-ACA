@@ -1,7 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-
+                
+                <!-- Texto de boas vindas -->
+                    <div class="textohome">
+                        <p class="display-1">Olá Professor,</p>
+                        <p class="display-3">Seja bem-vindo!</p>
+                        <h2>
+                            <small class="text-muted">                     
+                            <p>O Prova Pro foi pensado para você.</p>
+                            <p>Crie, corrija e gerencie suas provas, com segurança, eficiência e qualidade.</p>                                                
+                        </h2>  
+                    </div>
 
 <div class="container">
     <div class="row justify-content-center ">
@@ -14,8 +24,15 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endif
-
+                    @endif   
+                    
+                    <div class="textohome">
+                        <h3>
+                            <small class="text-muted">
+                            O processo de criação de provas do Prova Pro possui 4 etapas.
+                            Crie suas questões e provas, gerencie suas turmas e faça a correção de seus exames, seguindo o fluxo de utilização abaixo:   
+                        </h3> 
+                    </div>
 
                     <!-- Carrocel de imagens -->
 
