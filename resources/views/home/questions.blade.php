@@ -13,17 +13,7 @@
                 <!-- Busca -->
                 
                 <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-                        <form action="/search" method="POST" role="search">
-                            {{ csrf_field() }}
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="q"
-                                    placeholder="Search users"> <span class="input-group-btn">
-                                    <button type="submit" class="btn btn-default">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
+                        <input class="form-control barrapesquisa " type="text" placeholder="Pesquisar" aria-label="Search">
                 </div>
         </div>
         <div class="col-md-2">
@@ -119,8 +109,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                                     @endforeach
-                                    {!! $pag->onEachSide(5)->links() !!}
+
                                     <!-- Modal Visualizar -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
