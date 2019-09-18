@@ -26,6 +26,15 @@ body{
 .textocenter{
     text-align: center;
 }
+#centro {
+    width:180px;
+    height:130px;
+    position:relative;
+    top:0%;
+    left:50%;
+    margin-top:0px;
+    margin-left:-90px;
+    }
 /* Botão de upload*/
 
   .uploadz {
