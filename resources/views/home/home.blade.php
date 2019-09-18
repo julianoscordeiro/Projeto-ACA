@@ -29,8 +29,7 @@
                     <div class="textocenter">
                         <h3>
                             <small class="text-muted">
-                            O processo de criação de provas do Prova Pro possui etapas.
-                            Crie suas questões e provas, gerencie suas turmas e faça a correção de seus exames, seguindo o fluxo de utilização abaixo:   
+                            O processo de criação de provas do Prova Pro possui etapas conforme o fluxo abaixo:   
                         </h3> 
                     </div>
 
@@ -42,16 +41,38 @@
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                         </ol>
-                        <div class="carousel-inner">
+                        <div class="carousel-inner">                        
                             <div class="carousel-item active">
-                            <img class="d-block w-100" src="https://i.pinimg.com/originals/f1/90/ef/f190ef1c41595ad20eafb36313a0f395.jpg" alt="First slide">
-                            </div>
+                                <img class="w3-card-4" src="https://user-images.githubusercontent.com/53874458/65147675-02480500-d9f5-11e9-874b-e783a97181c0.png" alt="First slide" id="centro">
+                                    <div class="carousel-caption">
+                                        <h5>Crie seu Banco de Questões</h5>
+                                        <p>Na aba questões crie, armazene e gerencie facilmente quantas exercícios você desejar.</p>    
+                                </div>  
+                            </div>  
+ 
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="https://wallpaperplay.com/walls/full/d/0/b/193021.jpg" alt="Second slide">
+                            <img class="w3-card-4" src="https://user-images.githubusercontent.com/53874458/65147584-d75db100-d9f4-11e9-885c-611b61904844.png" alt="Second slide" id="centro">
+                                <div class="carousel-caption">
+                                    <h5>Crie Provas Únicas</h5>
+                                    <p>Na aba provas crie avaliações personalizadas com questões diferentes para suas turmas. Suas provas criadas podem ser encontradas com rapidez e organização.</p>    
+                                </div>    
                             </div>
+                          
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="https://i.pinimg.com/originals/7f/28/d8/7f28d83b07cf8b48ca26391c72d3b8c2.jpg" alt="Third slide">
+                            <img class="w3-card-4" src="https://user-images.githubusercontent.com/53874458/65147750-286da500-d9f5-11e9-84e1-5f1a0b3af299.png" alt="Third slide" id="centro">
+                                <div class="carousel-caption">
+                                    <h5>Gerencie suas Turmas</h5>
+                                    <p>Na aba Turmas adicione seus respectivos alunos ou importe sua lista de nomes em formato .CSV, .XLSX. Vincule suas provas as classes criadas para impressão e aplicação.</p>    
+                                </div>    
                             </div>
+                            
+                            <div class="carousel-item">
+                            <img class="w3-card-4" src="https://user-images.githubusercontent.com/53874458/65147635-f1978f00-d9f4-11e9-809c-ac1c657b890d.png" alt="Fourty slide" id="centro">
+                                <div class="carousel-caption">
+                                    <h5>Corrija suas provas</h5>
+                                    <p>Na aba Correções cadastre os gabaritos das provas aplicadas de seus alunos e efetue a correção automatizada e receba o relatório de notas da turma. Diminua substancialmente as horas de correção de exames.</p>    
+                                </div>
+                            </div>                 
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
