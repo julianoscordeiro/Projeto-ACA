@@ -3,7 +3,7 @@
 @section('content')
                 
                 <!-- Texto de boas vindas -->
-                    <div class="textohome">
+                    <div class="textocenter">
                         <p class="display-1">Olá Professor,</p>
                         <p class="display-3">Seja bem-vindo!</p>
                         <h2>
@@ -26,7 +26,7 @@
                         </div>
                     @endif   
                     
-                    <div class="textohome">
+                    <div class="textocenter">
                         <h3>
                             <small class="text-muted">
                             O processo de criação de provas do Prova Pro possui 4 etapas.
