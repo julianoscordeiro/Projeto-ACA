@@ -26,6 +26,7 @@
                         </div>
                     @endif   
                     
+                <!-- Texto de intruções de uso -->
                     <div class="text-center">
                         <h3>
                             <small class="text-muted">
@@ -33,7 +34,7 @@
                         </h3> 
                     </div>
 
-                    <!-- Carrocel de imagens -->
+                <!-- Carrossel de imagens com etapas do processo de criação -->
 
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -42,6 +43,7 @@
                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                         </ol>
+
                         <div class="carousel-inner">                        
                             <div class="carousel-item active">
                                 <img class="img-responsive" src="https://user-images.githubusercontent.com/53874458/65147675-02480500-d9f5-11e9-874b-e783a97181c0.png" alt="First slide" id="centro">
@@ -50,7 +52,8 @@
                                         <a href="/questoes">Crie e armazene questões no seu banco de questões.</a>
                                     </h4>                                     
                                 </div>
-                            </div>   
+                            </div>  
+
                             <div class="carousel-item">
                             <img class="img-responsive" src="https://user-images.githubusercontent.com/53874458/65147584-d75db100-d9f4-11e9-885c-611b61904844.png" alt="Second slide" id="centro">    
                             <div class="text-center" alt="Second slide" id="centro">
@@ -59,6 +62,7 @@
                                     </h4>                                     
                                 </div>
                             </div>
+
                             <div class="carousel-item">
                             <img class="img-responsive" src="https://user-images.githubusercontent.com/53874458/65147750-286da500-d9f5-11e9-84e1-5f1a0b3af299.png" alt="Third slide" id="centro">
                             <div class="text-center" alt="Third slide" id="centro">
@@ -67,6 +71,7 @@
                                     </h4>                                     
                                 </div>
                             </div>    
+
                             <div class="carousel-item">
                             <img class="img-responsive" src="https://user-images.githubusercontent.com/53874458/65147635-f1978f00-d9f4-11e9-809c-ac1c657b890d.png" alt="Fourth slide" id="centro">               
                             <div class="text-center" alt="Fourth slide" id="centro">
@@ -75,6 +80,7 @@
                                     </h4>                                     
                                 </div>
                         </div>
+                        
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
