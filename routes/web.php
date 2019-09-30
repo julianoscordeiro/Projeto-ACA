@@ -44,4 +44,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/provas/criar/nova', 'TestController@create')->name('criadaprova');
     //Deletar prova
     Route::get('/provas/delete/{id}', 'TestController@deleteTest')->name('deletarprova');
+
+    //Turmas
+    Route::get('/turmas', 'HomeController@turmas')->name('turmas');
 });

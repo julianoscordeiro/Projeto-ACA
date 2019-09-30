@@ -113,4 +113,16 @@ class HomeController extends Controller
             'title' => $title
         ], compact('question'));
     }
+
+    //Turmas
+    public function turmas()
+    {
+        //Retorna a lista de questões;
+        $userid = Auth::id();
+        $question = DB::table('questions')->where('user_id', '=', "$userid")->get();
+        $title = 'Turmas | ';
+        return view('home.classes', [
+            'title' => $title
+        ],compact('question'));
+    }
 }
