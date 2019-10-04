@@ -119,10 +119,22 @@ class HomeController extends Controller
     {
         //Retorna a lista de questões;
         $userid = Auth::id();
-        $question = DB::table('questions')->where('user_id', '=', "$userid")->get();
+        $class = DB::table('class')->where('user_id', '=', "$userid")->get();
         $title = 'Turmas | ';
         return view('home.classes', [
             'title' => $title
-        ],compact('question'));
+        ],compact('class'));
+    }
+
+    //Alunos
+    public function alunos()
+    {
+        //Retorna a lista de questões;
+        $userid = Auth::id();
+        $student = DB::table('student')->where('user_id', '=', "$userid")->get();
+        $title = 'Alunos | ';
+        return view('home.student', [
+            'title' => $title
+        ],compact('student'));
     }
 }

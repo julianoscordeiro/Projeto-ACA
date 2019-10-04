@@ -35,6 +35,8 @@ Route::group(['middleware' => 'auth'], function () {
     //procurar questão
     Route::get('/questoes/resultado', 'HomeController@buscarquestao')->name('buscarquestao');
     Route::any('/search','HomeController@buscarquestao');
+    //alunos
+    Route::get('/alunos', 'HomeController@alunos')->name('alunos');
 
 
 

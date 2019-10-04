@@ -93,7 +93,7 @@
 
                                     <!-- loop para mostrar questões  do usuario -->
                                     
-                                    @foreach ($question as $q)
+                                    @foreach ($class as $q)
                                     <div class="container">
                                     <div class="listquestions row justify-content-center">
                                         <div class="col-md-2">

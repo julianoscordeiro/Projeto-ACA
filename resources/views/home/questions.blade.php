@@ -108,7 +108,7 @@
                                                 <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
                                         </div>
                                     </div>
-                                </div>
+                                    </div>
                                 
                                     @endforeach
 
