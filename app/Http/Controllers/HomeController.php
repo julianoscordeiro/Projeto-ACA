@@ -126,6 +126,18 @@ class HomeController extends Controller
         ],compact('class'));
     }
 
+    //Criar Turma
+    public function criarturma()
+    {
+        //Retorna a lista de questões;
+        $userid = Auth::id();
+        $class = DB::table('class')->where('user_id', '=', "$userid")->get();
+        $title = 'Criar Turma | ';
+        return view('home.createclass', [
+            'title' => $title
+        ],compact('class'));
+    }
+
     //Alunos
     public function alunos()
     {

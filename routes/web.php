@@ -49,4 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Turmas
     Route::get('/turmas', 'HomeController@turmas')->name('turmas');
+    Route::get('/turmas/criar', 'HomeController@criarturma')->name('criarturma');
+    Route::post('/turmas/criar/nova', 'ClassesController@create')->name('criadaturma');
+    
 });

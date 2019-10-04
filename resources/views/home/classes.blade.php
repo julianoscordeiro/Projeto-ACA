@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-2">
                 <!-- Criar Turma -->
-                <a href="/questoes/criar" class="btn btn-primary questoesMargin1">Criar Turma</a>
+                <a href="/turmas/criar" class="btn btn-primary questoesMargin1">Criar Turma</a>
         </div>
     </div>
 
@@ -30,7 +30,7 @@
                     @endif
 
                         
-                            <div class=" row justify-content-center ">
+                            <!--<div class=" row justify-content-center ">
                                     <div class="titleListQuestion col-md-2">
                                         <span>Nome</span>
                                     </div>
@@ -49,7 +49,7 @@
                                     <div class="titleListQuestion col-md-2">
                                         <span>Alunos</span>
                                     </div>
-                            </div>
+                            </div> -->
                                      <!-- Confirmação -->
                         <script>
                                 function confirmDelete(id) {
@@ -97,10 +97,24 @@
                                     <div class="container">
                                     <div class="listquestions row justify-content-center">
                                         <div class="col-md-2">
-                                            <span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
+                                            Nome:
+                                            <span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
                                         </div>
-                                        <div class="col-md-7">
-                                                <span class="textQuestionList" >{{$q->enunciado ?? ''}}</span>
+                                        <div class="col-md-2">
+                                                Instituição:
+                                                <span class="textQuestionList1" >{{$q->instituicao ?? ''}}</span>
+                                        </div>
+                                        <div class="col-md-2">
+                                                Curso:
+                                                <span class="textQuestionList1" >{{$q->curso ?? ''}}</span>
+                                        </div>
+                                        <div class="col-md-2">
+                                                Período:
+                                                <span class="textQuestionList1" >{{$q->periodo ?? ''}}</span>
+                                        </div>
+                                        <div class="col-md-2">
+                                                Alunos:
+                                                <span class="textQuestionList1" >{{$q->alunos ?? ''}}</span>
                                         </div>
                                         
                                         <div class=" textQuestionList1 col-md-1">
@@ -109,9 +123,9 @@
                                         <div class=" textQuestionList1 col-md-1">
                                         <a class="button" href="/questoes/editar/{{ $q->id }}">Editar</a>
                                         </div>
-                                        <div class="textQuestionList1 col-md-1">
+                                        <!--<div class="textQuestionList1 col-md-1">
                                                 <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </div>
                                 
@@ -128,19 +142,12 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            Assunto:<br>
-                                            <p>{{$q->assunto ?? ''}}</p>
-                                            Enunciado: <br>
-                                            <p>{{$q->enunciado ?? ''}}</p>
-                                            Alternativas: <br>
-                                            
-                                            <p>A = {{$q->alternativaA ?? ''}}</p>
-                                            <p>B = {{$q->alternativaB ?? ''}}</p>
-                                            <p>C = {{$q->alternativaC ?? ''}}</p>
-                                            <p>D = {{$q->alternativaD ?? ''}}</p>
-                                            <p>E = {{$q->alternativaE ?? ''}}</p>
-
-                                            Alternativa Correta: {{$q->resposta ?? ''}};
+                                            Nome:{{$q->nome ?? ''}} <br>
+                                            Instituição:{{$q->instituicao ?? ''}} <br>
+                                            Curso:{{$q->curso ?? ''}} <br>
+                                            Período:{{$q->periodo ?? ''}} <br>
+                                            Semestre:{{$q->semestre ?? ''}} <br>
+                                            alunos:{{$q->alunos ?? ''}} <br>
                                         
                                         </div>
 

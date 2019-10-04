@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Classes extends Model
 {
+    //Indica o nome da tabela no banco de dados
+    protected $table = 'class';
+
     protected $fillable = [
         'id',
         'nome',
