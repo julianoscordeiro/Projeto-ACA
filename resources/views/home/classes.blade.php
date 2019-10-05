@@ -56,7 +56,7 @@
                                     var confirmation = confirm("Deseja realmente excluir?");
 
                                     if(confirmation){
-                                        window.location = "/questoes/delete/"+id;
+                                        window.location = "/turmas/delete/"+id;
                                     }   
                                 } 
                             </script>
@@ -94,26 +94,26 @@
                                     <!-- loop para mostrar questões  do usuario -->
                                     
                                     @foreach ($class as $q)
-                                    <div class="container">
-                                    <div class="listquestions row justify-content-center">
+                                    <div >
+                                    <div class="row listquestions justify-content-center">
                                         <div class="col-md-2">
-                                            Nome:
+                                                <b> Nome: </b>
                                             <span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
                                         </div>
                                         <div class="col-md-2">
-                                                Instituição:
+                                               <b> Instituição:</b>
                                                 <span class="textQuestionList1" >{{$q->instituicao ?? ''}}</span>
                                         </div>
                                         <div class="col-md-2">
-                                                Curso:
+                                               <b> Curso: </b>
                                                 <span class="textQuestionList1" >{{$q->curso ?? ''}}</span>
                                         </div>
                                         <div class="col-md-2">
-                                                Período:
+                                                <b>Período:</b>
                                                 <span class="textQuestionList1" >{{$q->periodo ?? ''}}</span>
                                         </div>
                                         <div class="col-md-2">
-                                                Alunos:
+                                                <b>Alunos:</b>
                                                 <span class="textQuestionList1" >{{$q->alunos ?? ''}}</span>
                                         </div>
                                         

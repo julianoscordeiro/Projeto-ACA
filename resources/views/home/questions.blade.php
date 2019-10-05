@@ -37,14 +37,14 @@
                     @endif
 
                         
-                            <div class=" row justify-content-center ">
+                             <!--<div class=" row justify-content-center ">
                                     <div class="titleListQuestion col-md-4">
                                         <span>Assunto</span>
                                     </div>
                                     <div class="titleListQuestion col-md-8">
                                             <span>Enunciado</span>
                                     </div>
-                            </div>
+                            </div>-->
                                      <!-- Confirmação -->
                         <script>
                                 function confirmDelete(id) {
@@ -89,13 +89,13 @@
                                     <!-- loop para mostrar questões  do usuario -->
                                     
                                     @foreach ($question as $q)
-                                    <div class="container">
+                                    <div class="">
                                     <div class="listquestions row justify-content-center">
                                         <div class="col-md-2">
-                                            <span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
+                                          <b>Assunto:</b><span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
                                         </div>
                                         <div class="col-md-7">
-                                                <span class="textQuestionList" >{{$q->enunciado ?? ''}}</span>
+                                            <b>Enunciado:</b><span class="textQuestionList" >{{$q->enunciado ?? ''}}</span>
                                         </div>
                                         
                                         <div class=" textQuestionList1 col-md-1">
