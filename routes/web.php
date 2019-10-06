@@ -32,27 +32,29 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/questoes/criar/nova', 'QuestionController@create')->name('criadaquestao');
     //Deletar Questão
     Route::get('/questoes/delete/{id}', 'QuestionController@deleteQuestion')->name('deletarquestao');
-    //procurar questão
+    //Procurar questão
     Route::get('/questoes/resultado', 'HomeController@buscarquestao')->name('buscarquestao');
     Route::any('/search','HomeController@buscarquestao');
-    //alunos
+    //Alunos
     Route::get('/alunos', 'HomeController@alunos')->name('alunos');
-
-
-
-
+    Route::get('/alunos/criar', 'HomeController@criaralunos')->name('criaraluno');
+    Route::post('/alunos/criar/nova', 'StudentController@create')->name('criadoaluno');
+    Route::get('/alunos/editar/{id}', 'HomeController@editarAluno')->name('editaraluno');
+    Route::post('/alunos/editado/{id}', 'StudentController@updateStudent')->name('editaraluno');
+    //Deletar aluno
+    Route::get('/alunos/delete/{id}', 'StudentController@deleteStudent')->name('deletaraluno');  
+    //Prova
     Route::get('/provas', 'HomeController@provas')->name('provas');
     Route::get('/provas/criar', 'HomeController@criarprova')->name('criarprova');
     Route::post('/provas/criar/nova', 'TestController@create')->name('criadaprova');
     //Deletar prova
     Route::get('/provas/delete/{id}', 'TestController@deleteTest')->name('deletarprova');
-
     //Turmas
     Route::get('/turmas', 'HomeController@turmas')->name('turmas');
     Route::get('/turmas/criar', 'HomeController@criarturma')->name('criarturma');
     Route::post('/turmas/criar/nova', 'ClassesController@create')->name('criadaturma');
-    Route::get('/turmas/delete/{id}', 'ClassesController@deleteClasses')->name('deletarquestao');
     Route::get('/turmas/editar/{id}', 'HomeController@editarTurma')->name('editarturma');
     Route::post('/turmas/editado/{id}', 'ClassesController@updateClass')->name('editarturma');
-    
+    //Deletar Turma
+    Route::get('/turmas/delete/{id}', 'ClassesController@deleteClasses')->name('deletarquestao');
 });
