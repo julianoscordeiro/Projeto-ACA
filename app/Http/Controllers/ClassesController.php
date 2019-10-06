@@ -29,11 +29,10 @@ class ClassesController extends Controller
 
         return redirect()->route('turmas');
     }
-
+        
+    //Deleta turma
     public function deleteClasses($id)
     {
-
-        //Deleta questão
         $deleteQuestion = DB::table('class')->where('id', '=', "$id")->delete();
         return redirect()->route('turmas');
     }
