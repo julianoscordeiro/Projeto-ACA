@@ -31,7 +31,7 @@
                         <div>
 
                                 
-                                <form method="POST" action="{{ route('criadaquestao') }}" enctype="multipart/form-data">
+                                <form method="POST" action="{{ route('criadoaluno') }}" enctype="multipart/form-data">
                                 @csrf
                                         
                                         Nome:
