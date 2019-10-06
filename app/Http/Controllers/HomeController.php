@@ -38,6 +38,7 @@ class HomeController extends Controller
         ]);
     }
 
+    //Questões
     public function questoes()
     {
         //Retorna a lista de questões;
@@ -129,7 +130,7 @@ class HomeController extends Controller
     //Criar Turma
     public function criarturma()
     {
-        //Retorna a lista de questões;
+        //Retorna a lista de turma;
         $userid = Auth::id();
         $class = DB::table('class')->where('user_id', '=', "$userid")->get();
         $title = 'Criar Turma | ';
@@ -141,7 +142,7 @@ class HomeController extends Controller
     public function editarTurma(Request $request)
     {
         $id = $request->route('id');
-        //Retorna a lista de questões;
+        //Retorna a lista de turma;
         $class = DB::table('class')->where('id', '=', "$id")->get();
 
         $title = 'Editar Turma | ';
@@ -151,9 +152,10 @@ class HomeController extends Controller
     }
 
     //Alunos
+    
     public function alunos()
     {
-        //Retorna a lista de questões;
+        //Retorna a lista de alunos;
         $userid = Auth::id();
         $student = DB::table('student')->where('user_id', '=', "$userid")->get();
         $title = 'Alunos | ';
@@ -161,4 +163,28 @@ class HomeController extends Controller
             'title' => $title
         ],compact('student'));
     }
+
+        //Criar Aluno
+        public function criaraluno()
+        {
+            //Retorna a lista de alunos;
+            $userid = Auth::id();
+            $class = DB::table('student')->where('user_id', '=', "$userid")->get();
+            $title = 'Criar Aluno | ';
+            return view('home.createstudent', [
+                'title' => $title
+            ],compact('student'));
+        }
+        //Editar turma
+        public function editarAluno(Request $request)
+        {
+            $id = $request->route('id');
+            //Retorna a lista de alunos;
+            $class = DB::table('student')->where('id', '=', "$id")->get();
+    
+            $title = 'Editar Aluno | ';
+            return view('home.updateStudent', [
+                'title' => $title
+            ], compact('id', 'student'));
+        }
 }
