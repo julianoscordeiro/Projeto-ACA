@@ -363,3 +363,61 @@ body{
     }
 
 }
+
+/* Atualizando visual dos botões */
+
+.btn-primary{
+    background: #e14eca;
+    background-image: linear-gradient(to bottom left,#9055A2,#9055A2,#e14eca);
+    background-size: 210% 210%;
+    background-position: 100% 0;
+    background-color: #e14eca;
+    transition: all .15s ease;
+    box-shadow: none;
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #ba54f5!important;
+    background-image: linear-gradient(to bottom left,#9055A2,#b96bd1,#b96bd1)!important;
+    background-image: -moz-linear-gradient(to bottom left,#9055A2,#b96bd1,#b96bd1)!important;
+    color: #fff;
+    box-shadow: none;
+}
+
+.btn-success{
+    background: #91F5AD;
+    background-image: linear-gradient(to bottom left,#3bb866,#3bb866,#3bb866);
+    background-size: 210% 210%;
+    background-position: 100% 0;
+    background-color: #91F5AD;
+    transition: all .15s ease;
+    box-shadow: none;
+    color: #fff;
+}
+
+.btn-success.active, .btn-success.active:focus, .btn-success.active:hover, .btn-success:active, .btn-success:active:focus, .btn-success:active:hover, .btn-success:focus, .btn-success:hover {
+    background-color: #0098f0!important;
+    background-image: linear-gradient(to bottom left,#3de075,#3bb866,#3bb866)!important;
+    background-image: -moz-linear-gradient(to bottom left,#3de075,#3bb866,#3bb866)!important;
+    color: #fff;
+    box-shadow: none;
+}
+
+.btn-danger {
+    background: #fd5d93;
+    background-image: linear-gradient(to bottom left,#bf3244,#bf3244,#fd5d93);
+    background-size: 210% 210%;
+    background-position: 100% 0;
+    background-color: #fd5d93;
+    transition: all .15s ease;
+    box-shadow: none;
+    color: #fff;
+}
+
+.btn-danger.active, .btn-danger.active:focus, .btn-danger.active:hover, .btn-danger:active, .btn-danger:active:focus, .btn-danger:active:hover, .btn-danger:focus, .btn-danger:hover {
+    background-color: #ec250d!important;
+    background-image: linear-gradient(to bottom left,#e32d45,#bf3244,#fd5d93)!important;
+    background-image: -moz-linear-gradient(to bottom left,#e32d45,#bf3244,#fd5d93)!important;
+    color: #fff;
+    box-shadow: none;
+}
