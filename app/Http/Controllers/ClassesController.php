@@ -37,4 +37,18 @@ class ClassesController extends Controller
         $deleteQuestion = DB::table('class')->where('id', '=', "$id")->delete();
         return redirect()->route('turmas');
     }
+
+    public function updateClass(Request $request, $id)
+    {
+        $share = Classes::find($id);
+        $share->nome = $request->get('nome') ?? $share->nome;
+        $share->instituicao = $request->get('instituicao') ?? $share->instituicao;
+        $share->curso = $request->get('curso') ?? $share->curso;
+        $share->periodo = $request->get('periodo') ?? $share->periodo;
+        $share->semestre = $request->get('semestre') ?? $share->semestre;
+
+        $share->save();
+
+        return redirect()->route('turmas');
+    }
 }

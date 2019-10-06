@@ -121,7 +121,7 @@
                                         <button class="button" onclick="confirmDelete({{ $q->id }})">Excluir</button>
                                         </div>
                                         <div class=" textQuestionList1 col-md-1">
-                                        <a class="button" href="/questoes/editar/{{ $q->id }}">Editar</a>
+                                        <a class="button" href="/turmas/editar/{{ $q->id }}">Editar</a>
                                         </div>
                                         <!--<div class="textQuestionList1 col-md-1">
                                                 <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>

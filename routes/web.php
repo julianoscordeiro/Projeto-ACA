@@ -52,5 +52,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/turmas/criar', 'HomeController@criarturma')->name('criarturma');
     Route::post('/turmas/criar/nova', 'ClassesController@create')->name('criadaturma');
     Route::get('/turmas/delete/{id}', 'ClassesController@deleteClasses')->name('deletarquestao');
+    Route::get('/turmas/editar/{id}', 'HomeController@editarTurma')->name('editarturma');
+    Route::post('/turmas/editado/{id}', 'ClassesController@updateClass')->name('editarturma');
     
 });

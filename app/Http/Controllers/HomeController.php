@@ -137,6 +137,18 @@ class HomeController extends Controller
             'title' => $title
         ],compact('class'));
     }
+    //Editar turma
+    public function editarTurma(Request $request)
+    {
+        $id = $request->route('id');
+        //Retorna a lista de questões;
+        $class = DB::table('class')->where('id', '=', "$id")->get();
+
+        $title = 'Editar Turma | ';
+        return view('home.updateClass', [
+            'title' => $title
+        ], compact('id', 'class'));
+    }
 
     //Alunos
     public function alunos()
