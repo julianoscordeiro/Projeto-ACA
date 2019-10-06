@@ -112,16 +112,19 @@
                                                 <b>Período:</b>
                                                 <span class="textQuestionList1" >{{$q->periodo ?? ''}}</span>
                                         </div>
-                                        <div class="col-md-2">
+                                        <!--<div class="col-md-2">
                                                 <b>Alunos:</b>
                                                 <span class="textQuestionList1" >{{$q->alunos ?? ''}}</span>
-                                        </div>
+                                        </div>-->
                                         
                                         <div class=" textQuestionList1 col-md-1">
                                         <button class="button" onclick="confirmDelete({{ $q->id }})">Excluir</button>
                                         </div>
                                         <div class=" textQuestionList1 col-md-1">
                                         <a class="button" href="/turmas/editar/{{ $q->id }}">Editar</a>
+                                        </div>
+                                        <div class=" textQuestionList1 col-md-1">
+                                        <a class="button" href="/alunos/{{ $q->id }}">Alunos</a>
                                         </div>
                                         <!--<div class="textQuestionList1 col-md-1">
                                                 <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
