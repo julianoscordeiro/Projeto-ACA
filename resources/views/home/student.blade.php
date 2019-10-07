@@ -8,13 +8,10 @@
         <div class="col-md-9 ">
             <h1 class="display-1 ">Alunos:</h1>
         </div>
-        <div class="col-md-2">
-                <!-- Busca -->
+        <div class="col-md-2">        
         </div>
     </div>
-
-
-
+     <!-- Busca -->
     <div class="row justify-content-center ">
         <div class="col-md-12">
             <div class="card">
@@ -26,47 +23,72 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                
-                <!-- Formulario -->
-                        <div>
+                <!-- Formulário adicionar aluno -->
+                        <div>                            
+                            <form method="POST" action="{{ route('criadoaluno') }}" enctype="multipart/form-data">
+                                @csrf                                 
+                                    Nome:
+                                    <input name="nome" type="text" class="formulariosquestoes" placeholder="Nome" required>
+                                    Email:
+                                    <input name="email" type="text" class="formulariosquestoes" placeholder="Email" required>       
+                                    <button type="submit" class="btn btn-success">Adicionar</button>
+                                    <a href="/turmas/criar"  class="btn btn-danger">Cancelar</a>
+                                    <br>                                                                                                                                          
+                            </form>
+                        </div> 
 
-                                
-                                <form method="POST" action="{{ route('criadoaluno') }}" enctype="multipart/form-data">
-                                @csrf
-                                        
-                                        Nome:
-                                        <input name="nome" type="text" class="formulariosquestoes" placeholder="Nome" required>
-                                        Email:
-                                        <input name="email" type="text" class="formulariosquestoes" placeholder="Email" required>
+                <script>
+                    function confirmDelete(id) {
+                            var confirmation = confirm("Deseja realmente excluir?");
+                                    if(confirmation){
+                                        window.location = "/alunos/delete/"+id;
+                                    }   
+                                } 
+                </script>
+                 <!-- script do modal -->
+                 <script>
+                                // Get the modal
+                                var modal = document.getElementById("myModal");
 
-                                        
-                                        <button type="submit" class="btn btn-success">Criar</button>
-                                        
-                                        <button type="clear" class="btn btn-danger">Cancelar</button>
+                                // Get the button that opens the modal
+                                var btn = document.getElementById("modalBtn");
 
-                                        <br>
+                                // Get the <span> element that closes the modal
+                                var span = document.getElementsByClassName("close")[0];
 
-                                        <!-- Mostrar os alunos -->
-                                     @foreach ($student as $q)
+                                // When the user clicks the button, open the modal 
+                                btn.onclick = function() {
+                                modal.style.display = "block";
+                                }
+
+                                // When the user clicks on <span> (x), close the modal
+                                span.onclick = function() {
+                                modal.style.display = "none";
+                                }
+
+                                // When the user clicks anywhere outside of the modal, close it
+                                window.onclick = function(event) {
+                                if (event.target == modal) {
+                                    modal.style.display = "none";
+                                }
+                                }
+                            </script>
+                        <!-- Mostrar os alunos  -->
+                        @foreach ($student as $q)
                                     <div class="listquestions row justify-content-center ">
                                         <div class="col-md-4">
+                                        <b> Nome: </b>
                                             <span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
                                         </div>
                                         <div class="col-md-6">
-                                                <span class="textQuestionList" >{{$q->email ?? ''}}</span>
+                                        <b> E-mail: </b>
+                                            <span class="textQuestionList" >{{$q->email ?? ''}}</span>
                                         </div>
                                         
                                         <div class=" textQuestionList1 col-md-1">
-                                        
-                                                <button class="button" onclick="" class="">Excluir</button>
+                                        <button class="button" onclick="confirmDelete({{ $q->id }})">Excluir</button>
                                     </div>
-                                    @endforeach                                  
-                                        
-                                
-
-                                </form>
-                        </div>    
-
+                        @endforeach  
                     </div>       
                 </div>
             </div>
