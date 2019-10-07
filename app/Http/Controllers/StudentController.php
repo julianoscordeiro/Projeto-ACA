@@ -23,7 +23,7 @@ class StudentController  extends Controller
             'email'=> $request->email,
             'user_id' => Auth::id()
         ]);
-
+     
         return redirect()->route('alunos');
     }
 
@@ -51,4 +51,6 @@ class StudentController  extends Controller
         
         return redirect()->route('alunos');
     }
+
+            
 }
