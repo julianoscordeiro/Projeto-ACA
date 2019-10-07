@@ -51,7 +51,7 @@
                                     </div>
                             </div> -->
                                      <!-- Confirmação -->
-                        <script>
+                            <script>
                                 function confirmDelete(id) {
                                     var confirmation = confirm("Deseja realmente excluir?");
 
@@ -91,7 +91,7 @@
                                 }
                             </script>
 
-                                    <!-- loop para mostrar questões  do usuario -->
+                                    <!-- loop para mostrar turmas do usuario -->
                                     
                                     @foreach ($class as $q)
                                     <div >
