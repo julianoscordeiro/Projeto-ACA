@@ -56,5 +56,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/turmas/editar/{id}', 'HomeController@editarTurma')->name('editarturma');
     Route::post('/turmas/editado/{id}', 'ClassesController@updateClass')->name('editarturma');
     //Deletar Turma
-    Route::get('/turmas/delete/{id}', 'ClassesController@deleteClasses')->name('deletarquestao');
+    Route::get('/turmas/delete/{id}', 'ClassesController@deleteClasses')->name('deletarturma');
 });
