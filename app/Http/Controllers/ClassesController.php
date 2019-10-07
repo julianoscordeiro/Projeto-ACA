@@ -27,6 +27,24 @@ class ClassesController extends Controller
             'user_id' => Auth::id()
         ]);
 
+                //Pega o id da turma
+                $idClass = $class->id;
+        
+                //Pega os checkbox de alunos
+                $student= $request->input('student_selected');
+        
+                
+                //Loop para adicionar aluno a tumra
+                foreach ($student as $q) {
+                    //Numero para indicar o indice da questão colocado no array
+                    $numero = 0;
+                    $classesStudent = ClassesStudent::create([            
+                        'classes_id' => $idClass,
+                        'student_id' => $q[$numero],
+                        'user_id' => Auth::id(),
+                        ]);      
+                    $numero++;
+                }
         return redirect()->route('turmas');
     }
         
