@@ -6,8 +6,12 @@
 
 <div class="container ">
     <div class="row justify-content-center   ">
-        <div class="col-md-9 ">
+        <div class="col-md-7 ">
             <h1 class="display-1 ">Turmas</h1>
+        </div>
+        <div class="col-md-2">
+            <!-- Criar Turma -->
+            <a href="/alunos" class="btn btn-success questoesMargin1">Alunos</a>
         </div>
         <div class="col-md-2">
                 <!-- Criar Turma -->
@@ -96,39 +100,39 @@
                                     @foreach ($class as $q)
                                     <div >
                                     <div class="row listquestions justify-content-center">
-                                        <div class="col-md-2">
+                                        <div class="col-md-12">
                                                 <b> Nome: </b>
                                             <span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-12">
                                                <b> Instituição:</b>
                                                 <span class="textQuestionList1" >{{$q->instituicao ?? ''}}</span>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-12">
                                                <b> Curso: </b>
                                                 <span class="textQuestionList1" >{{$q->curso ?? ''}}</span>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-12">
                                                 <b>Período:</b>
                                                 <span class="textQuestionList1" >{{$q->periodo ?? ''}}</span>
                                         </div>
-                                        <!--<div class="col-md-2">
+                                        <div class="col-md-12">
                                                 <b>Alunos:</b>
                                                 <span class="textQuestionList1" >{{$q->alunos ?? ''}}</span>
-                                        </div>-->
+                                        </div>
                                         
-                                        <div class=" textQuestionList1 col-md-1">
+                                        <div class=" textQuestionList1 col-md-4">
                                         <button class="button" onclick="confirmDelete({{ $q->id }})">Excluir</button>
                                         </div>
-                                        <div class=" textQuestionList1 col-md-1">
+                                        <div class=" textQuestionList1 col-md-4">
                                         <a class="button" href="/turmas/editar/{{ $q->id }}">Editar</a>
                                         </div>
-                                        <div class=" textQuestionList1 col-md-1">
+                                        <!--<div class=" textQuestionList1 col-md-1">
                                         <a class="button" href="/alunos/{{ $q->id }}">Alunos</a>
-                                        </div>
-                                        <!--<div class="textQuestionList1 col-md-1">
-                                                <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
                                         </div>-->
+                                        <div class=" textQuestionList1 col-md-4">
+                                            <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -151,7 +155,8 @@
                                             Período:{{$q->periodo ?? ''}} <br>
                                             Semestre:{{$q->semestre ?? ''}} <br>
                                             alunos:{{$q->alunos ?? ''}} <br>
-                                        
+
+                                            <a href="/turmas/" type="button" class="btn btn-success" data-dismiss="modal">Adicionar Aluno</a>
                                         </div>
 
                                         <div class="modal-footer">

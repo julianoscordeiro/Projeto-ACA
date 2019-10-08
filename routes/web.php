@@ -57,4 +57,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/turmas/editado/{id}', 'ClassesController@updateClass')->name('editarturma');
     //Deletar Turma
     Route::get('/turmas/delete/{id}', 'ClassesController@deleteClasses')->name('deletarturma');
+    //Alunos
+    Route::get('/alunos', 'HomeController@alunos')->name('alunos');
 });

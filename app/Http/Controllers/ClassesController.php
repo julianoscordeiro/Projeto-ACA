@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 
 use App\Classes;
+use App\ClassesStudent;
 
 use Illuminate\Http\Request;
 
@@ -16,16 +17,19 @@ class ClassesController extends Controller
     /* Inserção no banco de dados */
     public function create(Request $request)
     {
-
+        
         $class = Classes::create([
             'nome' => $request->nome,
             'instituicao' => $request->instituicao,
             'curso' => $request->curso,
             'periodo' => $request->periodo,
             'semestre' => $request->semestre,
-            'alunos' => $request->alunos,
+            'alunos' => 0,
             'user_id' => Auth::id()
         ]);
+
+
+        
 
                 //Pega o id da turma
                 $idClass = $class->id;
@@ -45,6 +49,13 @@ class ClassesController extends Controller
                         ]);      
                     $numero++;
                 }
+
+        $classStudentList =  DB::table('classes_student')->where('classes_id', '=', "$class->id")->count();
+
+        $class->alunos = $classStudentList;
+
+        $class->save();
+
         return redirect()->route('turmas');
     }
         

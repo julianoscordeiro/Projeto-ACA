@@ -133,10 +133,11 @@ class HomeController extends Controller
         //Retorna a lista de turma;
         $userid = Auth::id();
         $class = DB::table('class')->where('user_id', '=', "$userid")->get();
+        $student = DB::table('student')->where('user_id', '=', "$userid")->get();
         $title = 'Criar Turma | ';
         return view('home.createclass', [
             'title' => $title
-        ],compact('class'));
+        ],compact('class','student'));
     }
     //Editar turma
     public function editarTurma(Request $request)
@@ -169,7 +170,7 @@ class HomeController extends Controller
         {
             //Retorna a lista de alunos;
             $userid = Auth::id();
-            $class = DB::table('student')->where('user_id', '=', "$userid")->get();
+            $student = DB::table('student')->where('user_id', '=', "$userid")->get();
             $title = 'Criar Aluno | ';
             return view('home.createstudent', [
                 'title' => $title

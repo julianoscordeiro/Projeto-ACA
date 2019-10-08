@@ -75,20 +75,19 @@
                             </script>
                         <!-- Mostrar os alunos  -->
                         @foreach ($student as $q)
-                                    <div class="listquestions row justify-content-center ">
-                                        <div class="col-md-4">
-                                        <b> Nome: </b>
-                                            <span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
-                                        </div>
-                                        <div class="col-md-6">
-                                        <b> E-mail: </b>
-                                            <span class="textQuestionList" >{{$q->email ?? ''}}</span>
-                                        </div>
-                                        
-                                        <div class=" textQuestionList1 col-md-1">
-                                        <button class="button" onclick="confirmDelete({{ $q->id }})">Excluir</button>
-                                    </div>
-                        @endforeach  
+
+                            <div class="listquestions row justify-content-center ">
+                                <div class="col-md-4">
+                                    <b>Nome: </b><span class="textQuestionList1" >{{$q->nome}}</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <b>Email: </b><span class="textQuestionList1" >{{$q->email}}</span>
+                                </div>
+                                <div class=" textQuestionList1 col-md-2">
+                                    <button class="button" onclick="confirmDelete({{ $q->id }})">Excluir</button>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>       
                 </div>
             </div>
