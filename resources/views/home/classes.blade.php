@@ -96,10 +96,9 @@
                             </script>
 
                                     <!-- loop para mostrar turmas do usuario -->
-                                    
+                                    <div class="row justify-content-center">
                                     @foreach ($class as $q)
-                                    <div >
-                                    <div class="row listquestions justify-content-center">
+                                    <div class="row col-md-3 listquestions justify-content-center">
                                         <div class="col-md-12">
                                                 <b> Nome: </b>
                                             <span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
@@ -134,9 +133,9 @@
                                             <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
                                         </div>
                                     </div>
-                                </div>
                                 
                                     @endforeach
+                                 </div>
 
                                     <!-- Modal Visualizar -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

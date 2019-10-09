@@ -67,7 +67,6 @@ class QuestionController  extends Controller
         $share = Question::find($id);
         $share->assunto = $request->get('assunto') ?? $share->assunto;
         $share->enunciado = $request->get('enunciado') ?? $share->enunciado;
-        $share->assunto = $request->get('enunciado') ?? $share->enunciado;
         $share->alternativaA = $request->get('alternativaA') ?? $share->alternativaA;
         $share->alternativaB = $request->get('alternativaB') ?? $share->alternativaB;
         $share->alternativaC = $request->get('alternativaC') ?? $share->alternativaC;
