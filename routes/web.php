@@ -64,4 +64,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/turmas/delete/{id}', 'ClassesController@deleteClasses')->name('deletarturma');
     //Alunos
     Route::get('/alunos', 'HomeController@alunos')->name('alunos');
+    //Importar Exportar
+    Route::get('/import-export', 'ExcelController@importExport');
+    Route::post('/import', 'ExcelController@import');
+    Route::get('/export', 'ExcelController@export');
 });
