@@ -6,6 +6,7 @@ use Auth;
 
 use App\Classes;
 use App\ClassesStudent;
+use App\TestClasses;
 
 use Illuminate\Http\Request;
 
@@ -76,6 +77,18 @@ class ClassesController extends Controller
         $share->semestre = $request->get('semestre') ?? $share->semestre;
 
         $share->save();
+
+        return redirect()->route('turmas');
+    }
+
+    public function adicionarProva(Request $request,$id){
+
+        $numero = 0;
+        $classesStudent = TestClasses::create([            
+            'classes_id' => $id,
+            'test_id' => $request->test_selected,
+            'user_id' => Auth::id(),
+            ]);
 
         return redirect()->route('turmas');
     }

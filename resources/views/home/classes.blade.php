@@ -98,7 +98,7 @@
                                     <!-- loop para mostrar turmas do usuario -->
                                     <div class="row justify-content-center">
                                     @foreach ($class as $q)
-                                    <div class="row col-md-3 listquestions justify-content-center">
+                                    <div class="row col-md-5 listquestions justify-content-center">
                                         <div class="col-md-12">
                                                 <b> Nome: </b>
                                             <span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
@@ -120,17 +120,20 @@
                                                 <span class="textQuestionList1" >{{$q->alunos ?? ''}}</span>
                                         </div>
                                         
-                                        <div class=" textQuestionList1 col-md-4">
+                                        <div class=" textQuestionList1 col-md-3">
                                         <button class="button" onclick="confirmDelete({{ $q->id }})">Excluir</button>
                                         </div>
-                                        <div class=" textQuestionList1 col-md-4">
+                                        <div class=" textQuestionList1 col-md-3">
                                         <a class="button" href="/turmas/editar/{{ $q->id }}">Editar</a>
                                         </div>
                                         <!--<div class=" textQuestionList1 col-md-1">
                                         <a class="button" href="/alunos/{{ $q->id }}">Alunos</a>
                                         </div>-->
-                                        <div class=" textQuestionList1 col-md-4">
+                                        <div class=" textQuestionList1 col-md-3">
                                             <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
+                                        </div>
+                                        <div class=" textQuestionList1 col-md-3">
+                                            <a class="button" href="/turmas/provas/{{ $q->id }}">Provas</a>
                                         </div>
                                     </div>
                                 

@@ -152,6 +152,35 @@ class HomeController extends Controller
         ], compact('id', 'class'));
     }
 
+    public function provasTurmas(Request $request)
+    {
+        $id = $request->route('id');
+        $userid = Auth::id();
+        $classTests = DB::table('test_class')->join('class', 'class.id', '=', 'test_class.classes_id')->join('tests', 'tests.id', '=', 'test_class.test_id')->where('classes_id', '=', "$id")->get();
+
+        
+
+        $title = 'Provas da turma | ';
+        return view('home.classestests', [
+            'title' => $title
+        ],compact('id','classTests'));
+    }
+    public function addProvaTurma(Request $request)
+    {
+        $id = $request->route('id');
+        //Retorna a lista de turma;
+        //$test = DB::table('test')->where('id', '=', "$id")->get();
+        $userid = Auth::id();
+        $test = DB::table('tests')->where('user_id', '=', "$userid")->get();
+
+        
+
+        $title = 'Adicionar prova | ';
+        return view('home.addtestclass', [
+            'title' => $title
+        ],compact('test','id'));
+    }
+
     //Alunos
     
     public function alunos()

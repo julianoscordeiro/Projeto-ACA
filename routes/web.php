@@ -55,6 +55,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/turmas/criar/nova', 'ClassesController@create')->name('criadaturma');
     Route::get('/turmas/editar/{id}', 'HomeController@editarTurma')->name('editarturma');
     Route::post('/turmas/editado/{id}', 'ClassesController@updateClass')->name('editarturma');
+    Route::get('/turmas/provas/{id}', 'HomeController@provasTurmas')->name('provasturma');
+    Route::get('/turmas/provas/add/{id}', 'HomeController@addProvaTurma')->name('addprovaturma');
+    Route::post('/turmas/provas/add/{id}', 'ClassesController@adicionarProva')->name('adicionadoprovaturma');
+    //Imprimir prova
+    Route::get('/turmas/provas/imprimir/{id}', 'ImprimirController@imprimir')->name('imprimir');
     //Deletar Turma
     Route::get('/turmas/delete/{id}', 'ClassesController@deleteClasses')->name('deletarturma');
     //Alunos
