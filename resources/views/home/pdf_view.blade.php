@@ -6,6 +6,7 @@
  <title>Prova</title>
 </head>
 <body>
+    <!-- Informações cabeçalio -->
     @foreach ($test as $t)
         <p>Unidade Curricular:{{$t->unidadeCurricular}}</p>
         <p>Assunto: {{$t->assunto}}</p>
@@ -13,8 +14,20 @@
         <p>Data:</p>
     @endforeach
   <div>
-    
 
+    <!-- Loop gabarito -->
+    <p><b>Gabarito:</b><p>
+    @foreach ($classTests as $q)
+    
+    <center>Questão {{$count}}: A(  ) B(  ) C(  ) D(  ) E(  )<br></center>
+
+    <?php $count++ ?>
+    @endforeach
+
+    
+    <?php $count = 1 ?>
+    
+    <!-- loop questões -->
     @foreach ($classTests as $q)
     <p>Questão {{$count}}: {{$q->enunciado}} </p>
 
