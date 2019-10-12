@@ -2,7 +2,7 @@
    
 namespace App\Imports;
    
-use App\User;
+use App\Student;
 use Maatwebsite\Excel\Concerns\ToModel;
    
 class ImportUsers implements ToModel
@@ -14,7 +14,7 @@ class ImportUsers implements ToModel
     */
     public function model(array $row)
     {
-        return new User([
+        return new Student([
             'name'     => $row[0],
             'email'    => $row[1], 
         ]);

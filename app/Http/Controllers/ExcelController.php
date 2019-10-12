@@ -13,7 +13,7 @@ class ExcelController extends Controller
     */
     public function importExport()
     {
-       return view('import');
+       return view('home.import');
     }
     
     /**
@@ -31,6 +31,6 @@ class ExcelController extends Controller
     {
         Excel::import(new ImportUsers, request()->file('file'));
             
-        return back();
+        return redirect()->route('turmas');
     }
 }

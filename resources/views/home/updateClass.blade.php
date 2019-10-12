@@ -43,6 +43,21 @@
                                         Período:<textarea name="periodo" class="formulariosquestoes" placeholder="Período">{{$q->periodo}}  </textarea>
                                         Semestre:<textarea name="semestre" class="formulariosquestoes" placeholder="Semestre">{{$q->semestre}}  </textarea>
 
+                                        <!-- Loop que mostra os alunos -->
+                                        @foreach ($student as $q)
+                                        <div class="listquestions row justify-content-center ">
+                                            <div class="col-md-4">
+                                                <b>Nome: </b><span class="textQuestionList1" >{{$q->nome}}</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <b>Email: </b><span class="textQuestionList1" >{{$q->email}}</span>
+                                            </div>
+                                            <div class=" textQuestionList1 col-md-2">
+                                                <input type="checkbox" name="student_selected[]" value="{{$q->id}}">
+                                            </div>
+                                        </div>
+                                        @endforeach
+
                                         <button type="submit" class="btn btn-success">Salvar</button>
                                         
                                         <a href="/turmas" class="btn btn-danger">Cancelar</a>               

@@ -76,6 +76,19 @@ class ClassesController extends Controller
         $share->periodo = $request->get('periodo') ?? $share->periodo;
         $share->semestre = $request->get('semestre') ?? $share->semestre;
 
+        $student= $request->input('student_selected');
+
+        foreach ($student as $q) {
+            //Numero para indicar o indice da questão colocado no array
+            $numero = 0;
+            $classesStudent = ClassesStudent::create([            
+                'classes_id' => $share->id,
+                'student_id' => $q[$numero],
+                'user_id' => Auth::id(),
+                ]);      
+            $numero++;
+        }
+
         $share->save();
 
         return redirect()->route('turmas');

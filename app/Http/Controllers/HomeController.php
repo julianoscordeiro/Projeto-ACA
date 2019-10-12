@@ -145,11 +145,13 @@ class HomeController extends Controller
         $id = $request->route('id');
         //Retorna a lista de turma;
         $class = DB::table('class')->where('id', '=', "$id")->get();
+        $userid = Auth::id();
+        $student = DB::table('student')->where('user_id', '=', "$userid")->get();
 
         $title = 'Editar Turma | ';
         return view('home.updateClass', [
             'title' => $title
-        ], compact('id', 'class'));
+        ], compact('id', 'class','student'));
     }
 
     public function provasTurmas(Request $request)

@@ -19,7 +19,7 @@
                 <br>
                 <a class="btn btn-info" href="{{ url('export') }}"> 
                  Export File</a>
-                <button class="btn btn-success">Import File</button>
+                <button type="submit" class="btn btn-success">Import File</button>
             </form>
         </div>
     </div>
