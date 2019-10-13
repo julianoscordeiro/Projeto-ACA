@@ -105,4 +105,10 @@ class ClassesController extends Controller
 
         return redirect()->route('turmas');
     }
+
+    public function deleteClassTest($id)
+    {
+        $deleteClassTest = DB::table('test_class')->where('id', '=', "$id")->delete();
+        return redirect()->route('turmas');
+    }
 }

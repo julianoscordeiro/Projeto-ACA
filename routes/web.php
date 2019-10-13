@@ -60,6 +60,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/turmas/provas/add/{id}', 'ClassesController@adicionarProva')->name('adicionadoprovaturma');
     //Imprimir prova
     Route::get('/turmas/provas/imprimir/{id}', 'ImprimirController@imprimir')->name('imprimir');
+    Route::get('/turmas/provas/delete/{id}', 'ClassesController@deleteClassTest')->name('deletarprovaturma');
     //Deletar Turma
     Route::get('/turmas/delete/{id}', 'ClassesController@deleteClasses')->name('deletarturma');
     //Alunos

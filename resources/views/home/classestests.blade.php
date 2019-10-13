@@ -39,27 +39,42 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
+                                <!-- Confirmação de exclusão -->
+
+                                <script>
+                                function confirmDelete(id) {
+                                    var confirmation = confirm("Deseja realmente excluir?");
+
+                                    if(confirmation){
+                                        window.location = "/turmas/provas/delete/"+id;
+                                    }   
+                                } 
+                            </script>
                 
                 <!-- Formulario -->
                         <div>
 
-                                
+                                    forea
                                 <div>
                                     
-                                        <!-- Loop que mostra os alunos -->
+                                        <!-- Loop que mostra as provas -->
                                         @foreach ($classTests as $q)
                                         <div class="listquestions row justify-content-center ">
                                             <div class="col-md-4">
                                                 <b>Nome: </b><span class="textQuestionList1" >{{$q->nome}}</span>
                                             </div>
                                             <div class="col-md-6">
-                                                <b>Enunciado: </b><span class="textQuestionList1" >{{$q->assunto}}</span>
+                                                <b>Assunto: </b><span class="textQuestionList1" >{{$q->assunto}}</span>
                                             </div>
-                                            <div class=" textQuestionList1 col-md-2">
-                                            <a href="/turmas/provas/imprimir/{{$q->id}}" class="btn btn-success">Imprimir</a>
+                                            <div class=" textQuestionList1 ">
+                                                <a href="/turmas/provas/imprimir/{{$q->id}}" class="btn btn-primary btn-sm">Corrigir</a>
+                                             </div>
+                                            <div class=" textQuestionList1 ">
+                                            <a href="/turmas/provas/imprimir/{{$q->id}}" class="btn btn-success btn-sm">Imprimir</a>
                                             </div>
-                                        </div>
-                                        @endforeach           
+                                        </div>  
+                                        @endforeach        
 
                                     </div>
                         </div>    

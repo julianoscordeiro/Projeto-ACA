@@ -159,13 +159,13 @@ class HomeController extends Controller
         $id = $request->route('id');
         $userid = Auth::id();
         $classTests = DB::table('test_class')->join('class', 'class.id', '=', 'test_class.classes_id')->join('tests', 'tests.id', '=', 'test_class.test_id')->where('classes_id', '=', "$id")->get();
-
+        $classTest = DB::table('test_class')->where('classes_id', '=', "$id")->get();
         
 
         $title = 'Provas da turma | ';
         return view('home.classestests', [
             'title' => $title
-        ],compact('id','classTests'));
+        ],compact('id','classTests','classTest'));
     }
     public function addProvaTurma(Request $request)
     {

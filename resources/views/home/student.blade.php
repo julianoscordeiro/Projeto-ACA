@@ -84,7 +84,7 @@
                                     <b>Email: </b><span class="textQuestionList1" >{{$q->email}}</span>
                                 </div>
                                 <div class=" textQuestionList1 col-md-2">
-                                    <button class="button" onclick="confirmDelete({{ $q->id }})">Excluir</button>
+                                    <button class="btn btn-danger btn-sm" onclick="confirmDelete({{ $q->id }})">Excluir</button>
                                 </div>
                             </div>
                         @endforeach
