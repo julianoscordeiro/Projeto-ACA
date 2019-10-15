@@ -43,10 +43,10 @@
                                         @foreach ($question as $q)
                                         <div class="listquestions row justify-content-center ">
                                             <div class="col-md-4">
-                                                <span class="textQuestionList1" >{{$q->assunto}}</span>
+                                                <b>Assunto:</b><span class="textQuestionList1" >{{$q->assunto}}</span>
                                             </div>
                                             <div class="col-md-6">
-                                                    <span class="textQuestionList" >{{$q->enunciado}}</span>
+                                                 <b>Enunciado:</b><span class="textQuestionList" >{{$q->enunciado}}</span>
                                             </div>
                                             <div class=" textQuestionList1 col-md-2">
                                                 <input type="checkbox" name="question_selected[]" value="{{$q->id}}">

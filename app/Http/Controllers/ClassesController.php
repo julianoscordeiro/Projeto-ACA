@@ -40,16 +40,18 @@ class ClassesController extends Controller
         
                 
                 //Loop para adicionar aluno a tumra
-                foreach ($student as $q) {
-                    //Numero para indicar o indice da questão colocado no array
-                    $numero = 0;
-                    $classesStudent = ClassesStudent::create([            
-                        'classes_id' => $idClass,
-                        'student_id' => $q[$numero],
-                        'user_id' => Auth::id(),
-                        ]);      
-                    $numero++;
-                }
+                if($student != null){
+                    foreach ($student as $q) {
+                        //Numero para indicar o indice da questão colocado no array
+                        $numero = 0;
+                        $classesStudent = ClassesStudent::create([            
+                            'classes_id' => $idClass,
+                            'student_id' => $q[$numero],
+                            'user_id' => Auth::id(),
+                            ]);      
+                        $numero++;
+                    }
+            }
 
         $classStudentList =  DB::table('classes_student')->where('classes_id', '=', "$class->id")->count();
 
