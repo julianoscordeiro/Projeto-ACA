@@ -42,7 +42,7 @@
                                 
                                 
                                         
-                                <h2>Escolha a prova:</h2>
+                                <b>Escolha a prova:</b>
                                 <form method="POST" action="{{ route('adicionadoprovaturma', $id) }}" enctype="multipart/form-data">
                                 @csrf
                                     <!-- Loop que mostra os alunos -->

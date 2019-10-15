@@ -13,7 +13,10 @@
                 <!-- Busca -->
                 
                 <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-                        <input class="form-control barrapesquisa " type="text" placeholder="Pesquisar" aria-label="Search">
+                        <form action="/search" method="get">
+                            <input class="form-control barrapesquisa" type="search"  placeholder="Buscar" name="search">
+                        
+                        </form>
                 </div>
         </div>
         <div class="col-md-2">
@@ -111,6 +114,8 @@
                                         </div>
                                     </div>
                                     </div>
+
+                                    
                                 
                                     
                                     
@@ -151,6 +156,8 @@
                                     
                                     @endforeach
                                     
+
+                                    {{$question->links()}}
 
                 <div>
                     

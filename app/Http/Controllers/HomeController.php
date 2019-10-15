@@ -43,8 +43,7 @@ class HomeController extends Controller
     {
         //Retorna a lista de questões;
         $userid = Auth::id();
-        $question = DB::table('questions')->where('user_id', '=', "$userid")->get();
-        $pag = Question::where('user_id','=', Auth::id())->orderBy('id')->paginate(5);
+        $question = DB::table('questions')->where('user_id', '=', "$userid")->paginate(5);
 
 
         $title = 'Questões | ';
@@ -96,7 +95,7 @@ class HomeController extends Controller
     {
         //Retorna a lista de questões;
         $userid = Auth::id();
-        $test = DB::table('tests')->where('user_id', '=', "$userid")->get();
+        $test = DB::table('tests')->where('user_id', '=', "$userid")->paginate(10);
 
         $title = 'Provas | ';
         return view('home.tests', [

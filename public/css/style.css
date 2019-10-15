@@ -432,6 +432,24 @@ body{
     box-shadow: none;
 }
 
-/* Botoes sem fundo */
+/* Paginação */
 
+
+.pagination .page-item.active>.page-link, .pagination .page-item.active>.page-link:focus, .pagination .page-item.active>.page-link:hover {
+    background: #e14eca;
+    background-image: linear-gradient(to bottom left,#9055A2,#b96bd1,#b96bd1);
+    background-size: 210% 210%;
+    background-position: 100% 0;
+    color: #000;
+}
+.pagination{
+    margin-top: 20px;
+    justify-content: center;
+}
+.page-link{
+    color: #000;
+}
+.pagination .page-item .page-link:focus, .pagination .page-item .page-link:hover {
+    color: #9055A2;
+}
 
