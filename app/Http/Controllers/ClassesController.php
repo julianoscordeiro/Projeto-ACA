@@ -80,16 +80,23 @@ class ClassesController extends Controller
 
         $student= $request->input('student_selected');
 
-        foreach ($student as $q) {
-            //Numero para indicar o indice da questão colocado no array
-            $numero = 0;
-            $classesStudent = ClassesStudent::create([            
-                'classes_id' => $share->id,
-                'student_id' => $q[$numero],
-                'user_id' => Auth::id(),
-                ]);      
-            $numero++;
-        }
+        $numeroAlunos = 0;
+        //Loop para adicionar aluno a tumra
+        if($student != null){
+            foreach ($student as $q) {
+                //Numero para indicar o indice da questão colocado no array
+                $numero = 0;
+                $numeroAlunos++;
+                $classesStudent = ClassesStudent::create([            
+                    'classes_id' => $id,
+                    'student_id' => $q[$numero],
+                    'user_id' => Auth::id(),
+                    ]);      
+                $numero++;
+            }
+    }
+
+        $share->alunos += $numeroAlunos;
 
         $share->save();
 
@@ -112,5 +119,12 @@ class ClassesController extends Controller
     {
         $deleteClassTest = DB::table('test_class')->where('id', '=', "$id")->delete();
         return redirect()->route('turmas');
+    }
+
+    public function search(Request $request){
+        $search = $request->get('search');
+        $userid = Auth::id(); 
+        $class = DB::table('class')->where('assunto','like', '%'.$search.'%')->paginate(100);
+        return view('home.classes',['class' => $class],compact('class'));
     }
 }

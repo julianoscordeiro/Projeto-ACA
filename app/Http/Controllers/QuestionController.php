@@ -98,4 +98,11 @@ class QuestionController  extends Controller
         $deleteQuestion = DB::table('questions')->where('id', '=', "$id")->delete();
         return redirect()->route('questoes');
     }
+
+    public function search(Request $request){
+        $search = $request->get('search');
+        $userid = Auth::id(); 
+        $question = DB::table('questions')->where('assunto','like', '%'.$search.'%')->paginate(100);
+        return view('home.questions',['questions' => $question],compact('question'));
+    }
 }

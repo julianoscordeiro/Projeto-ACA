@@ -63,6 +63,15 @@ class TestController  extends Controller
     }
 
 
+    //busca
+    public function search(Request $request){
+        $search = $request->get('search');
+        $userid = Auth::id(); 
+        $test = DB::table('tests')->where('nome','like', '%'.$search.'%')->paginate(100);
+        return view('home.tests',['tests' => $test],compact('test'));
+    }
+
+
 
 
 }

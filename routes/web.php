@@ -32,9 +32,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/questoes/criar/nova', 'QuestionController@create')->name('criadaquestao');
     //Deletar Questão
     Route::get('/questoes/delete/{id}', 'QuestionController@deleteQuestion')->name('deletarquestao');
-    //Procurar questão
-    Route::get('/questoes/resultado', 'HomeController@buscarquestao')->name('buscarquestao');
-    Route::any('/search','HomeController@buscarquestao');
+    //Busca
+    Route::any('/search','QuestionController@search');
+    Route::any('/search','TestController@search');
     //Alunos
     Route::get('/alunos', 'HomeController@alunos')->name('alunos');
     Route::get('/alunos/criar', 'HomeController@criaralunos')->name('criaraluno');
