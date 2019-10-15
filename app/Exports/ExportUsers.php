@@ -1,9 +1,10 @@
 <?php
    
-namespace App\Exports;
+namespace App;
    
-use App\User;
+use App\Student;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Illuminate\Database\Eloquent\Model;
    
 class ExportUsers implements FromCollection
 {
@@ -12,6 +13,6 @@ class ExportUsers implements FromCollection
     */
     public function collection()
     {
-        return User::get();
+        return Student::all();
     }
 }

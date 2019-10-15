@@ -1,9 +1,11 @@
 <?php
    
-namespace App\Imports;
+namespace App;
    
 use App\Student;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Illuminate\Support\Facades\Hash;
+use Auth;
    
 class ImportUsers implements ToModel
 {
@@ -16,7 +18,8 @@ class ImportUsers implements ToModel
     {
         return new Student([
             'name'     => $row[0],
-            'email'    => $row[1], 
+            'email'    => $row[1],
+            'user_id' => Auth::id(),
         ]);
     }
 }

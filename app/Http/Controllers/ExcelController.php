@@ -21,7 +21,7 @@ class ExcelController extends Controller
     */
     public function export() 
     {
-        return Excel::download(new ExportUsers, 'users.xlsx');
+        return Excel::download(new ExportUsers, 'alunos.xlsx');
     }
     
     /**
@@ -31,6 +31,6 @@ class ExcelController extends Controller
     {
         Excel::import(new ImportUsers, request()->file('file'));
             
-        return redirect()->route('turmas');
+        return redirect('/')->/*route('turmas')*/with('success', 'all good');
     }
 }
