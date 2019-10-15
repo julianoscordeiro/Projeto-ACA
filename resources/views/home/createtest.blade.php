@@ -32,7 +32,7 @@
                                 <form method="POST" action="{{ route('criadaprova') }}">
                                 @csrf                                        
                                         Nome:
-                                        <input name="nome" type="text" class="formulariosquestoes" placeholder="Enunciado">
+                                        <input name="nome" type="text" class="formulariosquestoes" placeholder="Nome">
                                         Unidade Curricular:
                                         <input name="unidadeCurricular" type="text" class="formulariosquestoes" placeholder="Unidade Curricular">
                                         Assunto:
@@ -49,7 +49,7 @@
                                                  <b>Enunciado:</b><span class="textQuestionList" >{{$q->enunciado}}</span>
                                             </div>
                                             <div class=" textQuestionList1 col-md-2">
-                                                <input type="checkbox" name="question_selected[]" value="{{$q->id}}">
+                                                <input class="checkbox" type="checkbox" name="question_selected[]" value="{{$q->id}}">
                                             </div>
                                         </div>
                                         @endforeach

@@ -12,9 +12,8 @@
                 <!-- Busca -->
                 
                 <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-                        <form action="/search" method="get">
+                        <form action="/searchTest" method="get">
                             <input class="form-control barrapesquisa" type="search"  placeholder="Buscar" name="search">
-                        
                         </form>
                 </div>
         </div>

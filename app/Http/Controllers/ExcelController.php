@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Excel;
 use DB;
+use App\Http\Imports\ImportUsers;
 
 class ExcelController extends Controller
 {

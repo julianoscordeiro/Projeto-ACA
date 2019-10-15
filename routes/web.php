@@ -33,8 +33,8 @@ Route::group(['middleware' => 'auth'], function () {
     //Deletar Questão
     Route::get('/questoes/delete/{id}', 'QuestionController@deleteQuestion')->name('deletarquestao');
     //Busca
-    Route::any('/search','QuestionController@search');
-    Route::any('/search','TestController@search');
+    Route::any('/searchQuestion','QuestionController@search');
+    Route::any('/searchTest','TestController@search');
     //Alunos
     Route::get('/alunos', 'HomeController@alunos')->name('alunos');
     Route::get('/alunos/criar', 'HomeController@criaralunos')->name('criaraluno');
@@ -67,6 +67,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/alunos', 'HomeController@alunos')->name('alunos');
     //Importar Exportar
     Route::get('/import-export', 'ExcelController@importExport');
-    Route::post('/import', 'ExcelController@import');
+    Route::post('/import', 'ExcelController@import')->name('importar');
     Route::get('/export', 'ExcelController@export');
 });
