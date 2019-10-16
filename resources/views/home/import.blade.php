@@ -12,13 +12,11 @@
         Importe e exporte formulários de alunos
         </div>
         <div class="card-body">
-            <form action="{{ route('importar') }}" method="POST" name="importform" enctype="multipart/form-data">
+            <form action="{{ route('importarAluno') }}" method="POST" name="importform" enctype="multipart/form-data">
                 @csrf
-                
                 <input type="file" name="file" class="form-control">
                 <br>
-                <a class="btn btn-info" href="{{ url('export') }}"> 
-                 Exportar arquivo</a>
+                <a class="btn btn-info" href="{{ route ('exportarAluno') }}">Exportar arquivo</a>
                 <button type="submit" class="btn btn-success">Importar arquivo</button>
             </form>
         </div>

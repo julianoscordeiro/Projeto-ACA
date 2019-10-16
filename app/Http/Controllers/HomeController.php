@@ -7,6 +7,7 @@ use App\Question;
 use Auth;
 use DB;
 use Illuminate\Support\Facades\Input;
+use Rap2hpoutre\FastExcel\FastExcel;
 
 class HomeController extends Controller
 {
@@ -206,13 +207,34 @@ class HomeController extends Controller
                 'title' => $title
             ],compact('student'));
         }
-        //Editar turma
+
+        //Exportar aluno
+        public function exportarAluno()
+        {
+            $userid = Auth::id();
+            $student = DB::table('student')->where('user_id', '=', "$userid")->get();
+            return (new FastExcel($student))->download('alunos.xlsx');
+            
+        }
+
+          //Importar aluno
+          public function importarAluno(Request $request)       
+        {  
+            $student = (new FastExcel)->import($request->file('file'), function ($line) {
+                return Stundent::create([
+                    'nome' => $line[0],
+                    'email' => $line[1],
+                ]);
+            }); 
+        }
+
+        //Editar aluno
         public function editarAluno(Request $request)
         {
             $id = $request->route('id');
+
             //Retorna a lista de alunos;
             $class = DB::table('student')->where('id', '=', "$id")->get();
-    
             $title = 'Editar Aluno | ';
             return view('home.updateStudent', [
                 'title' => $title
