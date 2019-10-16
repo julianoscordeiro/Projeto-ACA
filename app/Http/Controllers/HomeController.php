@@ -8,6 +8,7 @@ use Auth;
 use DB;
 use Illuminate\Support\Facades\Input;
 use Rap2hpoutre\FastExcel\FastExcel;
+use App\Student;
 
 class HomeController extends Controller
 {
@@ -221,11 +222,13 @@ class HomeController extends Controller
           public function importarAluno(Request $request)       
         {  
             $student = (new FastExcel)->import($request->file('file'), function ($line) {
-                return Stundent::create([
-                    'nome' => $line[0],
-                    'email' => $line[1],
+                return Student::create([
+                    'nome' => $line['Nome'],
+                    'email' => $line['Email'],
+                    'user_id' => Auth::id()
                 ]);
-            }); 
+            });
+            return redirect()->route('alunos');
         }
 
         //Editar aluno

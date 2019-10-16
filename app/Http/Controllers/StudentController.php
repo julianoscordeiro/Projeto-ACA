@@ -18,7 +18,7 @@ class StudentController  extends Controller
     public function create(Request $request)
     {
 
-        $question = Student::create([
+        $student = Student::create([
             'nome'=> $request->nome,
             'email'=> $request->email,
             'user_id' => Auth::id()
@@ -37,7 +37,7 @@ class StudentController  extends Controller
     //Deleta aluno
     public function deleteStudent($id)
     {
-        $deleteQuestion = DB::table('student')->where('id', '=', "$id")->delete();
+        $deleteStudent = DB::table('student')->where('id', '=', "$id")->delete();
         return redirect()->route('alunos');
     }
 
