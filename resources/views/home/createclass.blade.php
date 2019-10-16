@@ -9,8 +9,6 @@
             <h1 class="display-1 ">Criar Turma</h1>
         </div>
             <div class="col-md-2">
-                <!-- Adicionar aluno -->               
-                <a href="/alunos" class="btn btn-primary questoesMargin1">Adicionar Aluno</a>
             </div>
         </div>
 <div class="row justify-content-center ">
