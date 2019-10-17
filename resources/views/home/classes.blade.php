@@ -10,7 +10,7 @@
             <h1 class="display-1 ">Turmas</h1>
         </div>
         <div class="col-md-2">
-            <!-- Criar Turma -->
+            <!-- Criar Aluno-->
             <a href="/alunos" class="btn btn-success questoesMargin1">Alunos</a>
         </div>
         <div class="col-md-2">

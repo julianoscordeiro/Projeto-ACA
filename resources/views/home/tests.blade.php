@@ -18,7 +18,7 @@
                 </div>
         </div>
         <div class="col-md-2">
-                <!-- Busca -->
+                <!-- Criar prova-->
                 <a href="/provas/criar" class="btn btn-primary questoesMargin1">Criar prova</a>
         </div>
     </div>

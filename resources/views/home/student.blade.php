@@ -16,11 +16,11 @@
                                     Escolher Arquivo
                                     <input type="file" class="uploadz" name="file" class="btn btn-primary">
                                     
-                                </div>
-                            <a class="btn btn-info btn-sm" href="{{ route ('exportarAluno') }}">Exportar</a>
-                            <button type="submit" class="btn btn-success btn-sm">Importar</button>
+                            </div>
+                                <a class="btn btn-info btn-sm" href="{{ route ('exportarAluno') }}">Exportar</a>
+                                <button type="submit" class="btn btn-success btn-sm">Importar</button>
                         </form>
-                    </div>       
+                </div>       
         </div>
     </div>
      <!-- Busca -->
@@ -44,7 +44,7 @@
                                     Email:
                                     <input name="email" type="text" class="formulariosquestoes" placeholder="Email" required>       
                                     <button type="submit" class="btn btn-success">Adicionar</button>
-                                    <a href="/turmas/criar"  class="btn btn-danger">Cancelar</a>
+                                    <a href="/turmas/criar"  class="btn btn-primary">Criar Turma</a>
                                     <br>                                                                                                                                          
                             </form>
                         </div> 
