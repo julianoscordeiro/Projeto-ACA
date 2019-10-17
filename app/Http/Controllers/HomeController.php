@@ -219,8 +219,12 @@ class HomeController extends Controller
         }
 
           //Importar aluno
+
           public function importarAluno(Request $request)       
         {  
+          if($request->file('file') == null){
+            return redirect()->route('alunos');
+          } else{
             $student = (new FastExcel)->import($request->file('file'), function ($line) {
                 return Student::create([
                     'nome' => $line['Nome'],
@@ -229,6 +233,7 @@ class HomeController extends Controller
                 ]);
             });
             return redirect()->route('alunos');
+        }
         }
 
         //Editar aluno

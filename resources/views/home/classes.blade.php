@@ -6,16 +6,15 @@
 
 <div class="container ">
     <div class="row justify-content-center   ">
-        <div class="col-md-7 ">
+        <div class="col-md-7">
             <h1 class="display-1 ">Turmas</h1>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-4">
             <!-- Criar Aluno-->
-            <a href="/alunos" class="btn btn-success questoesMargin1">Alunos</a>
-        </div>
-        <div class="col-md-2">
+            <a href="/alunos" class="btn btn-success questoesMargin3">Alunos</a>
+        
                 <!-- Criar Turma -->
-                <a href="/turmas/criar" class="btn btn-primary questoesMargin1">Criar Turma</a>
+                <a href="/turmas/criar" class="btn btn-primary questoesMargin3">Criar Turma</a>
         </div>
     </div>
 

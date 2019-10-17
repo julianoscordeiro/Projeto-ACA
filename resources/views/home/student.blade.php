@@ -5,20 +5,19 @@
 
 <div class="container ">
     <div class="row justify-content-center   ">
-        <div class="col-md-7 ">
-            <h1 class="display-1 ">Alunos:</h1>
+        <div class="col-md-6 ">
+            <h1 class="display-1 ">Alunos</h1>
         </div>
         <div class="col-md-5"> 
                 <div class="card-body">
                         <form action="{{ route('importarAluno') }}" method="POST" name="importform" enctype="multipart/form-data">
                             @csrf
-                            <div class="btn btn-primary btn-sm">
+                            <div class="btn btn-primary btn-sm questoesMargin2" questoesMargin2>
                                     Escolher Arquivo
-                                    <input type="file" class="uploadz" name="file" class="btn btn-primary">
-                                    
+                                    <input type="file" class="uploadz" name="file" class="btn btn-primary">                                    
                             </div>
-                                <a class="btn btn-info btn-sm" href="{{ route ('exportarAluno') }}">Exportar</a>
-                                <button type="submit" class="btn btn-success btn-sm">Importar</button>
+                                <a class="btn btn-info btn-sm questoesMargin2" href="{{ route ('exportarAluno') }}">Exportar</a>
+                                <button type="submit" class="btn btn-success btn-sm questoesMargin2">Importar</button>
                         </form>
                 </div>       
         </div>
