@@ -22,7 +22,6 @@ class Question extends Model
         'user_id'
     ];
     
-
     /*Relaciona o usuario a questão */
     public function user(){
         return $this->hasOne(User::class, 'id');

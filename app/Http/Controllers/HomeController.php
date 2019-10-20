@@ -7,6 +7,8 @@ use App\Question;
 use Auth;
 use DB;
 use Illuminate\Support\Facades\Input;
+use Rap2hpoutre\FastExcel\FastExcel;
+use App\Student;
 
 class HomeController extends Controller
 {
@@ -38,18 +40,18 @@ class HomeController extends Controller
         ]);
     }
 
+    //Questões
     public function questoes()
     {
         //Retorna a lista de questões;
         $userid = Auth::id();
-        $question = DB::table('questions')->where('user_id', '=', "$userid")->get();
-        $pag = Question::where('user_id','=', Auth::id())->orderBy('id')->paginate(5);
+        $question = DB::table('questions')->where('user_id', '=', "$userid")->paginate(5);
 
 
         $title = 'Questões | ';
         return view('home.questions', [
             'title' => $title
-        ], compact('question','pag'));
+        ], compact('question','question'));
     }
     public function criarquestao()
     {
@@ -95,7 +97,7 @@ class HomeController extends Controller
     {
         //Retorna a lista de questões;
         $userid = Auth::id();
-        $test = DB::table('tests')->where('user_id', '=', "$userid")->get();
+        $test = DB::table('tests')->where('user_id', '=', "$userid")->paginate(10);
 
         $title = 'Provas | ';
         return view('home.tests', [
@@ -113,4 +115,137 @@ class HomeController extends Controller
             'title' => $title
         ], compact('question'));
     }
+
+    //Turmas
+    public function turmas()
+    {
+        //Retorna a lista de questões;
+        $userid = Auth::id();
+        $class = DB::table('class')->where('user_id', '=', "$userid")->get();
+        $title = 'Turmas | ';
+        return view('home.classes', [
+            'title' => $title
+        ],compact('class'));
+    }
+
+    //Criar Turma
+    public function criarturma()
+    {
+        //Retorna a lista de turma;
+        $userid = Auth::id();
+        $class = DB::table('class')->where('user_id', '=', "$userid")->get();
+        $student = DB::table('student')->where('user_id', '=', "$userid")->get();
+        $title = 'Criar Turma | ';
+        return view('home.createclass', [
+            'title' => $title
+        ],compact('class','student'));
+    }
+    //Editar turma
+    public function editarTurma(Request $request)
+    {
+        $id = $request->route('id');
+        //Retorna a lista de turma;
+        $class = DB::table('class')->where('id', '=', "$id")->get();
+        $userid = Auth::id();
+        $student = DB::table('student')->where('user_id', '=', "$userid")->get();
+
+        $title = 'Editar Turma | ';
+        return view('home.updateClass', [
+            'title' => $title
+        ], compact('id', 'class','student'));
+    }
+
+    public function provasTurmas(Request $request)
+    {
+        $id = $request->route('id');
+        $userid = Auth::id();
+        $classTests = DB::table('test_class')->join('class', 'class.id', '=', 'test_class.classes_id')->join('tests', 'tests.id', '=', 'test_class.test_id')->where('classes_id', '=', "$id")->get();
+        $classTest = DB::table('test_class')->where('classes_id', '=', "$id")->get();
+        
+
+        $title = 'Provas da turma | ';
+        return view('home.classestests', [
+            'title' => $title
+        ],compact('id','classTests','classTest'));
+    }
+    public function addProvaTurma(Request $request)
+    {
+        $id = $request->route('id');
+        //Retorna a lista de turma;
+        //$test = DB::table('test')->where('id', '=', "$id")->get();
+        $userid = Auth::id();
+        $test = DB::table('tests')->where('user_id', '=', "$userid")->get();
+
+        
+
+        $title = 'Adicionar prova | ';
+        return view('home.addtestclass', [
+            'title' => $title
+        ],compact('test','id'));
+    }
+
+    //Alunos
+    
+    public function alunos()
+    {
+        //Retorna a lista de alunos;
+        $userid = Auth::id();
+        $student = DB::table('student')->where('user_id', '=', "$userid")->get();
+        $title = 'Alunos | ';
+        return view('home.student', [
+            'title' => $title
+        ],compact('student'));
+    }
+
+        //Criar Aluno
+        public function criaraluno()
+        {
+            //Retorna a lista de alunos;
+            $userid = Auth::id();
+            $student = DB::table('student')->where('user_id', '=', "$userid")->get();
+            $title = 'Criar Aluno | ';
+            return view('home.createstudent', [
+                'title' => $title
+            ],compact('student'));
+        }
+
+        //Exportar aluno
+        public function exportarAluno()
+        {
+            $userid = Auth::id();
+            $student = DB::table('student')->where('user_id', '=', "$userid")->get();
+            return (new FastExcel($student))->download('alunos.xlsx');
+            
+        }
+
+          //Importar aluno
+
+          public function importarAluno(Request $request)       
+        {  
+          if($request->file('file') == null){
+            return redirect()->route('alunos');
+          } else{
+            $student = (new FastExcel)->import($request->file('file'), function ($line) {
+                return Student::create([
+                    'nome' => $line['Nome'],
+                    'email' => $line['Email'],
+                    'user_id' => Auth::id()
+                ]);
+            });
+            return redirect()->route('alunos');
+        }
+        }
+
+        //Editar aluno
+        public function editarAluno(Request $request)
+        {
+            $id = $request->route('id');
+
+            //Retorna a lista de alunos;
+            $class = DB::table('student')->where('id', '=', "$id")->get();
+            $title = 'Editar Aluno | ';
+            return view('home.updateStudent', [
+                'title' => $title
+            ], compact('id', 'student'));
+        }
 }

@@ -67,7 +67,6 @@ class QuestionController  extends Controller
         $share = Question::find($id);
         $share->assunto = $request->get('assunto') ?? $share->assunto;
         $share->enunciado = $request->get('enunciado') ?? $share->enunciado;
-        $share->assunto = $request->get('enunciado') ?? $share->enunciado;
         $share->alternativaA = $request->get('alternativaA') ?? $share->alternativaA;
         $share->alternativaB = $request->get('alternativaB') ?? $share->alternativaB;
         $share->alternativaC = $request->get('alternativaC') ?? $share->alternativaC;
@@ -98,5 +97,12 @@ class QuestionController  extends Controller
         //Deleta questão
         $deleteQuestion = DB::table('questions')->where('id', '=', "$id")->delete();
         return redirect()->route('questoes');
+    }
+
+    public function search(Request $request){
+        $search = $request->get('search');
+        $userid = Auth::id(); 
+        $question = DB::table('questions')->where('assunto','like', '%'.$search.'%')->paginate(100);
+        return view('home.questions',['questions' => $question],compact('question'));
     }
 }

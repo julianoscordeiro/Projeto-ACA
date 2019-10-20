@@ -39,6 +39,11 @@ class User extends Authenticatable
 
     /*Retorna todas as questões do usuario*/
     public function questoes(){
-        return $this->hasMany(Questao::class, 'user_id');
+        return $this->hasMany(Question::class, 'user_id');
+    }
+
+    /*Retorna todas as turmas do usuario*/
+    public function turmas(){
+        return $this->hasMany(Classes::class, 'user_id');
     }
 }

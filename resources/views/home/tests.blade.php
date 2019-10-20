@@ -12,11 +12,13 @@
                 <!-- Busca -->
                 
                 <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-                        <input class="form-control barrapesquisa " type="text" placeholder="Pesquisar" aria-label="Search">
+                        <form action="/searchTest" method="get">
+                            <input class="form-control barrapesquisa" type="search"  placeholder="Buscar" name="search">
+                        </form>
                 </div>
         </div>
         <div class="col-md-2">
-                <!-- Busca -->
+                <!-- Criar prova-->
                 <a href="/provas/criar" class="btn btn-primary questoesMargin1">Criar prova</a>
         </div>
     </div>
@@ -35,14 +37,7 @@
                         </div>
                     @endif
 
-                                <div class=" row justify-content-center ">
-                                    <div class="titleListQuestion col-md-4">
-                                        <span>Nome</span>
-                                    </div>
-                                    <div class="titleListQuestion col-md-8">
-                                            <span>Assunto</span>
-                                    </div>
-                                </div>
+                                
 
                                  <!-- Confirmação -->
                         <script>
@@ -90,49 +85,52 @@
                                      @foreach ($test as $q)
                                     <div class="listquestions row justify-content-center ">
                                         <div class="col-md-4">
-                                            <span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
+                                            <b>Nome:</b><span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
                                         </div>
                                         <div class="col-md-6">
-                                                <span class="textQuestionList" >{{$q->assunto ?? ''}}</span>
+                                               <b>Assunto: </b> <span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
                                         </div>
                                         
-                                        <div class=" textQuestionList1 col-md-1">
+                                        <div class=" textQuestionList1">
                                         
-                                                <button class="button" onclick="confirmDelete({{ $q->id }})" class="">Excluir</button>
+                                                <button class="btn btn-danger btn-sm" onclick="confirmDelete({{ $q->id }})" class="">Excluir</button>
 
                                                 
                                         </div>
-                                        <div class="textQuestionList1 col-md-1">
-                                                <button class="button" type="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
+                                        <div class="textQuestionList1">
+                                                <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#exampleModal{{$q->id}}">Visualizar</button>
                                         </div>
                                     </div>
+
+                                    <!-- Modal Visualizar -->
+                                    <div class="modal fade" id="exampleModal{{$q->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h2 class="modal-title" id="exampleModalLabel">Visualizar Prova</h2>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <b>Nome:</b> {{$q->nome ?? ''}}<br>
+                                                <b>Unidade Curricular:</b> {{$q->unidadeCurricular ?? ''}}<br>
+                                                <b>Assunto:</b> {{$q->assunto ?? ''}}<br>
+    
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    <!-- Fim modal -->
+
                                     @endforeach
 
+                                    {{$test->links()}}
 
-                                     <!-- Modal Visualizar -->
-                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-lg" role="document">
-                                                <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h2 class="modal-title" id="exampleModalLabel">Visualizar Questão</h2>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Nome:<br>
-                                                    <p>{{$q->nome ?? ''}}</p>
-                                                    Enunciado: <br>
-                                                    <p>{{$q->assunto ?? ''}}</p>
-        
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        <!-- Fim modal -->
+                                     
 
                 <div>
                     

@@ -6,7 +6,7 @@
 <div class="container ">
     <div class="row justify-content-center   ">
         <div class="col-md-9 ">
-            <h1 class="display-1 ">Questão:</h1>
+            <h1 class="display-1 ">Criar Questão</h1>
         </div>
         <div class="col-md-2">
                 <!-- Busca -->
@@ -67,7 +67,7 @@
                                     
                                         <button type="submit" class="btn btn-success">Criar</button>
                                         
-                                        <button type="clear" class="btn btn-danger">Cancelar</button>                                  
+                                        <a href="/questoes" class="btn btn-danger">Cancelar</a>                                  
                                         
                                 
 

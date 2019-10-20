@@ -13,7 +13,10 @@
                 <!-- Busca -->
                 
                 <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-                        <input class="form-control barrapesquisa " type="text" placeholder="Pesquisar" aria-label="Search">
+                        <form action="/searchQuestion" method="get">
+                            <input class="form-control barrapesquisa" type="search"  placeholder="Buscar" name="search">
+                        
+                        </form>
                 </div>
         </div>
         <div class="col-md-2">
@@ -37,14 +40,14 @@
                     @endif
 
                         
-                            <div class=" row justify-content-center ">
+                             <!--<div class=" row justify-content-center ">
                                     <div class="titleListQuestion col-md-4">
                                         <span>Assunto</span>
                                     </div>
                                     <div class="titleListQuestion col-md-8">
                                             <span>Enunciado</span>
                                     </div>
-                            </div>
+                            </div>-->
                                      <!-- Confirmação -->
                         <script>
                                 function confirmDelete(id) {
@@ -87,33 +90,38 @@
                             </script>
 
                                     <!-- loop para mostrar questões  do usuario -->
-                                    
+                                    <?php $idques = 0;  ?>
                                     @foreach ($question as $q)
-                                    <div class="container">
+                                    
+                                    <div class="">
                                     <div class="listquestions row justify-content-center">
-                                        <div class="col-md-2">
-                                            <span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
+                                        <div class="col-md-3">
+                                          <b>Assunto:</b><span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
                                         </div>
-                                        <div class="col-md-7">
-                                                <span class="textQuestionList" >{{$q->enunciado ?? ''}}</span>
+                                        <div class="col-md-6">
+                                            <b>Enunciado:</b><span class="textQuestionList" >{{$q->enunciado ?? ''}}</span>
                                         </div>
                                         
-                                        <div class=" textQuestionList1 col-md-1">
-                                        <button class="button" onclick="confirmDelete({{ $q->id }})">Excluir</button>
+                                        <div class=" textQuestionList1">
+                                        <button class="btn btn-danger btn-sm" onclick="confirmDelete({{ $q->id }})">Excluir</button>
                                         </div>
-                                        <div class=" textQuestionList1 col-md-1">
-                                        <a class="button" href="/questoes/editar/{{ $q->id }}">Editar</a>
+                                        <div class=" textQuestionList1 ">
+                                        <a class="btn btn-primary btn-sm" href="/questoes/editar/{{ $q->id }}">Editar</a>
                                         </div>
-                                        <div class="textQuestionList1 col-md-1">
-                                                <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">Visualizar</button>
+                                        <div class="textQuestionList1 ">
+                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal{{$q->id}}">Visualizar</button>
+                                        <?php $idques++ ?>
                                         </div>
                                     </div>
-                                </div>
-                                
-                                    @endforeach
+                                    </div>
 
+                                    
+                                
+                                    
+                                    
+                                    
                                     <!-- Modal Visualizar -->
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="exampleModal{{$q->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                         <div class="modal-header">
@@ -123,19 +131,19 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            Assunto:<br>
-                                            <p>{{$q->assunto ?? ''}}</p>
-                                            Enunciado: <br>
-                                            <p>{{$q->enunciado ?? ''}}</p>
-                                            Alternativas: <br>
+                                            <b>Assunto:</b>
+                                            {{$q->assunto ?? ''}}<br>
+                                            <b>Enunciado: </b>
+                                            {{$q->enunciado ?? ''}}<br>
+                                            <b>Alternativas: </b><br>
                                             
-                                            <p>A = {{$q->alternativaA ?? ''}}</p>
-                                            <p>B = {{$q->alternativaB ?? ''}}</p>
-                                            <p>C = {{$q->alternativaC ?? ''}}</p>
-                                            <p>D = {{$q->alternativaD ?? ''}}</p>
-                                            <p>E = {{$q->alternativaE ?? ''}}</p>
+                                            <b>A = </b>  {{$q->alternativaA ?? ''}}<br>
+                                            <b>B =</b> {{$q->alternativaB ?? ''}}<br>
+                                            <b>C =</b> {{$q->alternativaC ?? ''}}<br>
+                                            <b>D =</b> {{$q->alternativaD ?? ''}}<br>
+                                            <b>E =</b> {{$q->alternativaE ?? ''}}<br>
 
-                                            Alternativa Correta: {{$q->resposta ?? ''}};
+                                            <b>Alternativa Correta:</b> {{$q->resposta ?? ''}}
                                         
                                         </div>
 
@@ -146,9 +154,10 @@
                                     </div>
                                     </div>
                                     
+                                    @endforeach
+                                    
 
-                                    
-                                    
+                                    {{$question->links()}}
 
                 <div>
                     

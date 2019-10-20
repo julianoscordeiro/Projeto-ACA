@@ -6,7 +6,7 @@
 <div class="container ">
     <div class="row justify-content-center   ">
         <div class="col-md-9 ">
-            <h1 class="display-1 ">Criar prova:</h1>
+            <h1 class="display-1 ">Criar Prova</h1>
         </div>
         <div class="col-md-2">
                 
@@ -32,7 +32,7 @@
                                 <form method="POST" action="{{ route('criadaprova') }}">
                                 @csrf                                        
                                         Nome:
-                                        <input name="nome" type="text" class="formulariosquestoes" placeholder="Enunciado">
+                                        <input name="nome" type="text" class="formulariosquestoes" placeholder="Nome">
                                         Unidade Curricular:
                                         <input name="unidadeCurricular" type="text" class="formulariosquestoes" placeholder="Unidade Curricular">
                                         Assunto:
@@ -43,13 +43,13 @@
                                         @foreach ($question as $q)
                                         <div class="listquestions row justify-content-center ">
                                             <div class="col-md-4">
-                                                <span class="textQuestionList1" >{{$q->assunto}}</span>
+                                                <b>Assunto:</b><span class="textQuestionList1" >{{$q->assunto}}</span>
                                             </div>
                                             <div class="col-md-6">
-                                                    <span class="textQuestionList" >{{$q->enunciado}}</span>
+                                                 <b>Enunciado:</b><span class="textQuestionList" >{{$q->enunciado}}</span>
                                             </div>
                                             <div class=" textQuestionList1 col-md-2">
-                                                <input type="checkbox" name="question_selected[]" value="{{$q->id}}">
+                                                <input class="checkbox" type="checkbox" name="question_selected[]" value="{{$q->id}}">
                                             </div>
                                         </div>
                                         @endforeach
@@ -58,7 +58,7 @@
                                     
                                         <button type="submit" class="btn btn-success">Criar</button>
                                         
-                                        <button type="clear" class="btn btn-danger">Cancelar</button>                                      
+                                        <a href="/provas" class="btn btn-danger">Cancelar</a>                                        
                                        
                                 
 
