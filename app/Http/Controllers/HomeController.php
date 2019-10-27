@@ -248,4 +248,16 @@ class HomeController extends Controller
                 'title' => $title
             ], compact('id', 'student'));
         }
+
+          //Correções
+    public function correcao()
+    {
+        //Retorna a lista de questões;
+        $userid = Auth::id();
+        $class = DB::table('class')->where('user_id', '=', "$userid")->get();
+        $title = 'Correção | ';
+        return view('home.correction', [
+            'title' => $title
+        ],compact('class'));
+    }
 }

@@ -67,5 +67,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/alunos', 'HomeController@alunos')->name('alunos');
     //Importar Exportar
     Route::post('/import', 'HomeController@importarAluno')->name('importarAluno');
-    Route::get('/export', 'HomeController@exportarAluno')->name('exportarAluno');;
+    Route::get('/export', 'HomeController@exportarAluno')->name('exportarAluno');
+    //Correções
+    Route::get('/correcao', 'HomeController@correcao')->name('correcao');
 });

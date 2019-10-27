@@ -37,12 +37,8 @@
                     @endif
                 
                 <!-- Formulario -->
-                        <div>
-
-                                
-                                
-                                        
-                                <b>Escolha a prova:</b>
+                        <div>         
+                            <b>Escolha a prova:</b>
                                 <form method="POST" action="{{ route('adicionadoprovaturma', $id) }}" enctype="multipart/form-data">
                                 @csrf
                                     <!-- Loop que mostra os alunos -->

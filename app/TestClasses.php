@@ -14,7 +14,7 @@ class TestClasses extends Pivot
         'user_id',
     ];
 
-    /*Retorna todas os estudantes*/
+    /*Retorna todas os provas*/
     public function provas(){
         return $this->hasMany(Test::class, 'testId');
     }

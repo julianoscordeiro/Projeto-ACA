@@ -9,7 +9,7 @@
             <h1 class="display-1 ">Provas da turma</h1>
         </div>
             <div class="col-md-2">
-                <!-- Adicionar aluno -->               
+                <!-- Adicionar provas -->               
                 <a href="/turmas/provas/add/{{$id}}" class="btn btn-primary questoesMargin1">Adicionar Prova</a>
             </div>
         </div>
@@ -53,13 +53,10 @@
                             </script>
                 
                 <!-- Formulario -->
-                        <div>
-
-                                    
-                                <div>
-                                    
-                                        <!-- Loop que mostra as provas -->
-                                        @foreach ($classTests as $q)
+                        <div>      
+                            <div>                                   
+                                <!-- Loop que mostra as provas -->
+                                    @foreach ($classTests as $q)
                                         <div class="listquestions row justify-content-center ">
                                             <div class="col-md-4">
                                                 <b>Nome: </b><span class="textQuestionList1" >{{$q->nome}}</span>
@@ -74,11 +71,9 @@
                                             <a href="/turmas/provas/imprimir/{{$q->id}}" class="btn btn-success btn-sm">Imprimir</a>
                                             </div>
                                         </div>  
-                                        @endforeach        
-
-                                    </div>
+                                @endforeach        
+                            </div>
                         </div>    
-
                     </div>       
                 </div>
             </div>
