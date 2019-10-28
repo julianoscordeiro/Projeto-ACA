@@ -70,14 +70,28 @@
                                     <?php $count = 0 ?>
                                     <!-- Loop que mostra os alunos -->
                                         @foreach ($testQuestion as $q)
-                                         <?php
                                          
-                                         $count++
-                                         
-                                         ?>
+                                        <form method="POST" action="{{ route('corrigido', $q->test_id) }}" enctype="multipart/form-data">
+                                            @csrf
+                                                    
+                                                    <div class="row justify-content-center ">
+                                                        <div class="col-md-10">
+                                                                Enunciado:
+                                                                <b class="formulariosquestoes">{{$q->enunciado}}  </b>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                                Peso:<input name="peso" type="number" class="formulariosquestoes">
+                                                        </div>
+                                                        
+                                                    </div>
+
                                         @endforeach
 
-                                        <?php echo $count ?>
+                                            <button type="submit" class="btn btn-success">Corrigir</button>
+                                                    
+                                                    <a href="/correcao" class="btn btn-danger">Cancelar</a>             
+            
+                                            </form>
 
                         <div>
                     </div>           

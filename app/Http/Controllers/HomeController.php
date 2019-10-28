@@ -273,7 +273,7 @@ class HomeController extends Controller
         $userid = Auth::id();
 
         //Retornar as questões da prova
-        $testQuestion = DB::table('test_question')->where('test_id', '=', "$id")->get();
+        $testQuestion = DB::table('test_question')->join('questions', 'questions.id', '=', 'test_question.question_id')->where('test_id', '=', "$id")->get();
         
         //Lista de provas de todas as turmas do usuario
         $testList = DB::table('test_class')->join('class', 'class.id', '=', 'test_class.classes_id')->join('tests', 'tests.id', '=', 'test_class.test_id')->get();

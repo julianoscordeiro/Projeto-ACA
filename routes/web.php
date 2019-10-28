@@ -71,4 +71,5 @@ Route::group(['middleware' => 'auth'], function () {
     //Correções
     Route::get('/correcao', 'HomeController@correcao')->name('correcao');
     Route::get('/corrigir/{id}', 'HomeController@corrigir')->name('corrigir');
+    Route::post('/corrigido/{id}', 'TestController@corrigirTest')->name('corrigido');
 });
