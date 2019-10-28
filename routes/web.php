@@ -70,4 +70,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/export', 'HomeController@exportarAluno')->name('exportarAluno');
     //Correções
     Route::get('/correcao', 'HomeController@correcao')->name('correcao');
+    Route::get('/corrigir/{id}', 'HomeController@corrigir')->name('corrigir');
 });

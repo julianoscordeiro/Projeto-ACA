@@ -7,7 +7,7 @@
 <div class="container ">
     <div class="row justify-content-center   ">
         <div class="col-md-7">
-            <h1 class="display-1 ">Correção</h1>
+            <h1 class="display-1 ">Corrigir</h1>
         </div>
     </div>
 
@@ -67,28 +67,17 @@
                             </script>
 
                                 
-                             <!-- loop para mostrar questões  do usuario -->
-                             @foreach ($testList as $q)
-                             
-                             <div class="">
-                             <div class="listquestions row justify-content-center">
-                                 <div class="col-md-3">
-                                   <b>Nome:</b><span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
-                                 </div>
-                                 <div class="col-md-6">
-                                     <b>Assunto:</b><span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
-                                 </div>
-                                 
-                                 <div class=" textQuestionList1">
-                                 <button class="btn btn-danger btn-sm" onclick="confirmDelete({{ $q->id }})">Excluir</button>
-                                 </div>
-                                 <div class=" textQuestionList1 ">
-                                 <a class="btn btn-primary btn-sm" href="/corrigir/{{ $q->id }}">Corrigir</a>
-                                 </div>
-                             </div>
-                             </div>
-                             
-                             @endforeach
+                                    <?php $count = 0 ?>
+                                    <!-- Loop que mostra os alunos -->
+                                        @foreach ($testQuestion as $q)
+                                         <?php
+                                         
+                                         $count++
+                                         
+                                         ?>
+                                        @endforeach
+
+                                        <?php echo $count ?>
 
                         <div>
                     </div>           

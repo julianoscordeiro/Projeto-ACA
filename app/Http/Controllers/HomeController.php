@@ -254,10 +254,34 @@ class HomeController extends Controller
     {
         //Retorna a lista de questões;
         $userid = Auth::id();
+        //$id = $request->route('id');
         $class = DB::table('class')->where('user_id', '=', "$userid")->get();
+        
+        //Lista de provas de todas as turmas do usuario
+        $testList = DB::table('test_class')->join('class', 'class.id', '=', 'test_class.classes_id')->join('tests', 'tests.id', '=', 'test_class.test_id')->get();
         $title = 'Correção | ';
         return view('home.correction', [
             'title' => $title
-        ],compact('class'));
+        ],compact('class','testList'));
+    }
+
+    //Corrigir prova
+    public function corrigir(Request $request)
+    {
+        $id = $request->route('id');
+        //Retorna a lista de questões;
+        $userid = Auth::id();
+
+        //Retornar as questões da prova
+        $testQuestion = DB::table('test_question')->where('test_id', '=', "$id")->get();
+        
+        //Lista de provas de todas as turmas do usuario
+        $testList = DB::table('test_class')->join('class', 'class.id', '=', 'test_class.classes_id')->join('tests', 'tests.id', '=', 'test_class.test_id')->get();
+        $title = 'Corrigir | ';
+        return view('home.correctiontest', [
+            'title' => $title
+        ],compact('testQuestion'));
+
+
     }
 }

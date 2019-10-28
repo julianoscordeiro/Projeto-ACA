@@ -65,7 +65,7 @@
                                                 <b>Assunto: </b><span class="textQuestionList1" >{{$q->assunto}}</span>
                                             </div>
                                             <div class=" textQuestionList1 ">
-                                                <a href="/turmas/provas/imprimir/{{$q->id}}" class="btn btn-primary btn-sm">Corrigir</a>
+                                                <a href="/corrigir/{{$q->id}}" class="btn btn-primary btn-sm">Corrigir</a>
                                              </div>
                                             <div class=" textQuestionList1 ">
                                             <a href="/turmas/provas/imprimir/{{$q->id}}" class="btn btn-success btn-sm">Imprimir</a>
