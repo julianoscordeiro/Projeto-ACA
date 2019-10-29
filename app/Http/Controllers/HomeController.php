@@ -253,8 +253,8 @@ class HomeController extends Controller
     public function correcao()
     {
         //Retorna a lista de questões;
-        $userid = Auth::id();
         //$id = $request->route('id');
+        $userid = Auth::id();
         $class = DB::table('class')->where('user_id', '=', "$userid")->get();
         
         //Lista de provas de todas as turmas do usuario
@@ -262,7 +262,7 @@ class HomeController extends Controller
         $title = 'Correção | ';
         return view('home.correction', [
             'title' => $title
-        ],compact('class','testList'));
+        ],compact('class','testList','testClass'));
     }
 
     //Corrigir prova

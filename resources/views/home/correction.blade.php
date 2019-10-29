@@ -6,7 +6,7 @@
 
 <div class="container ">
     <div class="row justify-content-center   ">
-        <div class="col-md-7">
+        <div class="col-md-12">
             <h1 class="display-1 ">Correção</h1>
         </div>
     </div>
@@ -72,13 +72,21 @@
                              
                              <div class="">
                              <div class="listquestions row justify-content-center">
-                                 <div class="col-md-3">
+                                 <div class="col-md-2">
                                    <b>Nome:</b><span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
                                  </div>
-                                 <div class="col-md-6">
+                                 <div class="col-md-2">
                                      <b>Assunto:</b><span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
-                                 </div>
-                                 
+                                 </div>         
+                                 <div class="col-md-2">
+                                     <b>Instituição:</b><span class="textQuestionList1" >{{$q->instituicao ?? ''}}</span>
+                                 </div> 
+                                 <div class="col-md-2">
+                                     <b>Curso:</b><span class="textQuestionList1" >{{$q->curso ?? ''}}</span>
+                                 </div> 
+                                 <div class="col-md-2">
+                                     <b>Semestre:</b><span class="textQuestionList1" >{{$q->semestre ?? ''}}</span>
+                                 </div> 
                                  <div class=" textQuestionList1">
                                  <button class="btn btn-danger btn-sm" onclick="confirmDelete({{ $q->id }})">Excluir</button>
                                  </div>
