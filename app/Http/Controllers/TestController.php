@@ -14,6 +14,8 @@ use App\TestWeight;
 
 use App\TestQuestion;
 
+use App\Grade;
+
 class TestController  extends Controller
 {
 
@@ -73,27 +75,88 @@ class TestController  extends Controller
         return view('home.tests',['tests' => $test],compact('test'));
     }
 
+    //adicionar peso as provas
     public function corrigirTest(Request $request){
         $id = $request->route('id');
-        $questionId = DB::table('test_question')->where('test_id', '=', "$id")->get();
+        $questionId = DB::table('test_question')->where('test_id', '=', "$id")->first();
+        $question_id = DB::table('test_question')->where('test_id', '=', "$id")->get();
+
+        $count = 0;
+        $pesos = $request->input('peso_selected');
+       
+    
+        foreach ($question_id as $p) {
+            
+            $correcao = TestWeight::create([            
+                'test_id' => $id,
+                'question_id'=> $p->question_id,
+                'peso'=> $pesos[$count],
+                'user_id' => Auth::id()
+
+                ]);
+
+                $count++;
+                
+                
+    
+            }
+        
+
+        
+
+        return redirect()->route('corrigirProva', $id);
+    }
+
+
+    public function corrigirProva(Request $request){
+        $id = $request->route('id');
+
+        
+        $questionId = DB::table('test_question')->join('questions', 'questions.id', '=', 'test_question.question_id')->where('test_id', '=', "$id")->get();
+        $testQuestion = DB::table('test_question')->where('test_id', '=', "$id")->first();
+        $soma = 0;
+        $count = 0;
+        $contagem = 0;
+
+        
+        $alter = $request->input('alternativa_selected');
 
         foreach ($questionId as $q) {
             
-        
+            $contagem++;
+            $pesoTab = DB::table('test_weight')->where('question_id', '=', "$q->question_id")->first();
+            $valorPeso = $pesoTab->peso;
+            if($q->resposta == $alter[$count]){
+                $soma = $soma + $valorPeso;
+            }
 
+            
+            $count++;
+           
+            
+        }
 
-        $correcao = TestWeight::create([            
-            'test_id' => $id,
-            'question_id'=> $q->question_id,
-            'peso'=> $request->peso,
+        $soma;
+
+        $nota = Grade::create([      
+            'aluno_id'=> $request->aluno,
+            'nota'=> $soma,
             'user_id' => Auth::id()
     
             ]);
 
-        }
+        $nota->test_id = $id;
+        
+        $nota->save();
 
-        return redirect()->route('correcao');
+        
+
+
+        return redirect()->route('corrigirProva',$id);
     }
+
+
+    
 
 
 

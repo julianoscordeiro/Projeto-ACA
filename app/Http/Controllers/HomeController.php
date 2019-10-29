@@ -262,7 +262,7 @@ class HomeController extends Controller
         $title = 'Correção | ';
         return view('home.correction', [
             'title' => $title
-        ],compact('class','testList','testClass'));
+        ],compact('class','testList'));
     }
 
     //Corrigir prova
@@ -281,6 +281,25 @@ class HomeController extends Controller
         return view('home.correctiontest', [
             'title' => $title
         ],compact('testQuestion'));
+
+
+    }
+
+    public function corrigirProva(Request $request)
+    {
+        $id = $request->route('id');
+        //Retorna a lista de questões;
+        $userid = Auth::id();
+
+        //Retornar as questões da prova
+        $testQuestion = DB::table('test_question')->join('questions', 'questions.id', '=', 'test_question.question_id')->where('test_id', '=', "$id")->get();
+        $student = DB::table('student')->get();
+        
+        
+        $title = 'Corrigir | ';
+        return view('home.correctiotestnew', [
+            'title' => $title
+        ],compact('testQuestion','student'));
 
 
     }
