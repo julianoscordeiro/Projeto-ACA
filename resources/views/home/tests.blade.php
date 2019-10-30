@@ -115,8 +115,16 @@
                                             <div class="modal-body">
                                                 <b>Nome:</b> {{$q->nome ?? ''}}<br>
                                                 <b>Unidade Curricular:</b> {{$q->unidadeCurricular ?? ''}}<br>
-                                                <b>Assunto:</b> {{$q->assunto ?? ''}}<br>
-    
+                                                <b>Assunto:</b> {{$q->assunto ?? ''}}<br>                                                 
+                                                @php($i=1)
+                                                @foreach ($questionTests as $p)
+                                                @if ($q->id == $p->test_id) 
+                                                <b>Questão {{$i}}:</b> {{$p->enunciado ?? ''}}<br> 
+                                                @php ($i++)                           
+                                                @endif
+                                                @endforeach 
+                                                
+                                                              
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
