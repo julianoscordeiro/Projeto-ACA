@@ -69,21 +69,48 @@
                                 
                                     <?php $count = 0 ?>
                                     <!-- Loop que mostra os alunos -->
-                                        @foreach ($testQuestion as $q)
-                                         
-                                        <form method="POST" action="{{ route('corrigido', $q->test_id) }}" enctype="multipart/form-data">
+                                        
+                                        @foreach ($testQuestion as $y)
+
+                                        @endforeach
+
+                                        
+                                         <?php $count++ ?>
+                                        <form method="POST" action="{{ route('corrigidoProva', $y->test_id) }}" enctype="multipart/form-data">
                                             @csrf
-                                                    <?php $count++ ?>
-                                                    <div class="row justify-content-center ">
-                                                        <div class="col-md-10">
-                                                                Enunciado:
-                                                                <b class="formulariosquestoes">{{$q->enunciado}}  </b>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                                Peso:<input name="peso_selected[]" type="number" class="formulariosquestoes">
-                                                        </div>
-                                                        
+                                         
+                                            <div class="row justify-content-center ">
+                                                    <div class="form-group col-md-12">
+                                                        Aluno
+                                                        <select name="aluno" class="formulariosquestoes">
+                                                           @foreach ($student as $s)
+                                                            <option value="{{$s->id}}">{{$s->nome}}</option>
+                                                           @endforeach
+                                                        </select>
+                                                      </div>
+                                                </div>
+                                        @foreach ($testQuestion as $q)
+                                                    <div class="col-md-12">
+                                                            <b>Questão <?php echo$count ?>:</b> {{$q->enunciado}}
                                                     </div>
+                                                    <br>
+                                                    <center>
+
+                                                        <div class="row justify-content-center ">
+                                                            <div class="form-group col-md-4">
+                                                                <b>Alternativa</b>
+                                                                        <select name="alternativa_selected[]" class="formulariosquestoes">
+                                                                            <option>A</option>
+                                                                            <option>B</option>
+                                                                            <option>C</option>
+                                                                            <option>D</option>
+                                                                            <option>E</option>
+                                                                        </select>
+                                                                      </div>
+                                                        </div>
+                                                </center>
+                                                <br>
+                                           
 
                                         @endforeach
 
