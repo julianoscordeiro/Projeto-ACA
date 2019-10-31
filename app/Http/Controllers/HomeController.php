@@ -294,6 +294,7 @@ class HomeController extends Controller
         //Retornar as questões da prova
         $testQuestion = DB::table('test_question')->join('questions', 'questions.id', '=', 'test_question.question_id')->where('test_id', '=', "$id")->get();
         $student = DB::table('student')->get();
+        $nota = DB::table('student')->get();
         
         
         $title = 'Corrigir | ';
@@ -302,5 +303,40 @@ class HomeController extends Controller
         ],compact('testQuestion','student'));
 
 
+    }
+
+    //Relatorios
+    public function relatorios()
+    {
+        
+        $userid = Auth::id();
+        $class = DB::table('class')->where('user_id', '=', "$userid")->get();
+        
+        //Lista de provas de todas as turmas do usuario
+        $testList = DB::table('test_class')->join('class', 'class.id', '=', 'test_class.classes_id')->join('tests', 'tests.id', '=', 'test_class.test_id')->get();
+        $title = 'Correção | ';
+        return view('home.reports', [
+            'title' => $title
+        ],compact('class','testList'));
+    }
+
+    //Relatorio de notas
+    public function relatorioDeNotas(Request $request)
+    {
+        $id = $request->route('id');
+        $userid = Auth::id();
+        
+        //Seleciona o aluno e a prova
+        $grades = DB::table('grade')
+        ->join('student', 'student.id', '=', 'grade.aluno_id')
+        ->join('tests', 'tests.id', '=', 'grade.test_id')
+        ->selectRaw('tests.nome as nomeProva, student.nome as nomeAluno, student.email as email, grade.nota as nota')
+        ->where('test_id', '=', "$id")
+        ->get();
+
+        $title = 'Correção | ';
+        return view('home.reportsgrades', [
+            'title' => $title
+        ],compact('grades'));
     }
 }

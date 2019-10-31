@@ -7,7 +7,7 @@
 <div class="container ">
     <div class="row justify-content-center   ">
         <div class="col-md-12">
-            <h1 class="display-1 ">Correção</h1>
+            <h1 class="display-1 ">Relatório de notas</h1>
         </div>
     </div>
 
@@ -66,37 +66,60 @@
                                 }
                             </script>
 
-                                
+
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th><span class="corTabela">Aluno</span></th>
+                                    <th><span class="corTabela">Email</span></th>
+                                    <th><span class="corTabela">Prova</span></th>
+                                    <th><span class="corTabela">Nota</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                @php $soma = 0;
+                                    $count = 0;
+                                @endphp
                              <!-- loop para mostrar provas  do usuario -->
-                             @foreach ($testList as $q)
+                             @foreach ($grades as $q)
                              
-                             <div class="">
-                             <div class="listquestions row justify-content-center">
-                                 <div class="col-md-2">
-                                   <b>Nome:</b><span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
-                                 </div>
-                                 <div class="col-md-2">
-                                     <b>Assunto:</b><span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
-                                 </div>         
-                                 <div class="col-md-2">
-                                     <b>Instituição:</b><span class="textQuestionList1" >{{$q->instituicao ?? ''}}</span>
-                                 </div> 
-                                 <div class="col-md-2">
-                                     <b>Curso:</b><span class="textQuestionList1" >{{$q->curso ?? ''}}</span>
-                                 </div> 
-                                 <div class="col-md-2">
-                                     <b>Semestre:</b><span class="textQuestionList1" >{{$q->semestre ?? ''}}</span>
-                                 </div> 
-                                 <div class=" textQuestionList1">
-                                 <button class="btn btn-danger btn-sm" onclick="confirmDelete({{ $q->id }})">Excluir</button>
-                                 </div>
-                                 <div class=" textQuestionList1 ">
-                                 <a class="btn btn-primary btn-sm" href="/corrigir/{{ $q->id }}">Corrigir</a>
-                                 </div>
-                             </div>
-                             </div>
+                             
+                                
+                                  <tr>
+                                    <td class="corTabela" scope="row"><span class="corTabela">{{$q->nomeAluno ?? ''}}</span></th>
+                                    <td class="corTabela" scope="row"><span class="corTabela">{{$q->email ?? ''}}</span></th>
+                                        <td class="corTabela" scope="row"><span class="corTabela">{{$q->nomeProva ?? ''}}</span></th>
+                                    <td class="corTabela"><span class="corTabela">{{$q->nota ?? ''}}</span></th>
+                                  </tr>
+
+                                  @php 
+                                       $soma += $q->nota; 
+                                       $count++
+                                  @endphp
+                                
                              
                              @endforeach
+
+                             @php
+                                if($count != 0){
+                                    $media = $soma / $count;
+                                }
+                                
+                             @endphp
+
+                            
+
+                            </tbody>
+                        </table>
+
+                        @if($count != 0)
+                        <div class="row justify-content-center" >
+                            <span class="mediaProva">Média da turma na prova : {{$media}}</span>
+                        </div>
+                        @endif
+
+
 
                         <div>
                     </div>           

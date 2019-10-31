@@ -457,6 +457,30 @@ body{
 }
 
 
-/* imagens carrocel */
+/* Tabela */
 
+table {
+    
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {background-color: #f2f2f2;}
+
+  .corTabela{
+      color: black;
+  }
+
+  .mediaProva{
+      color: white;
+      font-size: 20px;
+      padding: 10px;
+      border-radius: 10px;
+      background-image: linear-gradient(to right, #9055A2, #380049);
+  }
 

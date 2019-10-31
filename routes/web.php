@@ -74,4 +74,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/corrigido/{id}', 'TestController@corrigirTest')->name('corrigido');
     Route::get('/corrigirprova/{id}', 'HomeController@corrigirProva')->name('corrigirProva');
     Route::post('/correcaofeita/{id}', 'TestController@corrigirProva')->name('corrigidoProva');
+    //Relatórios
+    Route::get('/relatorios', 'HomeController@relatorios')->name('relatorios');
+    Route::get('/relatorios/notas/{id}', 'HomeController@relatorioDeNotas')->name('relatoriodenotas');
 });
