@@ -26,7 +26,7 @@
 
     
     <?php $count = 1 ?>
-    
+    <!-- imagem ?? "" -->
     <!-- loop questões -->
     @foreach ($classTests as $q)
     <p>Questão {{$count}}: {{$q->enunciado}} </p>

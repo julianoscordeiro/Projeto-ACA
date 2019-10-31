@@ -96,24 +96,15 @@ class HomeController extends Controller
     public function provas()
     {
         //Retorna a lista de questões;
+        //$id = $request->route('id');
         $userid = Auth::id();
         $test = DB::table('tests')->where('user_id', '=', "$userid")->paginate(10);
-
+        $questionTests = DB::table('test_question')->join('questions', 'questions.id', '=', 'test_question.question_id')->join('tests', 'tests.id', '=', 'test_question.test_id')->get();
         $title = 'Provas | ';
+
         return view('home.tests', [
             'title' => $title
-        ], compact('test'));
-    }
-    public function criarProva()
-    {
-        //Retorna a lista de questões;
-        $userid = Auth::id();
-        $question = DB::table('questions')->where('user_id', '=', "$userid")->get();
-
-        $title = 'Criar Prova | ';
-        return view('home.createtest', [
-            'title' => $title
-        ], compact('question'));
+        ], compact('test','questionTests', 'tests'));
     }
 
     //Turmas
@@ -122,10 +113,11 @@ class HomeController extends Controller
         //Retorna a lista de questões;
         $userid = Auth::id();
         $class = DB::table('class')->where('user_id', '=', "$userid")->get();
+        $classesStudent = DB::table('classes_student')->join('class', 'class.id', '=', 'classes_student.classes_id')->join('student', 'student.id', '=', 'classes_student.student_id')->get();
         $title = 'Turmas | ';
         return view('home.classes', [
             'title' => $title
-        ],compact('class'));
+        ],compact('class', 'classesStudent'));
     }
 
     //Criar Turma

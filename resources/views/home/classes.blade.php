@@ -154,7 +154,14 @@
                                             <b>Curso:</b>{{$q->curso ?? ''}} <br>
                                             <b>Período:</b>{{$q->periodo ?? ''}} <br>
                                             <b>Semestre:</b>{{$q->semestre ?? ''}} <br>
-                                            <b>alunos:</b>{{$q->alunos ?? ''}} <br>
+                                            <b>Alunos:</b>{{$q->alunos ?? ''}} <br>
+                                            @php($i=1)
+                                                @foreach ($classesStudent as $p)
+                                                @if ($q->id == $p->classes_id) 
+                                                <b>Aluno {{$i}}:</b> {{$p->nome ?? ''}}<br> 
+                                                @php ($i++)                           
+                                                @endif
+                                                @endforeach 
                                         </div>
 
                                         <div class="modal-footer">
