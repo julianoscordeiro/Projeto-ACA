@@ -306,7 +306,7 @@ class HomeController extends Controller
         
         //Lista de provas de todas as turmas do usuario
         $testList = DB::table('test_class')->join('class', 'class.id', '=', 'test_class.classes_id')->join('tests', 'tests.id', '=', 'test_class.test_id')->get();
-        $title = 'Correção | ';
+        $title = 'Relatórios | ';
         return view('home.reports', [
             'title' => $title
         ],compact('class','testList'));
@@ -326,7 +326,7 @@ class HomeController extends Controller
         ->where('test_id', '=', "$id")
         ->get();
 
-        $title = 'Correção | ';
+        $title = 'Relatório de Notas | ';
         return view('home.reportsgrades', [
             'title' => $title
         ],compact('grades'));
