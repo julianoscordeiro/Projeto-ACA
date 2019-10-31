@@ -56,7 +56,7 @@
                                         </div>
                                         @endforeach
 
-                                        <button type="submit" class="btn btn-success">Criar</button>
+                                        <button type="submit" class="btn btn-success">Adicionar</button>
                                         
                                         <a href="/turmas" class="btn btn-danger">Cancelar</a>             
 

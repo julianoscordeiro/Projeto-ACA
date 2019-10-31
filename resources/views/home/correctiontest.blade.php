@@ -6,7 +6,7 @@
 
 <div class="container ">
     <div class="row justify-content-center   ">
-        <div class="col-md-7">
+        <div class="col-md-11">
             <h1 class="display-1 ">Corrigir</h1>
         </div>
     </div>
