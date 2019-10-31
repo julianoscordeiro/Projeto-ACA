@@ -72,7 +72,8 @@ class TestController  extends Controller
         $search = $request->get('search');
         $userid = Auth::id(); 
         $test = DB::table('tests')->where('nome','like', '%'.$search.'%')->paginate(100);
-        return view('home.tests',['tests' => $test],compact('test'));
+        $questionTests = DB::table('test_question')->join('questions', 'questions.id', '=', 'test_question.question_id')->join('tests', 'tests.id', '=', 'test_question.test_id')->where('nome','like', '%'.$search.'%')->get();
+        return view('home.tests',['tests' => $test],compact('test','questionTests'));
     }
 
     //adicionar peso as provas
