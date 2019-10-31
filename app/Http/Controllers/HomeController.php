@@ -104,7 +104,7 @@ class HomeController extends Controller
 
         return view('home.tests', [
             'title' => $title
-        ], compact('test','questionTests', 'tests'));
+        ], compact('test','questionTests'));
     }
 
     //Turmas
