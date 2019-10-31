@@ -107,6 +107,17 @@ class HomeController extends Controller
         ], compact('test','questionTests'));
     }
 
+    public function criarProva()
+    {
+        //Retorna a lista de questões;
+        $userid = Auth::id();
+        $question = DB::table('questions')->where('user_id', '=', "$userid")->get();
+        $title = 'Criar Prova | ';
+        return view('home.createtest', [
+            'title' => $title
+        ], compact('question'));
+    }
+
     //Turmas
     public function turmas()
     {
