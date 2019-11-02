@@ -6,8 +6,8 @@
 
 <div class="container ">
     <div class="row justify-content-center   ">
-        <div class="col-md-7">
-            <h1 class="display-1 ">Corrigir</h1>
+        <div class="col-md-12">
+            <h1 class="display-1 ">Inserir correção</h1>
         </div>
     </div>
 
@@ -75,21 +75,22 @@
                                         @endforeach
 
                                         
-                                         <?php $count++ ?>
+                                         
                                         <form method="POST" action="{{ route('corrigidoProva', $y->test_id) }}" enctype="multipart/form-data">
                                             @csrf
                                          
                                             <div class="row justify-content-center ">
                                                     <div class="form-group col-md-12">
                                                         Aluno
-                                                        <select name="aluno" class="formulariosquestoes">
+                                                        <select name="aluno" class="formulariosquestoes">    
                                                            @foreach ($student as $s)
-                                                            <option value="{{$s->id}}">{{$s->nome}}</option>
+                                                            <option value="{{$s->id}}">{{$s->nome}}</option>          
                                                            @endforeach
                                                         </select>
                                                       </div>
                                                 </div>
                                         @foreach ($testQuestion as $q)
+                                                    <?php $count++ ?>
                                                     <div class="col-md-12">
                                                             <b>Questão <?php echo$count ?>:</b> {{$q->enunciado}}
                                                     </div>
