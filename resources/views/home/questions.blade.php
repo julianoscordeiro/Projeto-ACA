@@ -9,19 +9,19 @@
         <div class="col-md-6 ">
             <h1 class="display-1 ">Questões</h1>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 tirarMarginResponsividade">
                 <!-- Busca -->
                 
-                <div class="md-form active-pink active-pink-2 mb-3 mt-0">
+                <div class="md-form  active-pink active-pink-2 mb-3 mt-0">
                         <form action="/searchQuestion" method="get">
-                            <input class="form-control barrapesquisa" type="search"  placeholder="Buscar" name="search">
+                            <input class="form-control barrapesquisa " type="search"  placeholder="Buscar" name="search">
                         
                         </form>
                 </div>
         </div>
         <div class="col-md-2">
                 <!-- Criar Questão -->
-                <a href="/questoes/criar" class="btn btn-primary questoesMargin1">Criar Questão</a>
+                <a href="/questoes/criar" class="btn btn-primary questoesMargin1 tirarMarginResponsividade2">Criar Questão</a>
         </div>
     </div>
 

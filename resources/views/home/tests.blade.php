@@ -8,7 +8,7 @@
         <div class="col-md-6 ">
             <h1 class="display-1 ">Provas</h1>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 tirarMarginResponsividade">
                 <!-- Busca -->
                 
                 <div class="md-form active-pink active-pink-2 mb-3 mt-0">
@@ -19,7 +19,7 @@
         </div>
         <div class="col-md-2">
                 <!-- Criar prova-->
-                <a href="/provas/criar" class="btn btn-primary questoesMargin1">Criar prova</a>
+                <a href="/provas/criar" class="btn btn-primary questoesMargin1 tirarMarginResponsividade2">Criar prova</a>
         </div>
     </div>
 

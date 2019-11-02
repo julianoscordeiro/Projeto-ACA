@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{$title ?? ''}} ACA - Aplicativo de correção automatizada</title>
+    <title>{{$title ?? ''}} ProvaPro - Aplicativo de correção automatizada</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -40,7 +40,7 @@
 <body class="fundoDashboard">
 
         <!-- Menu Responsivo -->
-        <div class="container">
+        <div class="container menuzera2">
             <div class=" row justify-content-center ">
                 <div class="col-sm-10">
                     <div class="topnav" id="myTopnav">
@@ -62,7 +62,7 @@
                 </div> 
                 <div class="col-sm-2">
                     <div >   
-                    <div class="btn-group dropdown usuariobtn">
+                    <div class="btn-group dropdown usuariobtn tirarMarginResponsividade2">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ Auth::user()->name }}
                         </button>
@@ -88,7 +88,9 @@
                
         </div>
         
-
+<div class="linhaSeparaMenu">
+    <br>
+</div>
 
     <div id="app">
 
