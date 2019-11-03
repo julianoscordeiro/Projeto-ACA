@@ -80,14 +80,14 @@
                                                                 <b class="formulariosquestoes">{{$q->enunciado}}  </b>
                                                         </div>
                                                         <div class="col-md-2">
-                                                                Peso:<input name="peso_selected[]" type="number" class="formulariosquestoes">
+                                                                Peso:<input name="peso_selected[]" type="number" class="formulariosquestoes" required>
                                                         </div>
                                                         
                                                     </div>
 
                                         @endforeach
 
-                                            <button type="submit" class="btn btn-success">Corrigir</button>
+                                            <button type="submit" class="btn btn-success">Salvar</button>
                                                     
                                                     <a href="/correcao" class="btn btn-danger">Cancelar</a>             
             

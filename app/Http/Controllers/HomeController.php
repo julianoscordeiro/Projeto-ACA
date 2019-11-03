@@ -333,7 +333,7 @@ class HomeController extends Controller
         $grades = DB::table('grade')
         ->join('student', 'student.id', '=', 'grade.aluno_id')
         ->join('tests', 'tests.id', '=', 'grade.test_id')
-        ->selectRaw('tests.nome as nomeProva, student.nome as nomeAluno, student.email as email, grade.nota as nota')
+        ->select('tests.nome as nomeProva', 'student.nome as nomeAluno', 'student.email as email', 'grade.nota as nota')
         ->where('test_id', '=', "$id")
         ->get();
 

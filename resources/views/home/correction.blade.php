@@ -75,23 +75,20 @@
                                  <div class="col-md-2">
                                    <b>Nome:</b><span class="textQuestionList1" >{{$q->nome ?? ''}}</span>
                                  </div>
-                                 <div class="col-md-2">
+                                 <div class="col-md-3">
                                      <b>Assunto:</b><span class="textQuestionList1" >{{$q->assunto ?? ''}}</span>
-                                 </div>         
-                                 <div class="col-md-2">
-                                     <b>Instituição:</b><span class="textQuestionList1" >{{$q->instituicao ?? ''}}</span>
-                                 </div> 
+                                 </div>
                                  <div class="col-md-2">
                                      <b>Curso:</b><span class="textQuestionList1" >{{$q->curso ?? ''}}</span>
                                  </div> 
                                  <div class="col-md-2">
                                      <b>Semestre:</b><span class="textQuestionList1" >{{$q->semestre ?? ''}}</span>
                                  </div> 
-                                 <div class=" textQuestionList1">
-                                 <button class="btn btn-danger btn-sm" onclick="confirmDelete({{ $q->id }})">Excluir</button>
-                                 </div>
                                  <div class=" textQuestionList1 ">
-                                 <a class="btn btn-primary btn-sm" href="/corrigir/{{ $q->id }}">Corrigir</a>
+                                    <a class="btn btn-primary btn-sm" href="/corrigir/{{ $q->id }}">Adicionar Peso</a>
+                                    </div>
+                                 <div class=" textQuestionList1 ">
+                                 <a class="btn btn-primary btn-sm" href="/corrigirprova/{{ $q->id }}">Corrigir</a>
                                  </div>
                              </div>
                              </div>

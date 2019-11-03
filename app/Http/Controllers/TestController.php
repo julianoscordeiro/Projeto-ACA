@@ -105,7 +105,7 @@ class TestController  extends Controller
 
         
 
-        return redirect()->route('corrigirProva', $id);
+        return redirect()->route('correcao');
     }
 
 
