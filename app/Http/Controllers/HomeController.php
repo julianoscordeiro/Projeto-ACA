@@ -279,7 +279,7 @@ class HomeController extends Controller
         $testQuestion = DB::table('test_question')->join('questions', 'questions.id', '=', 'test_question.question_id')->where('test_id', '=', "$id")->get();
         
         //Lista de provas de todas as turmas do usuario
-        $testList = DB::table('test_class')->join('class', 'class.id', '=', 'test_class.classes_id')->join('tests', 'tests.id', '=', 'test_class.test_id')->get();
+        $testList = DB::table('test_class')->join('class', 'class.id', '=', 'test_class.classes_id')->join('tests', 'tests.id', '=', 'test_class.test_id')->where('test_class.user_id', '=', "$userid")->get();
         $title = 'Corrigir | ';
         return view('home.correctiontest', [
             'title' => $title
@@ -316,7 +316,7 @@ class HomeController extends Controller
         $class = DB::table('class')->where('user_id', '=', "$userid")->get();
         
         //Lista de provas de todas as turmas do usuario
-        $testList = DB::table('test_class')->join('class', 'class.id', '=', 'test_class.classes_id')->join('tests', 'tests.id', '=', 'test_class.test_id')->get();
+        $testList = DB::table('test_class')->join('class', 'class.id', '=', 'test_class.classes_id')->join('tests', 'tests.id', '=', 'test_class.test_id')->where('test_class.user_id', '=', "$userid")->get();
         $title = 'Relatórios | ';
         return view('home.reports', [
             'title' => $title
