@@ -115,7 +115,7 @@
 
                         @if($count != 0)
                         <div class="row justify-content-center" >
-                            <span class="mediaProva">Média da turma na prova : {{$media}}</span>
+                            <span class="mediaProva">Média da turma na prova : {{round($media, 1)}}</span>
                         </div>
                         @endif
 
